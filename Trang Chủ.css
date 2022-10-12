@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color:black;
+}
+
+ .maunenthanhtimkiem{
+    background-color: pink;
+    height: 150px;
+    width: auto;
+    margin-top: 50px;
+    position: relative;
+ }
+
+ .maunenungdung{
+    background-color:blue;
+    height: 1500px;
+    width: 1000px;
+    margin: 0px auto;
+ }
+
+ .nenthanhungdung{
+    background-color: chartreuse;
+    height: 200px;
+    width: auto;
+    margin-top: 20px;
+ }
+
+ .thanhcongcu{
+    background-color: coral;
+    height: 70px;
+    width: 1000px;
+ }
+
+.logo{
+    background-color: blueviolet;
+    height: 150px;
+    width: 150px;
+    margin-left: 50px;
+}
+
+ .thanhtimkiem{
+    background-color: aquamarine;
+    height: 70px;
+    width: 500px;
+    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+ }
