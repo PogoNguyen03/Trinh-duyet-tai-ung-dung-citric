@@ -9,25 +9,93 @@
     <title>Citric</title>
 </head>
 <body>
-        <div class="maunenungdung">
-            <div class="maunenthanhtimkiem">
-                <div class="tentrangweb">Citric</div>
-                <div class="logo"></div>
-                <div class="phantimkiem">
-                    <form action="" class="search" method="post">
-                        <input type="text" class="searchTerm" placeholder="Tìm ứng dụng...">
-                        <button type="submit" class="nuttimkiem">
-                        </button>
-                    </form>
+    <div class="thanhchucnang">
+        <div class="logo">Logo</div>
+        <div class="tenweb">Tên web</div>
+        <span class="khuchucnangtrai">
+            <ul class="chucnangtrai">
+                <li class="tenchucnangtrai">Cửa hàng</li>
+                <li class="tenchucnangtrai">Câu hỏi thường gặp</li>
+                <li class="tenchucnangtrai">Hỗ trợ</li>
+
+            </ul>
+        </span>
+        <span class="khuchucnangphai">
+            <ul class="chucnangphai">
+                <li class="tenchucnangphai">Ngôn ngữ</li>
+                <li class="tenchucnangphai">Đăng nhập</li>
+            </ul>
+        </span>
+    </div>
+    <main class="main">
+        <div class="nengiua">
+            <div class="nencongcu">
+                <div class="nenthanhtimkiem">
+                    <div class="thanhtimkiem">
+                        <form action="" class="search" method="post">
+                            <input type="text" class="searchTerm" placeholder="Tìm ứng dụng...">
+                            <button type="submit" class="nuttimkiem">
+                            </button>
+                        </form>
+                    </div>
+                    <span class="khucongcu">
+                        <ul class="congcu">
+                            <li class="tencongcu">Game mới</li>
+                            <li class="tencongcu">Game mới</li>
+                            <li class="tencongcu">Game mới</li>
+                            <li class="tencongcu">Game mới</li>
+                            <li class="tencongcu">Game mới</li>
+        
+                        </ul>
+                    </span>
                 </div>
             </div>
-            <div class="thanhcongcu"></div>
-            <div class="nenthanhungdung"></div>
-            <div class="nenthanhungdung"></div>
-            <div class="nenthanhungdung"></div>
-            <div class="nenthanhungdung"></div>
+            <div class="nenungdung">
+                <div class="slideshow">
+                    <div class="image">
+                        <div class="display-container">
+                       
+                            <img class="slides animate-fading" onclick="changeImage()" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg">
+                            <img class="slides animate-fading" onclick="changeImage()" src="hình ảnh/ứng dụng 2/nền ứng dụng 2.jpg">
+                            <img class="slides animate-fading" onclick="changeImage()" src="hình ảnh/ứng dụng 3/nền ứng dụng 3.jpg">
+                             <!--Nút qua lại-->
+                            <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+                    
+                            <!-- Chấm tròn -->
+                            <div class="badge" style="width:100%">
+                            <span class="image-badge" onclick="currentDiv(1)"></span>
+                            <span class="image-badge" onclick="currentDiv(2)"></span>
+                            <span class="image-badge" onclick="currentDiv(3)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script language="Javascript" src="Trang Chủ.js"></script>
+            </div>
         </div>
-
-
+    </main>
+    <div class="doancuoi">
+        <div class="logo">Logo</div>
+                <div class="tenweb">ten web</div>
+                <div class="gioithieu">
+       <table>
+        <tr>
+            <td><p class="gioithieutrangweb"><strong>Đào Minh Hà – Daominhha.com</strong> 
+                    là website Tải Game Việt Hóa Miễn Phí Tốc độ cao mới nhất , 
+                    Full Kích Hoạt , Full DLC , Full Mods … chia sẻ những thủ thuật về game và công nghệ.
+                    Ngoài ra daominhha.com còn cung cấp cho anh em một nơi tải Phần Mềm Miễn Phí Chất Lượng Cao.
+                    Với Phương Châm&nbsp; <strong>” Chia sẻ miễn phí tất cả “</strong></p>
+                </div>
+            </td>
+            <td>
+                <div class="timchungtoi">nhập địa chỉ hình ảnh như youtube rồi instagram fb</div>
+            </td>
+            <td>
+                <div class="ngaytaoweb">ngày thành lập web</div>
+            </td>
+        </tr>
+       </table>
+    </div>
 </body>
 </html>
