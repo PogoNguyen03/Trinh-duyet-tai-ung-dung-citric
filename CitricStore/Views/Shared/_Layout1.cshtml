@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/TrangChủ_Layout.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div-header">
+        <div class="logo">Logo</div>
+        <div class="tenweb">Tên web</div>
+        <div class="header-left-container">
+            <ul class="header-left">
+                <li class="header-left-name">Cửa hàng</li>
+                <li class="header-left-name">Câu hỏi thường gặp</li>
+                <li class="header-left-name">Hỗ trợ</li>
+
+            </ul>
+        </div>
+        <div class="header-right-container">
+            <ul class="header-right">
+                <li class="header-right-name">Ngôn ngữ</li>
+                <li class="header-right-name">Đăng nhập</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="div-main">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <table>
+            <tr>
+                <td>
+                    <div class="footer-logo-name-container">
+                        <div class="footer-logo">Logo</div>
+                        <div class="footer-tenweb">ten web</div>
+                    </div>
+                <td>
+                    <div class="ngaytaoweb">
+                        <p class="ngaytaoweb-caption">Copyright © 2018 - 2021 Citric.com</p>
+                    </div>
+                </td>
+                <td>
+                    <p class="gioithieutrangweb">
+                        <strong>Đào Minh Hà  Daominhha.com</strong>
+                        là website Tải Game Việt Hóa Miễn Phí Tốc độ cao mới nhất ,
+                        Full Kích Hoạt , Full DLC , Full Mods … chia sẻ những thủ thuật về game và công nghệ.
+                        Ngoài ra daominhha.com còn cung cấp cho anh em một nơi tải Phần Mềm Miễn Phí Chất Lượng Cao.
+                        Với Phương Châm&nbsp; <strong>” Chia sẻ miễn phí tất cả “</strong>
+                    </p>
+   
+                </td>
+                <td>
+                    <div class="timchungtoi">
+                        <i class="icon_lienlac fa-brands fa-square-facebook"></i>
+                        <i class="icon_lienlac fa-brands fa-instagram"></i>
+                        <i class="icon_lienlac fa-brands fa-youtube"></i>
+                        <i class="icon_lienlac fa-brands fa-twitter"></i>
+                        <i class="icon_lienlac fa-brands fa-discord"></i>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
