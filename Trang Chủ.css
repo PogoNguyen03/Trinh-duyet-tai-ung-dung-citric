@@ -199,32 +199,62 @@ body{
   min-width: 300px;
 }
 
+/* làm phần cuối */
 .doancuoi{
    position: absolute;
    display: flex;
    flex-direction: row;
 }
 
+.logoduoi{
+   background-color: pink;
+   margin-left: 160px;
+   height: 52px;
+   width: 52px;
+}
+
+.tenwebduoi{
+   background-color: brown;
+   margin-left: 160px;
+   width: 118px;
+   height: 52px;
+   text-align: center;
+}
+
 .gioithieutrangweb{
    background-color: aqua;
-   margin: 52px 0 0 30px;
    height: 130px;
    width: 500px;
+   top: 0;
 }
 
 .timchungtoi{
-   background-color: blue;
-   margin: 52px 0 0 30px;
+   background-color:aqua;
    height: 130px;
-   width: 500px;
+   width: 260px;
+   flex-direction: column;
+}
+
+.icon_lienlac{
+   margin-top: 100px;
+   margin-left: 10px;
+   font-size: 30px;
+   color: white;
 }
 
 .ngaytaoweb{
-   background-color: #fff;
-   margin: 52px 0 0 30px;
+   background-color: aqua;
    height: 130px;
    width: 300px;
-
+}
+.day{
+   height: 50px;
+   width: 300px;
+   padding-top: 65px;
+   font-size: 20px;
+   text-align:center;
+   align-items: center;
+   color: white;
 }
 
 /* Slide image auto */
