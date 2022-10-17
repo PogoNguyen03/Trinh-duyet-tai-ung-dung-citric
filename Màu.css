@@ -4,7 +4,7 @@
 /*-------------NỀN-------------*/
 body{
    font-family: 'Quicksand', sans-serif;
-   background-color:#303e47;
+   background-color: rgb(18,18,18);
 } 
 
 /*-------------CÁC KHOẢNG CÁCH-------------*/
@@ -32,7 +32,7 @@ body{
 
 /*-------------HEADER-------------*/
 .header{
-   background-color: darkblue;
+   background-color: #FCAE03;
    width: 100%;
    height: 52px;
    position: relative;
@@ -41,25 +41,25 @@ body{
    top:0;
 }
 .logo{
-   background-color: blueviolet;
+   
    height: 52px;
    width: 52px;
-   margin-left: 60px;
+   margin-left: 30px;
    position: absolute;
 }
 .tenweb{
-   background-color: white;
+   
    position: absolute;
    width: 118px;
    height: 52px;
-   margin-left: 112px;
+   margin-left: 82px;
    text-align: center;
 } 
 .header-left-container{
-   background-color: darkgreen;
+   
    height: 52px;
    width: 45%;
-   margin-left: 230px;
+   margin-left: 200px;
    position: absolute;
    display: flex;
    flex-direction: row;
@@ -72,8 +72,11 @@ body{
    align-items: center;
    height: 100%;
 }
+.header-left-name{
+   padding: 15px;
+}
 .header-right-container{
-   background-color: plum;
+  
    height: 52px;
    width: 25%;
    right: 0px;
@@ -92,60 +95,6 @@ body{
 .header-right-name{
    padding: 15px;
 }
-/*Hover Button*/
-* {
-   box-sizing: inherit;
-   transition-property: all;
-   transition-duration: 0.6s;
-   transition-timing-function: ease;
- }
- 
- .header-left-name {
-   background-color:tan;
-   color: #fff;
-   cursor: pointer;
-   font-size: 15px;
-   max-width: 1000px;
-   position: relative;
-   text-decoration: none;
-   width: 100px;
-   height: 52px;
-   text-align: center;
-   line-height: 45px;
- }
- .header-left-name:hover {
-   text-decoration: none;
- }
- 
- .header-right-name-btn{
-   letter-spacing: 0;
- }
- 
- .header-right-name-btn:hover, .header-right-name-btn:active {
-   letter-spacing: 3px;
- }
- 
- .header-right-name-btn:after, .header-right-name-btn:before {
-   border: 1px solid rgba(255, 255, 255, 0);
-   bottom: 0px;
-   content: " ";
-   display: block;
-   margin: 0 auto;
-   position: relative;
-   transition: all 280ms ease-in-out;
-   width: 0;
- }
- .header-right-name-btn:hover:after, .header-right-name-btn:hover:before {
-   border-color: #fff;
-   transition: width 350ms ease-in-out;
-   width: 70%;
- }
- 
- .header-right-name-btn:hover:before {
-   bottom: auto;
-   top: 0;
- }
- 
 
 /*-------------MAIN-------------*/
 .main{
@@ -154,14 +103,14 @@ body{
    z-index: auto;
 }
 .main-container{
-   background-color:#e3c99a;
-   height: 3500px;
+   background-color:rgb(18,18,18);
+   height: 3580px;
    width: 1200px;
    margin: 0 auto;
    min-width: 1000px;
 }
 .navigationbar-container{
-   background-color: pink;
+   background-color: rgb(18,18,18);
    height: 100px;
    width: 1200px;
    position: sticky;
@@ -172,7 +121,6 @@ body{
    z-index: 1000;
 }
 .searchbar-container{
-   background-color: yellowgreen;
    width: 290px;
    height: 100%;
 }
@@ -213,7 +161,6 @@ body{
    display: flex;
 }
 .navigation-container{
-   background-color: coral;
    height: 100%;
    width: 910px;
    right: 0;
@@ -233,11 +180,11 @@ body{
 .navigation-name{
    padding-left: 10px;
    padding-right: 20px;
+   color: white;
 }
 
 .nenungdung{
-   background-color: chartreuse;
-   height: 3400px;
+   height: 3460px;
    width: 1200px;
    position: absolute;
    min-width: 300px;
@@ -245,7 +192,6 @@ body{
 
 /* Slide image auto */
 .slideshow{
-   background-color: violet;
    width: 1200px;
    height: 360px;
    margin: 0 auto;
@@ -379,7 +325,6 @@ body{
 
 /*Game đề xuất*/
 .dexuat-container{
-   background-color: aquamarine;
    width: 100%;
    height: 760px;
    position: relative;
@@ -389,7 +334,6 @@ body{
 .dexuat-name{
    display: flex;
    width: 100%;
-   background-color:yellow;
    height: 40px;
    position: relative;
    align-items: center;
@@ -406,26 +350,26 @@ body{
 }
 .line {
     display: block;
-    background: #dd163b;
+    background: #FCAE03;
     height: 4px;
     width: 100%;
     flex: 1;
 }
 .dexuat-apps{
    width: 100%;
-   height: 720px;
-   background-color: tomato;
-   position: absolute;
+   height: 700px;
+   position: relative;
+}
+.row{
+   width: 1200px;
+   height: 330px;
 }
 .bloggame{
-   background-color: #007bff;
-   border-spacing: 20px 20px;
-
-   width: 100%;
-   margin: 0px auto;
-   align-items: center;
+   width: 250px;
+   height: 330px;
    
 }
+
 .imageblog{
    position: relative;
    display: block;
@@ -436,7 +380,7 @@ body{
    transition: opacity 0.15s ease-in-out;
 }
 .imageblog-width-height{
-   width: 100%;
+   width: 250px;
    height: 170px;
    vertical-align: middle;
 }
@@ -512,38 +456,36 @@ a {
 
 /*Footer*/
 .footer{
+   display: flex;
+   flex-direction: row;
    width: 100%;
-   height: 130px;
-   background-color: violet;
+   height: 140px;
+   background-color: #FCAE03;
+   margin: 0 auto;
    min-width: 1000px;
-   z-index: 1;
-   bottom:0;
+   z-index: 3;
 }
-.footer-table{
-   background-color: #dd163b;
-   border-spacing: 10px 0px;
+.footer>table{
+   margin: 0 auto;
 }
 .footer-logo-name-container{
-   background-color: aqua;
-   align-items: center;
    width: 300px;
+   height: 130px;
+   align-items: center;
 }
 .footer-logo{
-   background-color: pink;
    height: 52px;
    width: 52px;
    margin: 0 auto;
 }
 .footer-tenweb{
-   background-color: brown;
    width: 120px;
    height: 52px;
    text-align: center;
-   margin: 0 auto;
 }
 .ngaytaoweb{
-   background-color: aqua;
-   width: 350px;
+   height: 130px;
+   width: 300px;
 }
 .ngaytaoweb-caption{
    height: 50px;
@@ -555,11 +497,13 @@ a {
    color: white;
 }
 .gioithieutrangweb{
-   background-color: aqua;
+   height: 130px;
    width: 500px;
+   top: 0;
 }
 .timchungtoi{
-   background-color:aqua;
+   height: 130px;
+   width: 300px;
    flex-direction: column;
 }
 .icon_lienlac{
