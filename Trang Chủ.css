@@ -117,15 +117,15 @@ body{
    text-decoration: none;
  }
  
- .header-right-name-btn{
+ .header-left-name-btn{
    letter-spacing: 0;
  }
  
- .header-right-name-btn:hover, .header-right-name-btn:active {
+ .header-left-name-btn:hover, .header-left-name-btn:active {
    letter-spacing: 3px;
  }
  
- .header-right-name-btn:after, .header-right-name-btn:before {
+ .header-left-name-btn:after, .header-left-name-btn:before {
    border: 1px solid rgba(255, 255, 255, 0);
    bottom: 0px;
    content: " ";
@@ -135,13 +135,13 @@ body{
    transition: all 280ms ease-in-out;
    width: 0;
  }
- .header-right-name-btn:hover:after, .header-right-name-btn:hover:before {
+ .header-left-name-btn:hover:after, .header-left-name-btn:hover:before {
    border-color: #fff;
    transition: width 350ms ease-in-out;
    width: 70%;
  }
  
- .header-right-name-btn:hover:before {
+ .header-left-name-btn:hover:before {
    bottom: auto;
    top: 0;
  }
