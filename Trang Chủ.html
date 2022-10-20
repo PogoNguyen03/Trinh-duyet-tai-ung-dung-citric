@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Trang Chủ.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto:ital,wght@0,300;0,500;0,700;1,100;1,300;1,700&display=swap" rel="stylesheet">
     <title>Citric</title>
 </head>
@@ -35,16 +36,57 @@
                         <form action="" class="search" method="post">
                             <input type="text" class="searchTerm" placeholder="Tìm ứng dụng...">
                             <button type="submit" class="searchbar-btn">
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
                     </div>
                     <span class="navigation-container">
                         <ul class="navigation">
-                            <li class="navigation-name">Game mới</li>
-                            <li class="navigation-name">Game mới</li>
-                            <li class="navigation-name">Game mới</li>
-                            <li class="navigation-name">Game mới</li>
-                            <li class="navigation-name">Game mới</li>
+                            <li class="navigation-name"><a>Game mới</a>
+                                <ul class="menu-navigation">
+                                    <li><a href="">Game mới.1</a></li>
+                                    <li><a href="">Game mới.2</a></li>
+                                    <li><a href="">Game mới.3</a></li>
+                                    <li><a href="">Game mới.4</a></li>
+                                    <li><a href="">Game mới.5</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation-name"><a href="">Game mới</a>
+                                <ul class="menu-navigation">
+                                    <li><a href="">Game mới.1</a></li>
+                                    <li><a href="">Game mới.2</a></li>
+                                    <li><a href="">Game mới.3</a></li>
+                                    <li><a href="">Game mới.4</a></li>
+                                    <li><a href="">Game mới.5</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation-name"><a href="">Game mới</a>
+                                <ul class="menu-navigation">
+                                    <li><a href="">Game mới.1</a></li>
+                                    <li><a href="">Game mới.2</a></li>
+                                    <li><a href="">Game mới.3</a></li>
+                                    <li><a href="">Game mới.4</a></li>
+                                    <li><a href="">Game mới.5</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation-name"><a href="">Game mới</a>
+                                <ul class="menu-navigation">
+                                    <li><a href="">Game mới.1</a></li>
+                                    <li><a href="">Game mới.2</a></li>
+                                    <li><a href="">Game mới.3</a></li>
+                                    <li><a href="">Game mới.4</a></li>
+                                    <li><a href="">Game mới.5</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation-name"><a href="">Game mới</a>
+                                <ul class="menu-navigation">
+                                    <li><a href="">Game mới.1</a></li>
+                                    <li><a href="">Game mới.2</a></li>
+                                    <li><a href="">Game mới.3</a></li>
+                                    <li><a href="">Game mới.4</a></li>
+                                    <li><a href="">Game mới.5</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </span>
                 </div>
@@ -819,5 +861,11 @@
             </tr>
         </table>
      </div>
+     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+     <script>
+        $(document).ready(function(){
+            $('.menu-navigation').parent('li').addClass('has-child')
+        })
+     </script>
 </body>
 </html>
