@@ -89,8 +89,9 @@ body{
  align-items: center;
  height: 100%;
 }
-.header-right-name{
- padding: 15px;
+.header-right-name a{
+   text-decoration: none;
+   padding: 15px;
 }
 /*Hover Button*/
 * {
