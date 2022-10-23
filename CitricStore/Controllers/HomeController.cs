@@ -27,7 +27,15 @@ namespace CitricStore.Controllers
             return View();
         }
 
-        public ActionResult TrangChủ()
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+        public ActionResult AppPage()
+        {
+            return View();
+        }
+        public ActionResult Test()
         {
             return View();
         }

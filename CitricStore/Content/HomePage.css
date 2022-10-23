@@ -1,111 +1,15 @@
 ﻿* {
     margin: 0;
 }
-/*-------------CÁC KHOẢNG CÁCH-------------*/
-.khoangcach {
-    width: 40px;
-    height: 330px;
-    float: left;
-}
-
-.khoangcach-1 {
-    width: 40px;
-    height: 360px;
-}
-
-.duongngang {
-    height: 40px;
-    width: 1200px;
-}
-
-.duongngang-2 {
-    height: 20px;
-    width: 1200px;
-}
-
-.duongngang-1 {
-    height: 10px;
-    width: 100%;
-}
-
-/*-------------MAIN-------------*/
-
-.navigationbar-container {
-    background-color: pink;
-    height: 100px;
-    width: 1200px;
-    position: sticky;
-    top: 0px;
-    min-width: 300px;
-    max-width: 1600px;
-    display: flex;
-    z-index: 1000;
-}
-
-.searchTerm {
-    width: 100%;
-    border: 3px solid black;
-    border-right: none;
-    border-radius: 24px 0 0 24px;
-    outline: none;
-    color: #00B4CC;
-}
-
-.searchbar-btn {
-    height: 40px;
-    width: 40px;
-    background-color: #00B4CC;
-    border: 3px solid black;
-    border-left: none;
-    text-align: center;
-    border-radius: 0 24px 24px 0;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-
-.navigation-container {
-    background-color: coral;
-    height: 100%;
-    width: 910px;
-    right: 0;
-    position: absolute;
-    min-width: 300px;
-    display: flex;
-    flex-direction: row;
-}
-
-.navigation {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    align-items: center;
-    display: flex;
-    height: 100%;
-}
-
-.navigation-name {
-    padding-left: 10px;
-    padding-right: 20px;
-}
-
 .nenungdung {
-    background-color: chartreuse;
-    height: 3460px;
-    width: 1200px;
-    position: absolute;
-    min-width: 300px;
+    margin-bottom: 0px;
+    width:auto;
+    height:auto;
+
 }
 
 /* Slide image auto */
 .slideshow {
-    background-color: violet;
-    width: 1120px;
     height: 360px;
     margin: 0 auto;
 }
@@ -118,7 +22,7 @@
 }
 
 .imageslides {
-    width: 800px;
+    width:100%;
     height: 360px;
 }
 
@@ -257,10 +161,7 @@
 
 /*Game đề xuất*/
 .dexuat-container {
-    background-color: aquamarine;
     width: 100%;
-    height: 760px;
-    position: relative;
     font-size: 25px;
     font-weight: bold;
 }
@@ -268,11 +169,9 @@
 .dexuat-name {
     display: flex;
     width: 100%;
-    background-color: yellow;
     height: 40px;
     position: relative;
     align-items: center;
-    position: relative;
 }
 
     .dexuat-name > span {
@@ -288,29 +187,22 @@
 
 .line {
     display: block;
-    background: #dd163b;
+    background: #FCAE03;
     height: 4px;
     width: 100%;
     flex: 1;
 }
 
 .dexuat-apps {
-    width: 100%;
-    height: 700px;
-    background-color: tomato;
-    position: relative;
-}
-
-.row {
-    width: 1200px;
-    height: 330px;
+    width:100%;
 }
 
 .bloggame {
-    width: 250px;
-    height: 330px;
-    background-color: #007bff;
-    float: left;
+    border-spacing: 20px 20px;
+    width: auto;
+    height:auto;
+    margin: 0px auto;
+    align-items: center;
 }
 
 .imageblog {
@@ -324,22 +216,10 @@
 }
 
 .imageblog-width-height {
-    width: 250px;
+    width: 100%;
     height: 170px;
     vertical-align: middle;
 }
-/* a {
-   color: var(--color_palette_1);
-   -webkit-transition: 0.15s color;
-   -o-transition: 0.15s color;
-   transition: 0.15s color;
-}
-a {
-   color: #007bff;
-   text-decoration: none;
-   background-color: transparent;
-}
- */
 
 .bloggame-title {
     margin-bottom: 10px;
@@ -379,6 +259,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .bloggame-download-btn {
@@ -391,18 +272,15 @@ a {
 .bloggame-download-btn {
     background-color: #293139;
     border-color: #101215;
-    padding: 7px 15px;
-    font-size: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
     line-height: 1.5;
-    height: 40px;
+    height: 35px;
     width: 100px;
     border-radius: 4px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     transition: 0.15s all;
     cursor: pointer;
 }
 
-
-
-/*Bootstrap*/
