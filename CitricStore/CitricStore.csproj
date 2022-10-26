@@ -160,6 +160,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\LOGO\LOGO_Black.png" />
+    <Content Include="Images\LOGO\LOGO_White.png" />
     <Content Include="Images\nền ứng dụng 1.jpg" />
     <Content Include="Images\ứng dụng 1.1.jpg" />
     <Content Include="Images\ứng dụng 1.2.jpg" />

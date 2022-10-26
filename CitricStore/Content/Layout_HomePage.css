@@ -11,7 +11,11 @@
 .logo {
     height: 60px;
 }
-
+.imagelogo {
+    margin: 0px auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
 .tenweb {
     height: 60px;
     text-align: center;
@@ -184,6 +188,7 @@
     padding-left: 10px;
     padding-right: 20px;
 }
+
 /*-------------FOOTER-------------*/
 #footer {
     background-color: #FCAE03;
