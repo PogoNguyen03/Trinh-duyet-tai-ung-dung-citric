@@ -4,9 +4,8 @@
 /* Slide image auto */
 .slideshow {
     background-color: violet;
-    width: 100%;
     height: 500px;
-    padding-top: 150px;
+    margin: 0px auto;
 }
 
 .slides {
@@ -47,11 +46,11 @@
     top: 50%;
     transform: translateY(-50%);
 }
+.image-button:hover {
+    color: #000;
+    background: #ccc;
+}
 
-    .image-button:hover {
-        color: #000;
-        background: #ccc;
-    }
 /*Chấm tròn*/
 .badge {
     text-align: center;
@@ -77,6 +76,7 @@
     .image-badge:hover {
         background: #fff;
     }
+
 /*Hiệu ứng chuyển ảnh*/
 .animate-fading {
     width: 100%;
@@ -85,18 +85,54 @@
 }
 
 @keyframes fading {
-    0% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: 1
-    }
-
-    100% {
-        opacity: 0
-    }
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
 }
+
+/*-----------------APP-----------------*/
+.app-name {
+    background-color: blue;
+    font-size: 40px;
+    text-align:center;
+    color: white;
+}
+
+.app-download-btn {
+    background-color: #00B4CC;
+    height: 40px;
+    font-size: 25px;
+    display: flex;
+    border-radius: 24px;
+}
+.app-vote {
+    font-size: 30px;
+}
+
+/*Star voting*/
+.stars {
+    position: relative;
+    white-space: nowrap;
+}
+
+    .stars svg {
+        width: 60px;
+    }
+
+.overlay {
+    height: 100%;
+    overflow: hidden;
+    mix-blend-mode: color;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+svg {
+    fill: gold;
+}
+
+
 
 
 .app-image {
@@ -106,26 +142,8 @@
     padding-top: 150px;
 }
 
-.nuttaigame {
-    background-color: #00B4CC;
-    height: 40px;
-    width: 150px;
-    padding-left: 30px;
-    font-size: 25px;
-    display: flex;
-    border-radius: 24px;
-}
 
-.danhgia {
-    font-size: 30px;
-}
 
-.tenungdung {
-    background-color: blue;
-    height: 100px;
-    width: 1000px;
-    font-size: 40px;
-}
 
 .tieudenoidung {
     height: 400px;

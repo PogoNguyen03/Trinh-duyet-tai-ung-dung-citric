@@ -1,8 +1,10 @@
-﻿
+﻿@using CitricStore.Models
+@Model UNGDUNG 
 @{
-    ViewBag.Title = "AppPage";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
+
 <link rel="stylesheet" href="~/Content/AppPage.css" />
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
@@ -24,16 +26,15 @@
             <span class="image-badge" onclick="currentDiv(4)"></span>
         </div>
     </div>
-
 </div>
 <script language="Javascript" src="~/Scripts/SlideImageAuto.js"></script>
 
 <div class="container app-name">
-    <p>SUPRALAND SIX INCHES UNDER</p>
+    <p>@Model.TenUngDung</p>
     <div class="row">
         <div class="col-lg-6">
             <button type="submit" class="app-download-btn float-end"
-                    href="https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=">
+                    href="@Model.LinkTai">
                 Download
             </button>
         </div>
@@ -49,20 +50,16 @@
 <div class="tieudenoidung">
     <p class="tieude">NỘI DUNG</p>
     <p class="noidung">
-        “Six Inches Under” là một dự án phụ nhỏ được tạo ra để giới thiệu các thành viên nhóm phát triển mới với các công cụ và quy trình làm việc của chúng tôi. Về cơ bản đó là sự chuẩn bị của chúng tôi cho phần tiếp theo của Supraland.
-        Trong khi David Münnich thực hiện trò chơi Supraland đầu tiên một mình khá nhiều, anh ấy có một vai trò nhỏ hơn trong trò chơi này. Nhóm nòng cốt cho việc này có 6 người.
-        Khá nhiều người trong nhóm đã xây dựng 1 hoặc 2 khu vực của thế giới trò chơi, và theo nghĩa đó, nó rất thử nghiệm.
-        Nó được cho là một DLC nhỏ cho Supraland, nhưng nó hơi khó chịu và ngày càng phức tạp hơn. Thay vì 3 tháng, chúng tôi mất 27 tháng để làm việc này (Supraland 1 đã được phát triển trong 16 tháng).
-        Nó có thể được coi là “Supraland 1.5” vì nó vẫn còn rất nhiều thứ từ trò chơi đầu tiên, nhưng đồng thời đó là một thế giới mới với một loạt các cơ chế mới.
+        @Model.GioiThieu
     </p>
 </div>
 <hr>
 <div class="tieudechitiet">
     <p class="tieude">CHI TIẾT</p>
-    <p class="chitiet">Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu</p>
-    <p class="chitiet">Kích thước RAM: 8GB</p>
-    <p class="chitiet">Ngôn ngữ: Tiếng Anh</p>
-    <p class="chitiet">Hệ điều hành: Windows</p>
+    <p class="chitiet">Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")</p>
+    <p class="chitiet">Kích thước RAM: @Model.KichThuocRam</p>
+    <p class="chitiet">Ngôn ngữ: @Model.NgonNgu</p>
+    <p class="chitiet">Hệ điều hành: @Model.HeDieuHanh</p>
 </div>
 <hr>
 <div class="ungdungkhac">
@@ -188,3 +185,4 @@
         </div>
     </div>
 </div>
+
