@@ -19,7 +19,7 @@ namespace CitricStore.Controllers
         // GET: CitricStore
         public ActionResult Index()
         {
-            var dsUngDungMoi = LayUngDungMoi(5);
+            var dsUngDungMoi = LayUngDungMoi(8);
             return View(dsUngDungMoi);
         }
 

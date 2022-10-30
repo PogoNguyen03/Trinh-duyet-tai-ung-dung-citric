@@ -56,10 +56,9 @@
                 {
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="bloggame">
-                            <a href="@Url.Action("Details", "CitricStore", new {id=app.MaUngDung})" class="imageblog">
-
+                            <div class="imageblog">
                                 <img class="card-img-top imageblog-width-height" src="~/Images/@app.HinhMinhHoa" alt="Card image">
-                            </a>
+                            </div>
                             <div class="">
                                 <div class="bloggame-title h4">
                                     <a class="fix-line">@app.TenUngDung</a>
@@ -67,11 +66,11 @@
                                 <div class="bloggame-theloai">
                                    Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")
                                 </div>
-                                <div class="bloggame-download">
+                                <a class="bloggame-download" href="@Url.Action("Details", "CitricStore", new {id=app.MaUngDung})" style="text-decoration:none">
                                     <div class="bloggame-download-btn">
                                         Tải Game
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -79,7 +78,4 @@
             </div>
         </div>
 </div>
-
-        <!-- Kết thúc: Ứng dụng đề xuất -->
-
 
