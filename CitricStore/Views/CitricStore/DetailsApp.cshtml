@@ -1,7 +1,6 @@
 ﻿@using CitricStore.Models
-@Model UNGDUNG 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Model.TenApp;
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
@@ -30,7 +29,7 @@
 <script language="Javascript" src="~/Scripts/SlideImageAuto.js"></script>
 
 <div class="container app-name">
-    <p>@Model.TenUngDung</p>
+    <p>@Model.TenApp</p>
     <div class="row">
         <div class="col-lg-6">
             <button type="submit" class="app-download-btn float-end"

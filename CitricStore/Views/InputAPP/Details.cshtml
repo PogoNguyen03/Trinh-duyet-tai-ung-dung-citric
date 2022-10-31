@@ -1,0 +1,141 @@
+﻿@model CitricStore.Models.APP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<div style="margin: 10px auto; width: 90%;">
+    <h2 style="text-align: center">NHẬP DỮ LIỆU PHẦN MỀM (APP)</h2>
+    <h3 style="text-align: center">CHI TIẾT APP</h3>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                TÊN APP
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenApp)
+            </dd>
+
+            <dt>
+                GIỚI THIỆU
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GioiThieu)
+            </dd>
+
+            <dt>
+                KÍCH THƯỚC RAM
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KichThuocRam)
+            </dd>
+
+            <dt>
+                NGÔN NGỮ
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgonNgu)
+            </dd>
+
+            <dt>
+                HỆ ĐIỀU HÀNH
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HeDieuHanh)
+            </dd>
+
+            <dt>
+                LINK TẢI
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LinkTai)
+            </dd>
+
+            <dt>
+                NGÀY CẬP NHẬT
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayCapNhat)
+            </dd>
+
+            <dt>
+                HÌNH NỀN
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhNen)
+            </dd>
+
+            <dt>
+                HÌNH CHI TIẾT 1
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhCT1)
+            </dd>
+
+            <dt>
+                HÌNH CHI TIẾT 2
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhCT2)
+            </dd>
+
+            <dt>
+                HÌNH CHI TIẾT 3
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhCT3)
+            </dd>
+
+            <dt>
+                HÌNH CHI TIẾT 4
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhCT4)
+            </dd>
+
+            <dt>
+                ĐÁNH GIÁ
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DanhGia)
+            </dd>
+
+            <dt>
+                NHÀ PHÁT HÀNH
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NHAPHATHANH.TenNPH)
+            </dd>
+
+            <dt>
+                THỂ LOẠI
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.THELOAI.TenTheLoai)
+            </dd>
+
+        </dl>
+    </div>
+    </div>
+    <p>
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.MaApp }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Quay về trang tổng hợp", "Index")
+    </p>

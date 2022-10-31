@@ -20,8 +20,8 @@ namespace CitricStore.Models
         public string TenDN { get; set; }
         public string Matkhau { get; set; }
         public Nullable<System.DateTime> Ngaysinh { get; set; }
-        public Nullable<bool> Gioitinh { get; set; }
         public string Email { get; set; }
         public Nullable<bool> Daduyet { get; set; }
+        public string GioiTinh { get; set; }
     }
 }

@@ -9,19 +9,55 @@ namespace CitricStore.Controllers
 {
     public class CitricStoreController : Controller
     {
-        //Use DbContext to manage databas
+        //Use DbContext to manage database
         CitricStoreEntities2 database = new CitricStoreEntities2();
 
-        private List<UNGDUNG> LayUngDungMoi (int soluong)
+        //Lọc Game theo ngày cập nhật -> Game Mới
+        private List<GAME> LayGameMoi (int soluong)
         {
-            return database.UNGDUNGs.OrderByDescending(ungdung => ungdung.NgayCapNhat).Take(soluong).ToList();
+            return database.GAMEs.OrderByDescending(game => game.NgayCapNhat).Take(soluong).ToList();
         }
+
         // GET: CitricStore
         public ActionResult Index()
         {
-            var dsUngDungMoi = LayUngDungMoi(8);
-            return View(dsUngDungMoi);
+            var dsGameMoi = LayGameMoi(8);
+            return View(dsGameMoi);
         }
+
+        //Lọc Game theo đánh giá -> Game Đề Xuất
+        private List<GAME> LayGameTheoDanhGia(int soluong)
+        {
+            return database.GAMEs.OrderByDescending(game => game.DanhGia).Take(soluong).ToList();
+        }
+        public ActionResult GameTheoDanhGia()
+        {
+            var dsGameDeXuat = LayGameTheoDanhGia(8);
+            return PartialView(dsGameDeXuat);
+        }
+
+        //Lọc App theo ngày cập nhật -> App Mới
+        private List<APP> LayAppMoi(int soluong)
+        {
+            return database.APPs.OrderByDescending(app => app.NgayCapNhat).Take(soluong).ToList();
+        }
+        public ActionResult AppMoi()
+        {
+            var dsAppMoi = LayAppMoi(8);
+            return PartialView(dsAppMoi);
+        }
+
+        //Lọc App theo đánh giá -> App Đề Xuất
+        private List<APP> LayAppTheoDanhGia(int soluong)
+        {
+            return database.APPs.OrderByDescending(app => app.DanhGia).Take(soluong).ToList();
+        }
+        public ActionResult AppTheoDanhGia()
+        {
+            var dsAppDeXuat = LayAppTheoDanhGia(8);
+            return PartialView(dsAppDeXuat);
+        }
+
 
         public ActionResult LayTheLoai()
         {
@@ -49,20 +85,26 @@ namespace CitricStore.Controllers
 
         public ActionResult UngDungTheoTheLoai(int id)
         {
-            var dsUngDung = database.UNGDUNGs.Where(ud => ud.MaTheLoai == id).ToList();
+            var dsUngDung = database.GAMEs.Where(ud => ud.MaTheLoai == id).ToList();
             return View("Index", dsUngDung);
         }
         public ActionResult UngDungTheoNPH(int id)
         {
-            var dsNPH = database.UNGDUNGs.Where(ud => ud.MaNPH == id).ToList();
+            var dsNPH = database.GAMEs.Where(ud => ud.MaNPH == id).ToList();
             return View("Index", dsNPH);
         }
 
 
-        public ActionResult Details(int id)
+        public ActionResult DetailsGame(int id)
         {
-            var ungdung = database.UNGDUNGs.FirstOrDefault(s => s.MaUngDung == id);
-            return View(ungdung);
+            var game = database.GAMEs.FirstOrDefault(s => s.MaGame == id);
+            return View(game);
+        }
+
+        public ActionResult DetailsApp(int id)
+        {
+            var app = database.APPs.FirstOrDefault(s => s.MaApp == id);
+            return View(app);
         }
     }
 }

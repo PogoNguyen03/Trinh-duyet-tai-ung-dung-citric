@@ -2,17 +2,17 @@
 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trình duyệt tải ứnng dụng";
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
-    }
+}
 
-    <link rel="stylesheet" href="~/Content/HomePage.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
-    <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
+<link rel="stylesheet" href="~/Content/HomePage.css" />
+<link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
+<script src="~/Content/bootstrap5/js/bootstrap.js"></script>
 
-    <div class="slideshow">
-        <div class="display-container">
-            <div class="slides">
+<div class="slideshow">
+    <div class="display-container">
+        @*            <div class="slides">
                 <img class="imageslides animate-fading" onclick="changeImage()" src="~/Images/nền ứng dụng 1.jpg">
                 <div class="imageslides-caption">
                     <div class="imageslides-content">
@@ -24,58 +24,103 @@
                     </div>
                 </div>
             </div>
-            <div class="slides">
-                <img class="imageslides animate-fading" onclick="changeImage()" src="~/Images/ứng dụng 1.1.jpg">
-            </div>
-            <div class="slides">
-                <img class="imageslides animate-fading" onclick="changeImage()" src="~/Images/ứng dụng 1.2.jpg">
-            </div>
+        *@            <div class="slides">
+            <img class="imageslides animate-fading" onclick="changeImage()" src="~/Images/vecteezyhalloween-festivity-illustration-sceneryAW0721_generated.jpg">
+        </div>
+        <div class="slides">
+            <img class="imageslides animate-fading" onclick="changeImage()" src="~/Images/vecteezy_Jack-o'-lantern-Illustration_AP0920_vecteezy_Jack-o'-lantern-Illustration_AP0920.jpg">
+        </div>
+        <div class="slides">
+            <img class="imageslides animate-fading" onclick="changeImage()" src="~/Images/4183289.jpg">
+        </div>
 
-            <!--Nút qua lại-->
-            <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
-            <!-- Chấm tròn -->
-            <div class="badge" style="width:100%">
-                <span class="image-badge" onclick="currentDiv(1)"></span>
-                <span class="image-badge" onclick="currentDiv(2)"></span>
-                <span class="image-badge" onclick="currentDiv(3)"></span>
-            </div>
+        <!--Nút qua lại-->
+        <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+        <!-- Chấm tròn -->
+        <div class="badge" style="width:100%">
+            <span class="image-badge" onclick="currentDiv(1)"></span>
+            <span class="image-badge" onclick="currentDiv(2)"></span>
+            <span class="image-badge" onclick="currentDiv(3)"></span>
         </div>
     </div>
-    <script language="Javascript" src="~/Scripts/HomePage.js"></script>
-    <!-- Bắt đầu: Ứng dụng đề xuất -->
-    <div class="dexuat-container">
-        <div class="dexuat-name">
-            <div class="line"></div>
-            <span>ĐỀ XUẤT</span>
-            <div class="line"></div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                @foreach (var app in Model)
-                {
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <div class="imageblog">
-                                <img class="card-img-top imageblog-width-height" src="~/Images/@app.HinhMinhHoa" alt="Card image">
+</div>
+<script language="Javascript" src="~/Scripts/HomePage.js"></script>
+<!-- Bắt đầu: Game Mới -->
+<div class="dexuat-container">
+    <div class="dexuat-name">
+        <div class="line"></div>
+        <span>TRÒ CHƠI MỚI</span>
+        <div class="line"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var game in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="bloggame">
+                        <div class="imageblog">
+                            <img class="card-img-top imageblog-width-height" src="~/Images/@game.HinhNen" alt="Card image">
+                        </div>
+                        <div class="">
+                            <div class="bloggame-title h4">
+                                <a class="fix-line">@game.TenGame</a>
                             </div>
-                            <div class="">
-                                <div class="bloggame-title h4">
-                                    <a class="fix-line">@app.TenUngDung</a>
-                                </div>
-                                <div class="bloggame-theloai">
-                                   Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")
-                                </div>
-                                <a class="bloggame-download" href="@Url.Action("Details", "CitricStore", new {id=app.MaUngDung})" style="text-decoration:none">
-                                    <div class="bloggame-download-btn">
-                                        Tải Game
-                                    </div>
-                                </a>
+                            <div class="bloggame-theloai">
+                                Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")
                             </div>
+                            <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
+                                <div class="bloggame-download-btn">
+                                    Chi Tiết
+                                </div>
+                            </a>
                         </div>
                     </div>
-                }
-            </div>
+                </div>
+            }
         </div>
+    </div>
 </div>
-
+<!-- Kết thúc: Game Mới -->
+<!-- Bắt đầu: Game Đề Xuất (lọc theo đánh giá)-->
+<div class="dexuat-container">
+    <div class="dexuat-name">
+        <div class="line"></div>
+        <span>TRÒ CHƠI ĐỀ XUẤT</span>
+        <div class="line"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @Html.Action("GameTheoDanhGia", "CitricStore")
+        </div>
+    </div>
+</div>
+<!-- Kết thúc: Game Đề Xuất -->
+<!-- Bắt đầu: Phần Mềm Mới-->
+<div class="dexuat-container">
+    <div class="dexuat-name">
+        <div class="line"></div>
+        <span>PHẦN MỀM MỚI</span>
+        <div class="line"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @Html.Action("AppMoi", "CitricStore")
+        </div>
+    </div>
+</div>
+<!-- Kết thúc: Phần Mềm Mới -->
+<!-- Bắt đầu: Phần Mềm Đề Xuất-->
+<div class="dexuat-container">
+    <div class="dexuat-name">
+        <div class="line"></div>
+        <span>PHẦN MỀM ĐỀ XUẤT</span>
+        <div class="line"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            @Html.Action("AppTheoDanhGia", "CitricStore")
+        </div>
+    </div>
+</div>
+<!-- Kết thúc: Phần Mềm Đề Xuất-->

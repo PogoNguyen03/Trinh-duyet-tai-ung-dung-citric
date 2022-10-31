@@ -28,6 +28,7 @@ namespace CitricStore.Models
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<NHAPHATHANH> NHAPHATHANHs { get; set; }
         public virtual DbSet<THELOAI> THELOAIs { get; set; }
-        public virtual DbSet<UNGDUNG> UNGDUNGs { get; set; }
+        public virtual DbSet<APP> APPs { get; set; }
+        public virtual DbSet<GAME> GAMEs { get; set; }
     }
 }
