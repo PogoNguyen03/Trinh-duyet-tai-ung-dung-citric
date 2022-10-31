@@ -1,0 +1,253 @@
+﻿* {
+    margin: 0;
+}
+/*-------------HEADER-------------*/
+#header {
+    background-color: #FCAE03;
+    height: 60px;
+    top: 0;
+}
+
+.logo {
+    height: 60px;
+}
+.imagelogo {
+    margin: 0px auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tenweb {
+    height: 60px;
+    text-align: center;
+}
+
+.header-left-container {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-left {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header-right-container {
+    height: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.header-right {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header-right-name {
+    padding: 15px;
+}
+
+/*Hover Button*/
+* {
+    box-sizing: inherit;
+    transition-property: all;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+}
+
+.header-left-name {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    line-height: 55px;
+    
+}
+
+    .header-left-name:hover {
+        text-decoration: none;
+    }
+
+.header-left-name-btn {
+    letter-spacing: 0;
+}
+
+    .header-left-name-btn:hover, .header-left-name-btn:active {
+        letter-spacing: 3px;
+    }
+
+    .header-left-name-btn:after, .header-left-name-btn:before {
+        border: 1px solid rgba(255, 255, 255, 0);
+        bottom: 0px;
+        content: " ";
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        transition: all 280ms ease-in-out;
+        width: 0;
+    }
+
+    .header-left-name-btn:hover:after, .header-left-name-btn:hover:before {
+        border-color: #fff;
+        transition: width 350ms ease-in-out;
+        width: 70%;
+    }
+
+    .header-left-name-btn:hover:before {
+        bottom: 0;
+        top: 0;
+    }
+ 
+
+/*-------------MAIN-------------*/
+.main {
+    background-color: rgb(18,18,18);
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+.navigationbar-container {
+    background-color:rgb(18,18,18);
+    color:white;
+    height: 100px;
+    position:sticky;
+    top: 0;
+    display: flex;
+    z-index: 1000;
+}
+
+.searchbar-container {
+    height: 100%;
+    align-items:center;
+}
+
+.searchbar {
+    margin-left: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    display: flex;
+    border-radius: 24px;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid black;
+    border-right: none;
+    border-radius: 24px 0 0 24px;
+    outline: none;
+    color: #00B4CC;
+}
+
+.searchbar-btn {
+    height: 50px;
+    width: 50px;
+    background-color: #00B4CC;
+    border: 3px solid black;
+    border-left: none;
+    text-align: center;
+    border-radius: 0 24px 24px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.navigation-container {
+    height: 100%;
+}
+
+.navigation {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.navigation-name {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+/*-------------FOOTER-------------*/
+#footer {
+    background-color: #FCAE03;
+    margin: 0px;
+    padding: 0px;
+    bottom: 0px;
+    text-align: center;
+    z-index: 5;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height:180px;
+}
+.footer-logo-name-container {
+    align-items: center;
+    width: 300px;
+}
+
+.footer-logo {
+    height: 52px;
+    width: 52px;
+    margin: 0 auto;
+}
+
+.footer-tenweb {
+    width: 120px;
+    height: 52px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.ngaytaoweb {
+    width: 350px;
+}
+
+.ngaytaoweb-caption {
+    height: 50px;
+    width: 300px;
+    padding-top: 65px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+.gioithieutrangweb {
+    width: 500px;
+}
+
+.timchungtoi {
+    flex-direction: column;
+}
+
+.icon_lienlac {
+    margin-top: 100px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+/*Bootstrap*/
