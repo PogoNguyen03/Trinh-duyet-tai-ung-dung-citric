@@ -23,11 +23,11 @@ namespace CitricStore.Controllers
             return View(dsUngDungMoi);
         }
 
-        public ActionResult LayTheLoai()
-        {
-            var dsTheLoai = database.THELOAIs.ToList();
-            return PartialView(dsTheLoai);
-        }
+        //public ActionResult LayTheLoai()
+        //{
+        //    var dsTheLoai = database.THELOAIs.ToList();
+        //    return PartialView(dsTheLoai);
+        //}
 
         public ActionResult LayNPH()
         {
