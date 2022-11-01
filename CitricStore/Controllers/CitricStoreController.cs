@@ -61,8 +61,8 @@ namespace CitricStore.Controllers
 
         public ActionResult LayTheLoai()
         {
-            var dsTheLoai = database.THELOAIs.ToList();
-            return PartialView(dsTheLoai);
+           var dsTheLoai = database.THELOAIs.ToList();
+           return PartialView(dsTheLoai);
         }
 
         public ActionResult LayNPH()
@@ -72,12 +72,11 @@ namespace CitricStore.Controllers
         }
          public ActionResult TenTheLoai_Bloggame()
         {
-            /*            var theloai = from a in database.UNGDUNGs
+                    /*var theloai = from a in database.UNGDUNGs
                                       from b in database.THELOAIs
                                       where a.MaTheLoai == b.MaTheLoai
-                                      select b.TenTheLoai;
-            */
-            var theloai = database.THELOAIs.ToList();
+                                      select b.TenTheLoai;*/
+                    var theloai = database.THELOAIs.ToList();
 
             return PartialView(theloai);              
         }

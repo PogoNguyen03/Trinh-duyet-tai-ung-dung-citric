@@ -3,9 +3,8 @@
 }
 /* Slide image auto */
 .slideshow {
-    background-color: violet;
+    width: 100%;
     height: 500px;
-    margin: 0px auto;
 }
 
 .slides {
@@ -46,11 +45,11 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.image-button:hover {
-    color: #000;
-    background: #ccc;
-}
 
+    .image-button:hover {
+        color: #000;
+        background: #ccc;
+    }
 /*Chấm tròn*/
 .badge {
     text-align: center;
@@ -76,7 +75,6 @@
     .image-badge:hover {
         background: #fff;
     }
-
 /*Hiệu ứng chuyển ảnh*/
 .animate-fading {
     width: 100%;
@@ -85,54 +83,18 @@
 }
 
 @keyframes fading {
-    0% {opacity: 0}
-    50% {opacity: 1}
-    100% {opacity: 0}
-}
-
-/*-----------------APP-----------------*/
-.app-name {
-    background-color: blue;
-    font-size: 40px;
-    text-align:center;
-    color: white;
-}
-
-.app-download-btn {
-    background-color: #00B4CC;
-    height: 40px;
-    font-size: 25px;
-    display: flex;
-    border-radius: 24px;
-}
-.app-vote {
-    font-size: 30px;
-}
-
-/*Star voting*/
-.stars {
-    position: relative;
-    white-space: nowrap;
-}
-
-    .stars svg {
-        width: 60px;
+    0% {
+        opacity: 0
     }
 
-.overlay {
-    height: 100%;
-    overflow: hidden;
-    mix-blend-mode: color;
-    position: absolute;
-    top: 0;
-    right: 0;
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
 }
-
-svg {
-    fill: gold;
-}
-
-
 
 
 .app-image {
@@ -142,17 +104,54 @@ svg {
     padding-top: 150px;
 }
 
-
-
-
-.tieudenoidung {
-    height: 400px;
-    width: 500px;
+.nuttaigame {
+    background-color: #00B4CC;
+    height: 40px;
+    width: 150px;
+    padding-left: 30px;
+    padding-right: 10px;
+    font-size: 25px;
+    display: flex;
+    border-radius: 24px;
 }
 
+    .nuttaigame a {
+        margin: 0px -12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+    }
+
+.danhgia {
+    color:white;
+    font-size: 30px;
+}
+
+.ungdung {
+    height: 100px;
+    font-size: 50px;
+}
+
+.tenungdung {
+    magrin: 0;
+    color:white;
+}
+
+.tieudenoidung {
+    width: auto;
+    margin: 0 auto;
+}
+
+.noidung {
+    font-size: medium;
+    padding:60px;
+    color: white;
+}
+
+
 .tieudechitiet {
-    height: 200px;
-    width: 500px;
 }
 
 .tieude {
@@ -161,13 +160,6 @@ svg {
     color: white;
 }
 
-.noidung {
-    width: 500px;
-    height: 500px;
-    margin-left: 5%;
-    font-size: medium;
-    color: white;
-}
 
 .chitiet {
     margin-left: 5%;
@@ -206,17 +198,22 @@ svg {
     position: relative;
 }
 
-    .game-list-item:hover .game-list-item-img {
-        transform: scale(1.2);
-        margin: 0 30px;
-        opacity: 0.5;
-    }
+.game-list-title {
+    color: aliceblue;
+    padding-top: 30px;
+}
 
-    .game-list-item:hover .game-list-item-title,
-    .game-list-item:hover .game-list-item-desc,
-    .game-list-item:hover .game-list-item-button {
-        opacity: 1;
-    }
+.game-list-item:hover .game-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.game-list-item:hover .game-list-item-title,
+.game-list-item:hover .game-list-item-desc,
+.game-list-item:hover .game-list-item-button {
+    opacity: 1;
+}
 
 .game-list-container {
     padding: 0 20px;
@@ -272,3 +269,12 @@ svg {
 }
 
 
+
+
+.3yeah {
+    background-color: aquamarine;
+}
+
+.4yeah {
+    background-color: blue;
+}
