@@ -67,7 +67,7 @@ Create table GAME
 	TenDN Varchar(15) UNIQUE,
 	Matkhau Varchar(15) NOT NULL,
 	Ngaysinh SMALLDATETIME,
-	Gioitinh Bit Default 1,
+	GioiTinh nvarchar(3),
 	Email Varchar(50) UNIQUE,
 	Daduyet Bit Default 0,
 	CONSTRAINT PK_KHACHHANG PRIMARY KEY(MaKH)
@@ -88,19 +88,19 @@ Create table GAME
 					 references THELOAI (MaTheLoai) 
 
 -- TẠO CỘT TRONG BẢNG
-alter table APP
-add DanhGia nvarchar(5)
+alter table KHACHHANG
+add GioiTinh nvarchar(10)
 
 -- XOÁ DÒNG TRON BẢNG
 delete from UNGDUNG
 where MaUngDung = 1
 
 -- XOÁ CỘT TRONG BẢNG
-alter table GAME
-drop column Rating
+alter table KHACHHANG
+drop column Gioitinh
 
 -- NHẬP DỮ LIỆU
-Set identity_insert [dbo].[GAME] on
+Set identity_insert [dbo].[KHACHHANG] on
 Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (1,N'SUPRALAND SIX INCHES UNDER',
 		N'“Six Inches Under” là một dự án phụ nhỏ được tạo ra để giới thiệu các thành viên nhóm phát triển mới với các công cụ và quy trình làm việc của chúng tôi. Về cơ bản đó là sự chuẩn bị của chúng tôi cho phần tiếp theo của Supraland.
@@ -173,6 +173,9 @@ Set identity_insert [dbo].[NHAPHATHANH] off
 Set identity_insert [dbo].[THELOAI] on
 insert [dbo].[THELOAI] ([MaTheLoai],[TenTheLoai])
 values (1,N'Góc Nhìn Thứ Nhất')
+insert [dbo].[THELOAI] ([MaTheLoai],[TenTheLoai])
+values (2,N'Hành Động')
+
 Set identity_insert [dbo].[THELOAI] off
 
 
@@ -185,7 +188,7 @@ Update GAME
 set DanhGia = 3
 where MaGame = 8
 
-Set identity_insert [dbo].[APP] on
+Set identity_insert [dbo].[KHACHHANG] off
 Insert [dbo].[APP]([MaApp],[TenApp],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[DanhGia],[HinhNen])
 values (1,N'FACEBOOK',
 		N'Facebook là một phương tiện truyền thông xã hội và dịch vụ mạng xã hội trực tuyến thành lập vào năm 2004 của Mỹ thuộc sở hữu của Meta Platforms có trụ sở tại Menlo Park, California. Nó được Mark Zuckerberg, cùng với các sinh viên Đại học Harvard và bạn cùng phòng là Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, Chris Hughes sáng lập.
