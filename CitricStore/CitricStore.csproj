@@ -190,8 +190,10 @@
     <Content Include="Content\bootstrap5\js\bootstrap.esm.min.js" />
     <Content Include="Content\bootstrap5\js\bootstrap.js" />
     <Content Include="Content\bootstrap5\js\bootstrap.min.js" />
+    <Content Include="Content\classify.css" />
     <Content Include="Content\HomePage.css" />
     <Content Include="Content\Layout_HomePage.css" />
+    <Content Include="Content\Question.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -280,6 +282,8 @@
     <Content Include="Views\CitricStore\LayNPH.cshtml" />
     <Content Include="Views\CitricStore\TenTheLoai_Bloggame.cshtml" />
     <Content Include="Views\CitricStore\Details.cshtml" />
+    <Content Include="Views\Home\Classify.cshtml" />
+    <Content Include="Views\Home\Question.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

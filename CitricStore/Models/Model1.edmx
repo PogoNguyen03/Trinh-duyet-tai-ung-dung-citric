@@ -48,6 +48,7 @@
           <Property Name="HinhMinhHoa" Type="nvarchar" MaxLength="50" />
           <Property Name="MaNPH" Type="int" />
           <Property Name="NgayCapNhat" Type="smalldatetime" />
+          <Property Name="DanhGia" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <EntityContainer Name="CitricStoreModelStoreContainer">
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
@@ -106,6 +107,7 @@
           <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
           <NavigationProperty Name="NHAPHATHANH" Relationship="Self.FK_UNGDUNG_NHAPHATHANH" FromRole="UNGDUNG" ToRole="NHAPHATHANH" />
           <NavigationProperty Name="THELOAI" Relationship="Self.FK_UNGDUNG_THELOAI" FromRole="UNGDUNG" ToRole="THELOAI" />
+          <Property Name="DanhGia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_UNGDUNG_NHAPHATHANH">
           <End Role="NHAPHATHANH" Type="Self.NHAPHATHANH" Multiplicity="0..1" />
@@ -185,6 +187,7 @@
           <EntitySetMapping Name="UNGDUNGs">
             <EntityTypeMapping TypeName="CitricStoreModel.UNGDUNG">
               <MappingFragment StoreEntitySet="UNGDUNG">
+                <ScalarProperty Name="DanhGia" ColumnName="DanhGia" />
                 <ScalarProperty Name="MaUngDung" ColumnName="MaUngDung" />
                 <ScalarProperty Name="TenUngDung" ColumnName="TenUngDung" />
                 <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />

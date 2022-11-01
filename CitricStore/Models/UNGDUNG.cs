@@ -25,6 +25,7 @@ namespace CitricStore.Models
         public string HinhMinhHoa { get; set; }
         public Nullable<int> MaNPH { get; set; }
         public Nullable<System.DateTime> NgayCapNhat { get; set; }
+        public string DanhGia { get; set; }
     
         public virtual NHAPHATHANH NHAPHATHANH { get; set; }
         public virtual THELOAI THELOAI { get; set; }

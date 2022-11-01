@@ -1,0 +1,68 @@
+﻿* {
+    margin: 0;
+}
+
+
+.tennoidung {
+    font-size: 50px;
+    color: white;
+}
+
+.thanhlocdulieu {
+    height: 200px;
+    width: auto;
+    background-color: #293139;
+}
+
+.locdulieu {
+    height: 100px;
+    width: 500px;
+    padding: auto;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.row{
+    margin-left:25px;
+}
+
+.control-label {
+    color: white;
+}
+
+.hnc-filter-game {
+    background-color: #00B4CC;
+    height: 40px;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 10px;
+    font-size: 25px;
+    display: flex;
+    border-radius: 24px;
+}
+
+.hnc-filter-game a {
+        margin: -3px 15px 2px -9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        letter-spacing: 0;
+}
+
+.hnc-filter-game-loc{
+    margin-left:27n px;
+}
+
+.imageblog-width-height{
+    width:280px
+}
+
+.bloggame-theloai {
+    color: white;
+}
+
+.bloggame-download-btn{
+    color:white;
+}

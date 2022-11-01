@@ -39,5 +39,13 @@ namespace CitricStore.Controllers
         {
             return View();
         }
+        public ActionResult Classify()
+        {
+            return View();
+        }
+        public ActionResult Question()
+        {
+            return View();
+        }
     }
 }
