@@ -14,6 +14,12 @@
         <AssociationConnector Association="CitricStoreModel.FK_APP_THELOAI" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NHAPHATHANH" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_THELOAI" />
+        <EntityTypeShape EntityType="CitricStoreModel.HEDIEUHANH" Width="1.5" PointX="8.625" PointY="3.875" />
+        <EntityTypeShape EntityType="CitricStoreModel.NGONNGU" Width="1.5" PointX="11.625" PointY="5.875" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_HEDIEUHANH" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_NGONNGU" />
+        <AssociationConnector Association="CitricStoreModel.FK_GAME_HEDIEUHANH" />
+        <AssociationConnector Association="CitricStoreModel.FK_GAME_NGONNGU" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

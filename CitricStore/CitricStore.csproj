@@ -131,6 +131,9 @@
     <Compile Include="Controllers\CitricStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputAPPController.cs" />
+    <Compile Include="Controllers\InputGAMEController.cs" />
+    <Compile Include="Controllers\InputNHAPHATHANHController.cs" />
+    <Compile Include="Controllers\InputTHELOAIController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,6 +142,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GAME.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HEDIEUHANH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
@@ -158,6 +164,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NGONNGU.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHAPHATHANH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -309,6 +318,21 @@
     <Content Include="Views\InputAPP\Details.cshtml" />
     <Content Include="Views\InputAPP\Edit.cshtml" />
     <Content Include="Views\InputAPP\Index.cshtml" />
+    <Content Include="Views\InputGAME\Create.cshtml" />
+    <Content Include="Views\InputGAME\Delete.cshtml" />
+    <Content Include="Views\InputGAME\Details.cshtml" />
+    <Content Include="Views\InputGAME\Edit.cshtml" />
+    <Content Include="Views\InputGAME\Index.cshtml" />
+    <Content Include="Views\InputTHELOAI\Create.cshtml" />
+    <Content Include="Views\InputTHELOAI\Delete.cshtml" />
+    <Content Include="Views\InputTHELOAI\Details.cshtml" />
+    <Content Include="Views\InputTHELOAI\Edit.cshtml" />
+    <Content Include="Views\InputTHELOAI\Index.cshtml" />
+    <Content Include="Views\InputNHAPHATHANH\Create.cshtml" />
+    <Content Include="Views\InputNHAPHATHANH\Delete.cshtml" />
+    <Content Include="Views\InputNHAPHATHANH\Details.cshtml" />
+    <Content Include="Views\InputNHAPHATHANH\Edit.cshtml" />
+    <Content Include="Views\InputNHAPHATHANH\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

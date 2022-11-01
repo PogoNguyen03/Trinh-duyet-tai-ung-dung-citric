@@ -1,13 +1,14 @@
 ﻿@model CitricStore.Models.APP
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi Tiết App";
     Layout = "~/Views/Shared/_Layout_Admin.cshtml";
 }
+<link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
 <div style="margin: 10px auto; width: 90%;">
     <h2 style="text-align: center">NHẬP DỮ LIỆU PHẦN MỀM (APP)</h2>
-    <h3 style="text-align: center">CHI TIẾT APP</h3>
+    <h3 style="text-align: center; color: red;">CHI TIẾT APP</h3>
 
     <div>
         <hr />
@@ -29,11 +30,11 @@
             </dd>
 
             <dt>
-                KÍCH THƯỚC RAM
+                DUNG LƯỢNG (MB)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.KichThuocRam)
+                @Html.DisplayFor(model => model.DungLuong)
             </dd>
 
             <dt>
@@ -41,7 +42,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.NgonNgu)
+                @Html.DisplayFor(model => model.NGONNGU.TenNgonNgu)
             </dd>
 
             <dt>
@@ -49,7 +50,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.HeDieuHanh)
+                @Html.DisplayFor(model => model.HEDIEUHANH.TenHDH)
             </dd>
 
             <dt>
@@ -134,8 +135,9 @@
 
         </dl>
     </div>
-    </div>
-    <p>
+    <div>
         @Html.ActionLink("Sửa", "Edit", new { id = Model.MaApp }, new { @class = "btn btn-success" }) |
         @Html.ActionLink("Quay về trang tổng hợp", "Index")
-    </p>
+    </div>
+
+</div>

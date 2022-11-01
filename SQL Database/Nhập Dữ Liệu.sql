@@ -73,6 +73,20 @@ Create table GAME
 	CONSTRAINT PK_KHACHHANG PRIMARY KEY(MaKH)
  )
 
+ Create table HEDIEUHANH
+(
+	MaHDH	int identity(1,1),
+	TenHDH	nvarchar(50),
+	constraint PK_HEDIEUHANH primary key (MaHDH)
+)
+
+ Create table NGONNGU
+(
+	MaNgonNgu	int identity(1,1),
+	TenNgonNgu	nvarchar(70),
+	constraint PK_NGONNGU primary key (MaNgonNgu)
+)
+
  --KHOÁ NGOẠI
  Alter table APP add constraint FK_APP_NHAPHATHANH
 					 foreign key (MaNPH)
@@ -86,6 +100,19 @@ Create table GAME
  Alter table GAME add constraint FK_GAME_THELOAI
 					 foreign key (MaTheLoai)
 					 references THELOAI (MaTheLoai) 
+ Alter table APP add constraint FK_APP_NGONNGU
+					 foreign key (MaNgonNgu)
+					 references NGONNGU (MaNgonNgu) 
+ Alter table APP add constraint FK_APP_HEDIEUHANH
+					 foreign key (MaHDH)
+					 references HEDIEUHANH (MaHDH) 
+ Alter table GAME add constraint FK_GAME_NGONNGU
+					 foreign key (MaNgonNgu)
+					 references NGONNGU (MaNgonNgu) 
+ Alter table GAME add constraint FK_GAME_HEDIEUHANH
+					 foreign key (MaHDH)
+					 references HEDIEUHANH (MaHDH) 
+
 
 -- TẠO CỘT TRONG BẢNG
 alter table KHACHHANG
@@ -171,6 +198,7 @@ Set identity_insert [dbo].[NHAPHATHANH] off
 
 
 Set identity_insert [dbo].[THELOAI] on
+
 insert [dbo].[THELOAI] ([MaTheLoai],[TenTheLoai])
 values (1,N'Góc Nhìn Thứ Nhất')
 insert [dbo].[THELOAI] ([MaTheLoai],[TenTheLoai])
@@ -179,9 +207,29 @@ values (2,N'Hành Động')
 Set identity_insert [dbo].[THELOAI] off
 
 
+Set identity_insert [dbo].[NGONNGU] on
+
+insert [dbo].[NGONNGU] ([MaNgonNgu],[TenNgonNgu])
+values (1,N'Tiếng Việt')
+insert [dbo].[NGONNGU] ([MaNgonNgu],[TenNgonNgu])
+values (2,N'Tiếng Anh')
+
+Set identity_insert [dbo].[NGONNGU] off
+
+Set identity_insert [dbo].[HEDIEUHANH] on
+
+insert [dbo].[HEDIEUHANH] ([MaHDH],[TenHDH])
+values (1,N'Windows')
+insert [dbo].[HEDIEUHANH] ([MaHDH],[TenHDH])
+values (2,N'Android')
+
+Set identity_insert [dbo].[HEDIEUHANH] off
+
+
 select * from NHAPHATHANH
 select * from THELOAI
-select * from GAME
+select * from HEDIEUHANH
+
 
 
 Update GAME
@@ -246,4 +294,15 @@ values (8,N'INSTAGRAM',
 		N'+	Kết nối với bạn bè, chia sẻ những gì bạn đang làm hoặc xem những gì mới từ những người khác trên khắp thế giới. Khám phá cộng đồng của chúng tôi, nơi bạn có thể thoải mái là chính mình và chia sẻ mọi thứ, từ những khoảnh khắc hàng ngày đến những điểm nổi bật trong cuộc sống..',
 		N'8GB', N'Windows', N'Tiếng Anh',N'https://play.google.com/store/apps/details?id=com.instagram.android&hl=vi&gl=US',1,1,31/10/2022,4.5,N'App1.1.jpg')
 
-Select * from KHACHHANG
+Select * from game
+
+alter table GAME
+drop column NgonNgu
+
+alter table GAME
+add MaNgonNgu int
+
+update Game
+set MaNgonNgu = 1
+where MaGame = 1
+

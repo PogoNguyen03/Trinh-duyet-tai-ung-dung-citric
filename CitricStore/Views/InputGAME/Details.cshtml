@@ -1,23 +1,26 @@
-﻿@model CitricStore.Models.APP
+﻿@model CitricStore.Models.GAME
 
 @{
-    ViewBag.Title = "Xoá App";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout_Admin.cshtml";
 }
+
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
 <div style="margin: 10px auto; width: 90%;">
-    <h2 style="text-align: center">NHẬP DỮ LIỆU PHẦN MỀM (APP)</h2>
-    <h3 style="text-align: center; color: red;">OK XOÁ ĐI =)))) </h3>
+    <h2 style="text-align: center">NHẬP DỮ LIỆU GAME</h2>
+    <h3 style="text-align: center; color: red;">CHI TIẾT GAME</h3>
+
+
     <div>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                TÊN APP
+                TÊN GAME
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.TenApp)
+                @Html.DisplayFor(model => model.TenGame)
             </dd>
 
             <dt>
@@ -61,7 +64,7 @@
             </dd>
 
             <dt>
-                NGÀY CẬP NHẬT
+                NGÀY NHẬP
             </dt>
 
             <dd>
@@ -134,13 +137,8 @@
 
         </dl>
     </div>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Xoá" class="btn btn-info" /> |
-            @Html.ActionLink("Quay về trang tổng hợp", "Index")
-        </div>
-    }
+    <p>
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.MaGame }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Quay về trang tổng hợp", "Index")
+    </p>
 </div>

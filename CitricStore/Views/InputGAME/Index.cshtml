@@ -1,14 +1,14 @@
-﻿@model IEnumerable<CitricStore.Models.APP>
+﻿@model IEnumerable<CitricStore.Models.GAME>
 
 @{
-    ViewBag.Title = "Tổng Hợp App";
+    ViewBag.Title = "Tổng Hợp Game";
     Layout = "~/Views/Shared/_Layout_Admin.cshtml";
 }
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
 <div style="margin: 10px auto; width: 90%;">
-    <h2 style="text-align: center">NHẬP DỮ LIỆU PHẦN MỀM (APP)</h2>
-    <h3 style="text-align: center; color: red;">TỔNG HỢP</h3>
+    <h2 style="text-align: center">NHẬP DỮ LIỆU GAME</h2>
+    <h3 style="text-align: center; color: red;">TỔNG HỢP GAME</h3>
 
     <p>
         @Html.ActionLink("Tạo Mới", "Create", null, new { @class = "btn btn-primary" })
@@ -16,10 +16,10 @@
     <table class="table-bordered">
         <tr>
             <th>
-                Mã App
+                Mã Game
             </th>
             <th>
-                Tên App
+                Tên Game
             </th>
             <th>
                 Giới Thiệu
@@ -40,19 +40,19 @@
                 Ngày Nhập
             </th>
             <th>
-                Hình Nền (BgApp)
+                Hình Nền (BgGame)
             </th>
             <th>
-                Hình Chi Tiết (BgApp1.1)
+                Hình Chi Tiết (Game1.1)
             </th>
             <th>
-                Hình Chi Tiết (BgApp1.2)
+                Hình Chi Tiết (Game1.2)
             </th>
             <th>
-                Hình Chi Tiết (BgApp1.3)
+                Hình Chi Tiết (Game1.3)
             </th>
             <th>
-                Hình Chi Tiết (BgApp1.4)
+                Hình Chi Tiết (Game1.4)
             </th>
             <th>
                 Đánh Giá
@@ -68,7 +68,6 @@
             </th>
             <th>
                 Chi Tiết
-
             </th>
             <th>
                 Xoá
@@ -78,13 +77,13 @@
 
         @foreach (var item in Model)
         {
-
             <tr>
                 <td>
-                    @Html.DisplayFor((modelItem => item.MaApp))
+                    @Html.DisplayFor(modelItem => item.MaGame)
                 </td>
+
                 <td>
-                    @Html.DisplayFor(modelItem => item.TenApp)
+                    @Html.DisplayFor(modelItem => item.TenGame)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.GioiThieu)
@@ -129,16 +128,16 @@
                     @Html.DisplayFor(modelItem => item.THELOAI.TenTheLoai)
                 </td>
                 <td>
-                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaApp }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaGame }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaApp }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaGame }, new { @class = "btn btn-danger" })
                 </td>
                 <td>
-                    @Html.ActionLink("Xoá", "Delete", new { id = item.MaApp }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Xoá", "Delete", new { id = item.MaGame }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }
 
     </table>
-</div>
+    </div>

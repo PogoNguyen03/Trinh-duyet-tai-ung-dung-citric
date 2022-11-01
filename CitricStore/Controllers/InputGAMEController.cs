@@ -8,35 +8,35 @@ using System.Web;
 using System.Web.Mvc;
 using CitricStore.Models;
 
-namespace CitricStore.Controllers
+namespace CitricStore.Controllers 
 {
-    public class InputAPPController : Controller
+    public class InputGAMEController : Controller
     {
         private CitricStoreEntities2 db = new CitricStoreEntities2();
 
-        // GET: InputAPP
+        // GET: InputGAME
         public ActionResult Index()
         {
-            var aPPs = db.APPs.Include(a => a.NHAPHATHANH).Include(a => a.THELOAI).Include(g => g.HEDIEUHANH).Include(g => g.NGONNGU);
-            return View(aPPs.ToList());
+            var gAMEs = db.GAMEs.Include(g => g.NHAPHATHANH).Include(g => g.THELOAI).Include(g => g.HEDIEUHANH).Include(g => g.NGONNGU);
+            return View(gAMEs.ToList());
         }
 
-        // GET: InputAPP/Details/5
+        // GET: InputGAME/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            APP aPP = db.APPs.Find(id);
-            if (aPP == null)
+            GAME gAME = db.GAMEs.Find(id);
+            if (gAME == null)
             {
                 return HttpNotFound();
             }
-            return View(aPP);
+            return View(gAME);
         }
 
-        // GET: InputAPP/Create
+        // GET: InputGAME/Create
         public ActionResult Create()
         {
             ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH");
@@ -46,91 +46,93 @@ namespace CitricStore.Controllers
             return View();
         }
 
-        // POST: InputAPP/Create
+        // POST: InputGAME/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaApp,TenApp,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoai,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] APP aPP)
+        public ActionResult Create([Bind(Include = "MaGame,TenGame,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoai,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] GAME gAME)
         {
             if (ModelState.IsValid)
             {
-                db.APPs.Add(aPP);
+                db.GAMEs.Add(gAME);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", aPP.MaNPH);
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", aPP.MaTheLoai);
-            ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", aPP.MaNgonNgu);
-            ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", aPP.MaHDH);
+            ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", gAME.MaNPH);
+            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoai);
+            ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", gAME.MaNgonNgu);
+            ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", gAME.MaHDH);
 
-            return View(aPP);
+            return View(gAME);
         }
 
-        // GET: InputAPP/Edit/5
+        // GET: InputGAME/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            APP aPP = db.APPs.Find(id);
-            if (aPP == null)
+            GAME gAME = db.GAMEs.Find(id);
+            if (gAME == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", aPP.MaNPH);
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", aPP.MaTheLoai);
-            ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", aPP.MaNgonNgu);
-            ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", aPP.MaHDH);
+            ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", gAME.MaNPH);
+            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoai);
+            ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", gAME.MaNgonNgu);
+            ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", gAME.MaHDH);
 
-            return View(aPP);
+
+            return View(gAME);
         }
 
-        // POST: InputAPP/Edit/5
+        // POST: InputGAME/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaApp,TenApp,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoai,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] APP aPP)
+        public ActionResult Edit([Bind(Include = "MaGame,TenGame,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoai,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] GAME gAME)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(aPP).State = EntityState.Modified;
+                db.Entry(gAME).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", aPP.MaNPH);
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", aPP.MaTheLoai);
-            ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", aPP.MaNgonNgu);
-            ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", aPP.MaHDH);
+            ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", gAME.MaNPH);
+            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoai);
+            ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", gAME.MaNgonNgu);
+            ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", gAME.MaHDH);
 
-            return View(aPP);
+
+            return View(gAME);
         }
 
-        // GET: InputAPP/Delete/5
+        // GET: InputGAME/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            APP aPP = db.APPs.Find(id);
-            if (aPP == null)
+            GAME gAME = db.GAMEs.Find(id);
+            if (gAME == null)
             {
                 return HttpNotFound();
             }
-            return View(aPP);
+            return View(gAME);
         }
 
-        // POST: InputAPP/Delete/5
+        // POST: InputGAME/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            APP aPP = db.APPs.Find(id);
-            db.APPs.Remove(aPP);
+            GAME gAME = db.GAMEs.Find(id);
+            db.GAMEs.Remove(gAME);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
