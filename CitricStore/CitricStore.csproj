@@ -132,6 +132,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputAPPController.cs" />
     <Compile Include="Controllers\InputGAMEController.cs" />
+    <Compile Include="Controllers\InputHEDIEUHANHController.cs" />
     <Compile Include="Controllers\InputNHAPHATHANHController.cs" />
     <Compile Include="Controllers\InputTHELOAIController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -333,6 +334,11 @@
     <Content Include="Views\InputNHAPHATHANH\Details.cshtml" />
     <Content Include="Views\InputNHAPHATHANH\Edit.cshtml" />
     <Content Include="Views\InputNHAPHATHANH\Index.cshtml" />
+    <Content Include="Views\InputHEDIEUHANH\Create.cshtml" />
+    <Content Include="Views\InputHEDIEUHANH\Delete.cshtml" />
+    <Content Include="Views\InputHEDIEUHANH\Details.cshtml" />
+    <Content Include="Views\InputHEDIEUHANH\Edit.cshtml" />
+    <Content Include="Views\InputHEDIEUHANH\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
