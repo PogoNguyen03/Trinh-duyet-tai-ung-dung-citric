@@ -193,7 +193,7 @@
     <Content Include="Content\classify.css" />
     <Content Include="Content\HomePage.css" />
     <Content Include="Content\Layout_HomePage.css" />
-    <Content Include="Content\Question.css" />
+    <Content Include="Content\SP.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -283,7 +283,7 @@
     <Content Include="Views\CitricStore\TenTheLoai_Bloggame.cshtml" />
     <Content Include="Views\CitricStore\Details.cshtml" />
     <Content Include="Views\Home\Classify.cshtml" />
-    <Content Include="Views\Home\Question.cshtml" />
+    <Content Include="Views\Home\SP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -43,7 +43,7 @@ namespace CitricStore.Controllers
         {
             return View();
         }
-        public ActionResult Question()
+        public ActionResult SP()
         {
             return View();
         }
