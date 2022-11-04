@@ -119,8 +119,11 @@ alter table KHACHHANG
 add GioiTinh nvarchar(10)
 
 -- XOÁ DÒNG TRON BẢNG
-delete from UNGDUNG
-where MaUngDung = 1
+delete from NGONNGU
+where MaNgonNgu = 3
+
+select * from NGONNGU
+
 
 -- XOÁ CỘT TRONG BẢNG
 alter table KHACHHANG

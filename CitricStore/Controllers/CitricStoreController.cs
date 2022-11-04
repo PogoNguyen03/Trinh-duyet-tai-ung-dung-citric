@@ -93,6 +93,12 @@ namespace CitricStore.Controllers
             return View("Index", dsNPH);
         }
 
+        public ActionResult AppTheoNPH_Details(int id)
+        {
+            var dsNPH = database.APPs.Where(ud => ud.MaNPH == id).ToList();
+            return PartialView("Index", dsNPH);
+        }
+
 
         public ActionResult DetailsGame(int id)
         {
@@ -105,5 +111,31 @@ namespace CitricStore.Controllers
             var app = database.APPs.FirstOrDefault(s => s.MaApp == id);
             return View(app);
         }
+
+        //DetailsApp
+        public ActionResult AppMoi_Details()
+        {
+            var dsAppMoi = LayAppMoi(8);
+            return PartialView(dsAppMoi);
+        }
+
+        public ActionResult AppTheoDanhGia_Details()
+        {
+            var dsAppDeXuat = LayAppTheoDanhGia(8);
+            return PartialView(dsAppDeXuat);
+        }
+
+        public ActionResult GameTheoDanhGia_Details()
+        {
+            var dsGameDeXuat = LayGameTheoDanhGia(8);
+            return PartialView(dsGameDeXuat);
+        }
+        public ActionResult GameMoi_Details()
+        {
+            var dsGameMoi = LayGameMoi(8);
+            return PartialView(dsGameMoi);
+        }
+
+
     }
 }

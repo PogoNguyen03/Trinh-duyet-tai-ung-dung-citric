@@ -105,14 +105,18 @@
 }
 
 .nuttaigame {
-    background-color: #00B4CC;
+    background-color: #FCAE03;
     height: 40px;
-    width: 150px;
-    padding-left: 30px;
-    padding-right: 10px;
+    width: 200px;
     font-size: 25px;
     display: flex;
     border-radius: 24px;
+    text-decoration: none;
+    text-decoration-style:unset;
+    margin-top: 13px;
+    color: white;
+    text-align:center;
+    align-content:center;
 }
 
     .nuttaigame a {
@@ -127,6 +131,7 @@
 .danhgia {
     color:white;
     font-size: 30px;
+    margin:0px auto;
 }
 
 .ungdung {
@@ -135,8 +140,9 @@
 }
 
 .tenungdung {
-    magrin: 0;
+    margin: 0px;
     color:white;
+    font-size:50px;
 }
 
 .tieudenoidung {
@@ -146,7 +152,7 @@
 
 .noidung {
     font-size: medium;
-    padding:60px;
+    margin-left:30px;
     color: white;
 }
 
@@ -155,14 +161,13 @@
 }
 
 .tieude {
-    font-size: 50px;
-    margin-left: 5%;
+    font-size: 30px;
     color: white;
 }
 
 
 .chitiet {
-    margin-left: 5%;
+    margin-left:30px;
     font-size: medium;
     color: white;
 }
@@ -176,13 +181,13 @@
 
 #game-list-scrollbar::-webkit-scrollbar {
     width: 12px;
-    background-color: #e3c99a;
+    background-color: rgb(18,18,18);
 }
 
 #game-list-scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: rgb(18,18,18);
+    background-color: #FCAE03;
 }
 
 #game-list-scrollbar::-webkit-scrollbar-track {
@@ -201,6 +206,7 @@
 .game-list-title {
     color: aliceblue;
     padding-top: 30px;
+    font-size:30px;
 }
 
 .game-list-item:hover .game-list-item-img {
@@ -266,15 +272,4 @@
     left: 50px;
     opacity: 0;
     transition: 1s all ease-in-out;
-}
-
-
-
-
-.3yeah {
-    background-color: aquamarine;
-}
-
-.4yeah {
-    background-color: blue;
 }

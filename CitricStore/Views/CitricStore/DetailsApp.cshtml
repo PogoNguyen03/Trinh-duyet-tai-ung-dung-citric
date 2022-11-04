@@ -28,160 +28,59 @@
 </div>
 <script language="Javascript" src="~/Scripts/SlideImageAuto.js"></script>
 
-<div class="container app-name">
-    <p>@Model.TenApp</p>
+<div class="col-12">
     <div class="row">
-        <div class="col-lg-6">
-            <button type="submit" class="app-download-btn float-end"
-                    href="@Model.LinkTai">
+        <div class="col-lg-8 col-md-8 tenungdung">
+            @Model.TenApp
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <a type="submit" class="nuttaigame float-end" style="text-align:center" href="@Model.LinkTai">
                 Download
-            </button>
-        </div>
-        <div class="col-lg-6 " style="z-index:10">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
+            </a>
         </div>
     </div>
-</div>
-<div class="tieudenoidung">
-    <p class="tieude">NỘI DUNG</p>
-    <p class="noidung">
-        @Model.GioiThieu
-    </p>
-</div>
-<hr>
-<div class="tieudechitiet">
-    <p class="tieude">CHI TIẾT</p>
-    <p class="chitiet">Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")</p>
-    <p class="chitiet">Kích thước RAM: @Model.KichThuocRam</p>
-    <p class="chitiet">Ngôn ngữ: @Model.NgonNgu</p>
-    <p class="chitiet">Hệ điều hành: @Model.HeDieuHanh</p>
-</div>
-<hr>
-<div class="ungdungkhac">
-    <div class="game-list-container">
-        <h1 class="game-list-title">CÁC ỨNG DỤNG CÙNG NHÀ PHÁT HÀNH</h1>
-        <div class="game-list-wrapper">
-            <div class="game-list" id="game-list-scrollbar">
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-                <div class="game-list-item">
-                    <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                    <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                </div>
-            </div>
+    <div class="row justify-content-center">
+        <div class="danhgia">
+            <i class="fa-solid fa-star">1</i>
+            <i class="fa-solid fa-star">2</i>
+            <i class="fa-solid fa-star">3</i>
+            <i class="fa-regular fa-star">4</i>
+            <i class="fa-regular fa-star">5</i>
         </div>
     </div>
-    <div class="ungdungkhac">
-        <div class="game-list-container">
-            <h1 class="game-list-title">CÁC ỨNG DỤNG TƯƠNG TỰ</h1>
-            <div class="game-list-wrapper">
-                <div class="game-list" id="game-list-scrollbar">
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                    <div class="game-list-item">
-                        <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                        <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                    </div>
-                </div>
-            </div>
+        <div class="tieudenoidung">
+            <p class="tieude">NỘI DUNG</p>
+            <p class="noidung">
+                @Model.GioiThieu
+            </p>
+        <hr>
+        <div class="tieudechitiet">
+            <p class="tieude">CHI TIẾT</p>
+            <p class="chitiet">Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")</p>
+            <p class="chitiet">Kích thước RAM: @Model.DungLuong</p>
+            <p class="chitiet">Ngôn ngữ: @Model.MaNgonNgu</p>
+            <p class="chitiet">Hệ điều hành: @Model.MaHDH</p>
         </div>
-        <div class="ungdungkhac">
+    </div>
+        <hr>
+        <div class="row ungdungkhac">
             <div class="game-list-container">
-                <h1 class="game-list-title">CÁC ỨNG DỤNG BẠN CÓ THỂ QUAN TÂM</h1>
+                <h1 class="game-list-title">PHẦN MỀM MỚI</h1>
                 <div class="game-list-wrapper">
                     <div class="game-list" id="game-list-scrollbar">
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
-                        </div>
-                        <div class="game-list-item">
-                            <img class="game-list-item-img" src="hình ảnh/ứng dụng 1/nền ứng dụng 1.jpg" alt="">
-                            <span class="game-list-item-title">SUPRALAND SIX INCHES UNDER</span>
+                        @Html.Action("AppMoi_Details","CitricStore")
+                    </div>
+                </div>
+            </div>
+            <div class="ungdungkhac">
+                <div class="game-list-container">
+                    <h1 class="game-list-title">PHẦN MỀM HOT</h1>
+                    <div class="game-list-wrapper">
+                        <div class="game-list" id="game-list-scrollbar">
+                            @Html.Action("AppTheoDanhGia_Details", "CitricStore")
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-

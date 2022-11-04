@@ -9,12 +9,15 @@
     .login-container {
         height: 700px;
     }
+    .login-btn{
+        width:46%;
+        margin-left: 10px;
+    }
 </style>
 <div class="container login-container col-lg-6 col-md-12" style="margin:0px auto;">
     <div style="margin: 10px auto; width: 70%;">
         <h2 style="text-align: center; color:white;">ĐĂNG NHẬP</h2>
         <h2 style="color: #FCAE03; margin: 0px auto; font-size: 20px;">@ViewBag.ThongBao</h2>
-
         <div style="color:white; font-size:18px;">
 
             @using (Html.BeginForm("Login", "Users"))
@@ -30,9 +33,9 @@
                 </div>
                 <div class="row">
 
-                    <button type="submit" class="btn btn-dark" style="width:30%; margin-left:10px">Đăng Nhập</button>
+                    <button type="submit" class="btn btn-dark" style="width:46%; margin-left:13px">Đăng Nhập</button>
 
-                    @Html.ActionLink("Đăng Ký", "Login")
+                    @Html.ActionLink("Đăng Ký", "Register", null, new {@class="btn btn-dark login-btn" })
                 </div>
 
 

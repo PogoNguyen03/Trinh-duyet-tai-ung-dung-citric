@@ -133,6 +133,7 @@
     <Compile Include="Controllers\InputAPPController.cs" />
     <Compile Include="Controllers\InputGAMEController.cs" />
     <Compile Include="Controllers\InputHEDIEUHANHController.cs" />
+    <Compile Include="Controllers\InputNGONNGUController.cs" />
     <Compile Include="Controllers\InputNHAPHATHANHController.cs" />
     <Compile Include="Controllers\InputTHELOAIController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -339,6 +340,17 @@
     <Content Include="Views\InputHEDIEUHANH\Details.cshtml" />
     <Content Include="Views\InputHEDIEUHANH\Edit.cshtml" />
     <Content Include="Views\InputHEDIEUHANH\Index.cshtml" />
+    <Content Include="Views\InputNGONNGU\Create.cshtml" />
+    <Content Include="Views\InputNGONNGU\Delete.cshtml" />
+    <Content Include="Views\InputNGONNGU\Details.cshtml" />
+    <Content Include="Views\InputNGONNGU\Edit.cshtml" />
+    <Content Include="Views\InputNGONNGU\Index.cshtml" />
+    <Content Include="Views\CitricStore\AppCungNPH.cshtml" />
+    <Content Include="Views\CitricStore\AppTheoNPH_Details.cshtml" />
+    <Content Include="Views\CitricStore\AppMoi_Details.cshtml" />
+    <Content Include="Views\CitricStore\AppTheoDanhGia_Details.cshtml" />
+    <Content Include="Views\CitricStore\GameTheoDanhGia_Details.cshtml" />
+    <Content Include="Views\CitricStore\GameMoi_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
