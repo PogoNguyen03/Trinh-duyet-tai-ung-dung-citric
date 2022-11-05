@@ -13,17 +13,23 @@ namespace CitricStore.Controllers
         CitricStoreEntities2 database = new CitricStoreEntities2();
 
         //Lọc Game theo ngày cập nhật -> Game Mới
+        public ActionResult Index()
+        {
+            var kh = database.KHACHHANGs.ToList();
+            return View(kh);
+        }
+
         private List<GAME> LayGameMoi (int soluong)
         {
             return database.GAMEs.OrderByDescending(game => game.NgayCapNhat).Take(soluong).ToList();
         }
-
-        // GET: CitricStore
-        public ActionResult Index()
+        public ActionResult GameMoi()
         {
             var dsGameMoi = LayGameMoi(8);
-            return View(dsGameMoi);
+            return PartialView(dsGameMoi);
         }
+        // GET: CitricStore
+        
 
         //Lọc Game theo đánh giá -> Game Đề Xuất
         private List<GAME> LayGameTheoDanhGia(int soluong)
@@ -70,19 +76,19 @@ namespace CitricStore.Controllers
             var dsNPH = database.NHAPHATHANHs.ToList();
             return PartialView(dsNPH);
         }
-         public ActionResult TenTheLoai_Bloggame()
-        {
-                    /*var theloai = from a in database.UNGDUNGs
-                                      from b in database.THELOAIs
-                                      where a.MaTheLoai == b.MaTheLoai
-                                      select b.TenTheLoai;*/
-                    var theloai = database.THELOAIs.ToList();
+    public ActionResult TenTheLoai_Bloggame(int idtheloai)
+    {
+        /*var theloai = from a in database.UNGDUNGs
+                          from b in database.THELOAIs
+                          where a.MaTheLoai == b.MaTheLoai
+                          select b.TenTheLoai;*/
+        var theloai = database.THELOAIs.Where(g => g.MaTheLoai == idtheloai).ToList();
 
-            return PartialView(theloai);              
-        }
+        return PartialView(theloai);
+    }
 
 
-        public ActionResult UngDungTheoTheLoai(int id)
+    public ActionResult UngDungTheoTheLoai(int id)
         {
             var dsUngDung = database.GAMEs.Where(ud => ud.MaTheLoai == id).ToList();
             return View("Index", dsUngDung);
@@ -93,10 +99,19 @@ namespace CitricStore.Controllers
             return View("Index", dsNPH);
         }
 
-        public ActionResult AppTheoNPH_Details(int id)
+
+        /*App theo NPH*/
+        public ActionResult AppTheoNPH_Details(int idnph)
         {
-            var dsNPH = database.APPs.Where(ud => ud.MaNPH == id).ToList();
-            return PartialView("Index", dsNPH);
+            var dsNPH = database.GAMEs.Where(ud => ud.MaNPH == idnph).ToList();
+            return PartialView(dsNPH);
+        }
+
+        /*App cùng thể loại*/
+        public ActionResult GameCungTheLoai_Details(int idtheloai)
+        {
+            var dsNPH = database.GAMEs.Where(ud => ud.MaTheLoai == idtheloai).ToList();
+            return PartialView(dsNPH);
         }
 
 
@@ -136,6 +151,26 @@ namespace CitricStore.Controllers
             return PartialView(dsGameMoi);
         }
 
+        //Lấy tên của nhà phát hành
+        public ActionResult TenNPH_Details(int idnph)
+        {
+            var tennph = database.NHAPHATHANHs.Where(g => g.MaNPH == idnph).ToList();
+            return PartialView(tennph);
+        }
+
+        //Lấy tên ngôn ngữ
+        public ActionResult TenNgonNgu_Details(int idngonngu)
+        {
+            var tenngonngu = database.NGONNGUs.Where(g => g.MaNgonNgu == idngonngu).ToList();
+            return PartialView(tenngonngu);
+        }
+
+        //Lấy tên hệ điều hành
+        public ActionResult TenHDH_Details(int idhdh)
+        {
+            var tenhdh = database.HEDIEUHANHs.Where(g => g.MaHDH == idhdh).ToList();
+            return PartialView(tenhdh);
+        }
 
     }
 }

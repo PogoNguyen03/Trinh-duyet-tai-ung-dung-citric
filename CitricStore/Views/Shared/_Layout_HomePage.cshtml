@@ -20,17 +20,48 @@
             <div class="tenweb col-lg-1 col-md-1">
                 <img src="~/Images/LOGO/CITRICSTORE.png" alt="Citric" style="width:auto; height:100px; margin-top:-18px; margin-left:-50px" />
             </div>
-            <div class="header-left-container col-lg-7 col-md-7">
+            <div class="header-left-container col-lg-6 col-md-5">
                 <div class="header-left">
-                    <a class="header-left-name header-left-name-btn" href="">Cửa hàng</a>
-                    <a style="width:200px " class="header-left-name header-left-name-btn " href="">Câu hỏi thường gặp</a>
+                    <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")">Cửa hàng</a>
+                    <a style="width:200px " class="header-left-name header-left-name-btn" >Câu hỏi thường gặp</a>
                     <a class="header-left-name header-left-name-btn " href="">Hỗ trợ</a>
                 </div>
             </div>
-            <div class="header-right-container col-lg-3 col-md-3">
+            <div class="header-right-container col-lg-4 col-md-5" style="font-size:16px;">
                 <ul class="header-right">
-                    <li class="header-right-name">Ngôn ngữ</li>
-                    <li class="header-right-name">Đăng nhập</li>
+                    <li class="header-right-name">
+                        <img src="~/Images/Language.png" alt="Ngôn Ngữ" style="width:20px; height:20px" />
+                    </li>
+
+
+
+                    <li class="header-right-name">
+                        @if (Session["TaiKhoan"] != null)
+                        {
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="color: black; text-decoration:none;"
+                                   role="button" id="dropdownMenu" type="button"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    @Session["TenDN"].ToString()
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu"
+                                     style=" border: none; z-index: 1001;background-color: #FCAE03; animation:none;transition:none">
+                                    @Html.ActionLink("Xem Thông Tin", "ViewInfo", "Users", new { idkh = Session["MaKH"] }, new { @class = "dropdown-item XemThongTin" })
+
+                                    @Html.ActionLink("Đăng Xuất", "LogOut", "Users", null, new { @class = "dropdown-item XemThongTin" })
+                                </div>
+                            </div>
+                            <div></div>
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Đăng Nhập", "Login", "Users", null, new { @class = "DangNhap" })
+                        }
+
+                    </li>
+
                 </ul>
             </div>
 
@@ -75,26 +106,32 @@
                                         @Html.Action("LayTheLoai", "CitricStore")
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" style="color: white;">Phần Mềm</a>
-                                </li>
 
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" style="color: white;"
                                        role="button" id="dropdownMenu" type="button"
                                        data-toggle="dropdown"
                                        aria-haspopup="true" aria-expanded="false">
-                                        Mới
+                                        Phần Mềm
                                     </a>
+
                                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu" style="background-color:rgb(18,18,18); border:none;
                                                margin-left:-10px; padding:0px;">
-                                        @Html.Action("LayNPH", "CitricStore")
+                                        @Html.Action("LayTheLoai", "CitricStore")
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" style="color: white;">Đề Xuất</a>
-                                </li>
 
+                                <li class="nav-item">
+                                    @if (Session["TaiKhoan"] != null)
+                                    {
+                                        @Html.ActionLink("Thành Viên", "ViewInfo", "Users", new { idkh = Session["MaKH"] }, new { @class = "nav-link ThanhVien" })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Thành Viên", "Login", "Users", null, new { @class = "nav-link" })
+                                    }
+
+                                </li>
 
                             </ul>
                         </div>

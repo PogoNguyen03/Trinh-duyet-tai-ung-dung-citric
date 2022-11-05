@@ -120,18 +120,29 @@ add GioiTinh nvarchar(10)
 
 -- XOÁ DÒNG TRON BẢNG
 delete from NGONNGU
-where MaNgonNgu = 3
+where MaNgonNgu = 5
 
-select * from NGONNGU
+Select * from HEDIEUHANH
 
+Select * from NHAPHATHANH
+
+Select * from NGONNGU
+
+Select * from THELOAI
+
+Update HEDIEUHANH
+set TenHDH=N'MacOS'
+where MaHDH=10
 
 -- XOÁ CỘT TRONG BẢNG
 alter table KHACHHANG
 drop column Gioitinh
 
+Select * from Game
 -- NHẬP DỮ LIỆU
-Set identity_insert [dbo].[KHACHHANG] on
-Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+Set identity_insert [dbo].[GAME] on
+
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (1,N'SUPRALAND SIX INCHES UNDER',
 		N'“Six Inches Under” là một dự án phụ nhỏ được tạo ra để giới thiệu các thành viên nhóm phát triển mới với các công cụ và quy trình làm việc của chúng tôi. Về cơ bản đó là sự chuẩn bị của chúng tôi cho phần tiếp theo của Supraland.
 Trong khi David Münnich thực hiện trò chơi Supraland đầu tiên một mình khá nhiều, anh ấy có một vai trò nhỏ hơn trong trò chơi này. Nhóm nòng cốt cho việc này có 6 người.
@@ -139,14 +150,14 @@ Khá nhiều người trong nhóm đã xây dựng 1 hoặc 2 khu vực của th
 Nó được cho là một DLC nhỏ cho Supraland, nhưng nó hơi khó chịu và ngày càng phức tạp hơn. Thay vì 3 tháng, chúng tôi mất 27 tháng để làm việc này (Supraland 1 đã được phát triển trong 16 tháng).
 Nó có thể được coi là “Supraland 1.5” vì nó vẫn còn rất nhiều thứ từ trò chơi đầu tiên, nhưng đồng thời đó là một thế giới mới với một loạt các cơ chế mới.
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,31/10/2022,N'BgGame1.jpg')
+		N'2500', 1, 1,N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,N'2022/10/31',N'BgGame1.jpg')
 
-Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (2,N'THE KING OF FIGHTERS XV',
 		N'“Kể từ lần đầu tiên ra mắt vào năm 1994, dòng game đối kháng KOF đã đưa thế giới lên một tầm cao mới của sự phấn khích với các nhân vật hấp dẫn và hệ thống trò chơi độc đáo. Sáu năm đã trôi qua kể từ tựa game cuối cùng trong sê-ri, và giờ đây KOF XV vượt qua tất cả những người tiền nhiệm về đồ họa, hệ thống và trải nghiệm trực tuyến!
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,30/10/2022,N'Game1.jpg')
-Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+		N'523', 1, 1,N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,N'2022/10/30',N'Game1.jpg')
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (3,N'SUPRALAND SIX INCHES UNDER',
 		N'“Six Inches Under” là một dự án phụ nhỏ được tạo ra để giới thiệu các thành viên nhóm phát triển mới với các công cụ và quy trình làm việc của chúng tôi. Về cơ bản đó là sự chuẩn bị của chúng tôi cho phần tiếp theo của Supraland.
 Trong khi David Münnich thực hiện trò chơi Supraland đầu tiên một mình khá nhiều, anh ấy có một vai trò nhỏ hơn trong trò chơi này. Nhóm nòng cốt cho việc này có 6 người.
@@ -154,14 +165,14 @@ Khá nhiều người trong nhóm đã xây dựng 1 hoặc 2 khu vực của th
 Nó được cho là một DLC nhỏ cho Supraland, nhưng nó hơi khó chịu và ngày càng phức tạp hơn. Thay vì 3 tháng, chúng tôi mất 27 tháng để làm việc này (Supraland 1 đã được phát triển trong 16 tháng).
 Nó có thể được coi là “Supraland 1.5” vì nó vẫn còn rất nhiều thứ từ trò chơi đầu tiên, nhưng đồng thời đó là một thế giới mới với một loạt các cơ chế mới.
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,31/10/2022,N'BgGame1.jpg')
-
-Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+		N'1000', 2, 2,N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,N'2022/10/31',N'BgGame1.jpg')
+		
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (4,N'THE KING OF FIGHTERS XV',
 		N'“Kể từ lần đầu tiên ra mắt vào năm 1994, dòng game đối kháng KOF đã đưa thế giới lên một tầm cao mới của sự phấn khích với các nhân vật hấp dẫn và hệ thống trò chơi độc đáo. Sáu năm đã trôi qua kể từ tựa game cuối cùng trong sê-ri, và giờ đây KOF XV vượt qua tất cả những người tiền nhiệm về đồ họa, hệ thống và trải nghiệm trực tuyến!
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,30/10/2022,N'Game1.jpg')
-		Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+		N'5600', 7, 2,N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,N'2022/11/04',N'Game1.jpg')
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (5,N'SUPRALAND SIX INCHES UNDER',
 		N'“Six Inches Under” là một dự án phụ nhỏ được tạo ra để giới thiệu các thành viên nhóm phát triển mới với các công cụ và quy trình làm việc của chúng tôi. Về cơ bản đó là sự chuẩn bị của chúng tôi cho phần tiếp theo của Supraland.
 Trong khi David Münnich thực hiện trò chơi Supraland đầu tiên một mình khá nhiều, anh ấy có một vai trò nhỏ hơn trong trò chơi này. Nhóm nòng cốt cho việc này có 6 người.
@@ -169,14 +180,14 @@ Khá nhiều người trong nhóm đã xây dựng 1 hoặc 2 khu vực của th
 Nó được cho là một DLC nhỏ cho Supraland, nhưng nó hơi khó chịu và ngày càng phức tạp hơn. Thay vì 3 tháng, chúng tôi mất 27 tháng để làm việc này (Supraland 1 đã được phát triển trong 16 tháng).
 Nó có thể được coi là “Supraland 1.5” vì nó vẫn còn rất nhiều thứ từ trò chơi đầu tiên, nhưng đồng thời đó là một thế giới mới với một loạt các cơ chế mới.
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,31/10/2022,N'BgGame1.jpg')
+		N'8GB', 1, 1,N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,N'2022/10/31',N'BgGame1.jpg')
 
-Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (6,N'THE KING OF FIGHTERS XV',
 		N'“Kể từ lần đầu tiên ra mắt vào năm 1994, dòng game đối kháng KOF đã đưa thế giới lên một tầm cao mới của sự phấn khích với các nhân vật hấp dẫn và hệ thống trò chơi độc đáo. Sáu năm đã trôi qua kể từ tựa game cuối cùng trong sê-ri, và giờ đây KOF XV vượt qua tất cả những người tiền nhiệm về đồ họa, hệ thống và trải nghiệm trực tuyến!
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,30/10/2022,N'Game1.jpg')
-		Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+		N'1986', 1, 1,N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,N'2022/10/30',N'Game1.jpg')
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (7,N'SUPRALAND SIX INCHES UNDER',
 		N'“Six Inches Under” là một dự án phụ nhỏ được tạo ra để giới thiệu các thành viên nhóm phát triển mới với các công cụ và quy trình làm việc của chúng tôi. Về cơ bản đó là sự chuẩn bị của chúng tôi cho phần tiếp theo của Supraland.
 Trong khi David Münnich thực hiện trò chơi Supraland đầu tiên một mình khá nhiều, anh ấy có một vai trò nhỏ hơn trong trò chơi này. Nhóm nòng cốt cho việc này có 6 người.
@@ -184,15 +195,21 @@ Khá nhiều người trong nhóm đã xây dựng 1 hoặc 2 khu vực của th
 Nó được cho là một DLC nhỏ cho Supraland, nhưng nó hơi khó chịu và ngày càng phức tạp hơn. Thay vì 3 tháng, chúng tôi mất 27 tháng để làm việc này (Supraland 1 đã được phát triển trong 16 tháng).
 Nó có thể được coi là “Supraland 1.5” vì nó vẫn còn rất nhiều thứ từ trò chơi đầu tiên, nhưng đồng thời đó là một thế giới mới với một loạt các cơ chế mới.
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,31/10/2022,N'BgGame1.jpg')
+		N'2689', 1, 1,N'https://bluemediafiles.homes/url-generator.php?url=KH1TK0eBXmDmljELeo4C+FFvmgHJbc++7psPlN6tioiOAlqFJyJr1Da7TS+/2OydxBiEj9qrLmBRlalrpjeVwHAr6vqfd6J7bAs53bHlBmY=',1,1,N'2022/10/31',N'BgGame1.jpg')
 
-Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[KichThuocRam],[HeDieuHanh],[NgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
+Insert [dbo].[GAME]([MaGame],[TenGame],[GioiThieu],[DungLuong],[MaHDH],[MaNgonNgu],[LinkTai],[MaTheLoai],[MaNPH],[NgayCapNhat],[HinhNen])
 values (8,N'THE KING OF FIGHTERS XV',
 		N'“Kể từ lần đầu tiên ra mắt vào năm 1994, dòng game đối kháng KOF đã đưa thế giới lên một tầm cao mới của sự phấn khích với các nhân vật hấp dẫn và hệ thống trò chơi độc đáo. Sáu năm đã trôi qua kể từ tựa game cuối cùng trong sê-ri, và giờ đây KOF XV vượt qua tất cả những người tiền nhiệm về đồ họa, hệ thống và trải nghiệm trực tuyến!
 ',
-		N'8GB', N'Windows', N'Tiếng Anh',N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,30/10/2022,N'Game1.jpg')
+		N'1900', 1, 1,N'https://hadoantv.com/download?kind=old&url=https%3A%2F%2Fanotepad.com%2Fnotes%2Fx4asr7ek',1,1,N'2022/11/02',N'Game1.jpg')
 
-Set identity_insert [dbo].[GAME] off
+
+
+
+		Select * from GAME
+		Select * from hedieuhanh
+
+Set identity_insert [dbo].[NHAPHATHANH] off
 
 Set identity_insert [dbo].[NHAPHATHANH] on
 Insert [dbo].[NHAPHATHANH] ([MaNPH], [TenNPH])
@@ -297,7 +314,10 @@ values (8,N'INSTAGRAM',
 		N'+	Kết nối với bạn bè, chia sẻ những gì bạn đang làm hoặc xem những gì mới từ những người khác trên khắp thế giới. Khám phá cộng đồng của chúng tôi, nơi bạn có thể thoải mái là chính mình và chia sẻ mọi thứ, từ những khoảnh khắc hàng ngày đến những điểm nổi bật trong cuộc sống..',
 		N'8GB', N'Windows', N'Tiếng Anh',N'https://play.google.com/store/apps/details?id=com.instagram.android&hl=vi&gl=US',1,1,31/10/2022,4.5,N'App1.1.jpg')
 
-Select * from game
+
+
+
+
 
 alter table GAME
 drop column NgonNgu
@@ -309,3 +329,4 @@ update Game
 set MaNgonNgu = 1
 where MaGame = 1
 
+Select * from game

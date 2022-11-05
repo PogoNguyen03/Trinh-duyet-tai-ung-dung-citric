@@ -2,7 +2,7 @@
 
 
 @{
-    ViewBag.Title = "Trình duyệt tải ứnng dụng";
+    ViewBag.Title = "Trình duyệt tải ứng dụng";
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
@@ -55,29 +55,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            @foreach (var game in Model)
-            {
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="bloggame">
-                        <div class="imageblog">
-                            <img class="card-img-top imageblog-width-height" src="~/Images/@game.HinhNen" alt="Card image">
-                        </div>
-                        <div class="">
-                            <div class="bloggame-title h4">
-                                <a class="fix-line">@game.TenGame</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore")
-                            </div>
-                            <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
-                                <div class="bloggame-download-btn">
-                                    Chi Tiết
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            }
+            @Html.Action("GameMoi","CitricStore")
         </div>
     </div>
 </div>

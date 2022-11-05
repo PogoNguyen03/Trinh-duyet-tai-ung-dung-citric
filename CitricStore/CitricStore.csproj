@@ -221,6 +221,7 @@
     <Content Include="Images\Game1.2.jpg" />
     <Content Include="Images\Game1.3.jpg" />
     <Content Include="Images\Game1.jpg" />
+    <Content Include="Images\Language.png" />
     <Content Include="Images\LOGO\CITRICSTORE.png" />
     <Content Include="Images\LOGO\LOGO_Black.png" />
     <Content Include="Images\LOGO\LOGO_White.png" />
@@ -346,11 +347,18 @@
     <Content Include="Views\InputNGONNGU\Edit.cshtml" />
     <Content Include="Views\InputNGONNGU\Index.cshtml" />
     <Content Include="Views\CitricStore\AppCungNPH.cshtml" />
-    <Content Include="Views\CitricStore\AppTheoNPH_Details.cshtml" />
     <Content Include="Views\CitricStore\AppMoi_Details.cshtml" />
     <Content Include="Views\CitricStore\AppTheoDanhGia_Details.cshtml" />
     <Content Include="Views\CitricStore\GameTheoDanhGia_Details.cshtml" />
     <Content Include="Views\CitricStore\GameMoi_Details.cshtml" />
+    <Content Include="Views\CitricStore\AppTheoNPH_Details.cshtml" />
+    <Content Include="Views\CitricStore\GameCungTheLoai_Details.cshtml" />
+    <Content Include="Views\CitricStore\TenNPH_Details.cshtml" />
+    <Content Include="Views\CitricStore\TenNgonNgu_Details.cshtml" />
+    <Content Include="Views\CitricStore\TenHDH_Details.cshtml" />
+    <Content Include="Views\Users\EditInfo.cshtml" />
+    <Content Include="Views\CitricStore\GameMoi.cshtml" />
+    <Content Include="Views\Users\ViewInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

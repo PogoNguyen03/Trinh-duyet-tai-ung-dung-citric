@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CitricStore.Models;
@@ -11,6 +13,7 @@ namespace CitricStore.Controllers
     {
         private CitricStoreEntities2 database = new CitricStoreEntities2();
         //GET: User
+        //ĐĂNG KÝ
         [HttpGet]
         public ActionResult Register()
         {
@@ -50,13 +53,13 @@ namespace CitricStore.Controllers
             return RedirectToAction("Login");
         }
 
+        //ĐĂNG NHẬP
         [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
-        //Phần đăng nhập//
         [HttpPost]
         public ActionResult Login(KHACHHANG kh)
         {
@@ -68,25 +71,84 @@ namespace CitricStore.Controllers
                     ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
                 if (ModelState.IsValid)
                 {
-                    //Tìm khách hàng có tên đăng nhập và password hợp lệ trong CSDL
+                    
                     var khach = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN && k.Matkhau == kh.Matkhau);
+
+                    var makh = database.KHACHHANGs.Where(g => g.TenDN == kh.TenDN).Select(g => g.MaKH);
+
                     if (khach != null)
                     {
+
                         ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                         //Lưu vào session
                         Session["TaiKhoan"] = khach;
 
+                        Session["TenDN"] = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN).TenDN;
+
+                        Session["MaKH"] = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN).MaKH;
+
+                        return RedirectToAction("Index", "CitricStore");
+
                     }
                     else
+                    {
                         ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
-                }
-                else
-                {
+                    }
 
                 }
+              
+
             }
-
             return View();
+
         }
+
+        //XEM THÔNG TIN KHÁCH HÀNG
+        public ActionResult ViewInfo(int idkh)
+        {
+            var kh = database.KHACHHANGs.FirstOrDefault(g => g.MaKH == idkh);
+            return View(kh);
+        }
+
+        //SỬA THÔNG TIN KHÁCH HÀNG
+        public ActionResult EditInfo(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            KHACHHANG kh = database.KHACHHANGs.Find(id);
+            if (kh == null)
+            {
+                return HttpNotFound();
+            }
+            return View(kh);
+
+        }
+
+        // POST: Users/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditInfo([Bind(Include = "MaKH,HoTenKH,DienthoaiKH,TenDN,Matkhau,Ngáyinh,Email,Daduyet,GioiTinh")] KHACHHANG kh)
+        {
+            if (ModelState.IsValid)
+            {
+                database.Entry(kh).State = EntityState.Modified;
+                database.SaveChanges();
+                return RedirectToAction("ViewInfo","Users");
+            }
+            return View(kh);
+        }
+
+
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Index","CitricStore");
+        }
+
     }
+
 }
