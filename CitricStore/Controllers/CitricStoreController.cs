@@ -28,8 +28,6 @@ namespace CitricStore.Controllers
             var dsGameMoi = LayGameMoi(8);
             return PartialView(dsGameMoi);
         }
-        // GET: CitricStore
-        
 
         //Lọc Game theo đánh giá -> Game Đề Xuất
         private List<GAME> LayGameTheoDanhGia(int soluong)
@@ -64,7 +62,7 @@ namespace CitricStore.Controllers
             return PartialView(dsAppDeXuat);
         }
 
-
+        //Dropdown Navbar
         public ActionResult LayTheLoai()
         {
            var dsTheLoai = database.THELOAIs.ToList();
@@ -76,50 +74,22 @@ namespace CitricStore.Controllers
             var dsNPH = database.NHAPHATHANHs.ToList();
             return PartialView(dsNPH);
         }
-    public ActionResult TenTheLoai_Bloggame(int idtheloai)
-    {
-        /*var theloai = from a in database.UNGDUNGs
-                          from b in database.THELOAIs
-                          where a.MaTheLoai == b.MaTheLoai
-                          select b.TenTheLoai;*/
-        var theloai = database.THELOAIs.Where(g => g.MaTheLoai == idtheloai).ToList();
 
-        return PartialView(theloai);
-    }
-
-
+        
     public ActionResult UngDungTheoTheLoai(int id)
         {
             var dsUngDung = database.GAMEs.Where(ud => ud.MaTheLoai == id).ToList();
-            return View("Index", dsUngDung);
+            return View(dsUngDung);
         }
-        public ActionResult UngDungTheoNPH(int id)
+        public ActionResult GameTheoTheLoai(int id)
         {
-            var dsNPH = database.GAMEs.Where(ud => ud.MaNPH == id).ToList();
-            return View("Index", dsNPH);
+            var dsGame = database.GAMEs.Where(g => g.MaTheLoai == id).ToList();
+            return View(dsGame);
         }
 
 
-        /*App theo NPH*/
-        public ActionResult AppTheoNPH_Details(int idnph)
-        {
-            var dsNPH = database.GAMEs.Where(ud => ud.MaNPH == idnph).ToList();
-            return PartialView(dsNPH);
-        }
-
-        /*App cùng thể loại*/
-        public ActionResult GameCungTheLoai_Details(int idtheloai)
-        {
-            var dsNPH = database.GAMEs.Where(ud => ud.MaTheLoai == idtheloai).ToList();
-            return PartialView(dsNPH);
-        }
 
 
-        public ActionResult DetailsGame(int id)
-        {
-            var game = database.GAMEs.FirstOrDefault(s => s.MaGame == id);
-            return View(game);
-        }
 
         public ActionResult DetailsApp(int id)
         {
@@ -139,16 +109,50 @@ namespace CitricStore.Controllers
             var dsAppDeXuat = LayAppTheoDanhGia(8);
             return PartialView(dsAppDeXuat);
         }
+        //App theo NPH
+        public ActionResult AppTheoNPH_Details(int idnph)
+        {
+            var dsNPH = database.GAMEs.Where(ud => ud.MaNPH == idnph).ToList();
+            return PartialView(dsNPH);
+        }
+
+        //--------------------------DETAILS GAME--------------------------\
+        public ActionResult DetailsGame(int id)
+        {
+            var game = database.GAMEs.FirstOrDefault(s => s.MaGame == id);
+            return View(game);
+        }
 
         public ActionResult GameTheoDanhGia_Details()
         {
             var dsGameDeXuat = LayGameTheoDanhGia(8);
             return PartialView(dsGameDeXuat);
         }
+
         public ActionResult GameMoi_Details()
         {
             var dsGameMoi = LayGameMoi(8);
             return PartialView(dsGameMoi);
+        }
+
+        public ActionResult GameCungTheLoai_Details(int idtheloai)
+        {
+            var dsNPH = database.GAMEs.Where(ud => ud.MaTheLoai == idtheloai).ToList();
+            return PartialView(dsNPH);
+        }
+
+
+
+        //Lấy tên thể loại
+        public ActionResult TenTheLoai_Bloggame(int idtheloai)
+        {
+            /*var theloai = from a in database.UNGDUNGs
+                              from b in database.THELOAIs
+                              where a.MaTheLoai == b.MaTheLoai
+                              select b.TenTheLoai;*/
+            var theloai = database.THELOAIs.Where(g => g.MaTheLoai == idtheloai).ToList();
+
+            return PartialView(theloai);
         }
 
         //Lấy tên của nhà phát hành
@@ -170,6 +174,12 @@ namespace CitricStore.Controllers
         {
             var tenhdh = database.HEDIEUHANHs.Where(g => g.MaHDH == idhdh).ToList();
             return PartialView(tenhdh);
+        }
+
+        //TRANG PHÂN LOẠI
+        public ActionResult Classify()
+        {
+            return View();
         }
 
     }

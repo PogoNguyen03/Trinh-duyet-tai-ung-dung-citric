@@ -361,6 +361,8 @@
     <Content Include="Views\Users\ViewInfo.cshtml" />
     <Content Include="Views\Users\FogotPass.cshtml" />
     <Content Include="Views\Users\ResetPass.cshtml" />
+    <Content Include="Views\CitricStore\Classify.cshtml" />
+    <Content Include="Views\CitricStore\GameTheoTheLoai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
