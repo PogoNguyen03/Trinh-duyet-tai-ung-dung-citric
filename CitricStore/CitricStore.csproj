@@ -351,6 +351,7 @@
     <Content Include="Views\CitricStore\AppTheoDanhGia_Details.cshtml" />
     <Content Include="Views\CitricStore\GameTheoDanhGia_Details.cshtml" />
     <Content Include="Views\CitricStore\GameMoi_Details.cshtml" />
+    <Content Include="Views\CitricStore\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

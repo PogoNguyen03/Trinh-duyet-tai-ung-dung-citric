@@ -1,0 +1,44 @@
+﻿@using CitricStore.Controllers;
+@using CitricStore.Models;
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
+
+    string key = Request.QueryString["key"];
+
+    List<APP> result = new List<APP>();
+    List<GAME> result1 = new List<GAME>();
+}
+
+<h2 style="color:aliceblue">Search @key</h2>
+
+@{
+    if (string.IsNullOrEmpty(key))
+    {
+        <h3 style="color:aliceblue">vui lòng nhập từ khóa</h3>
+    }
+    else
+    {
+        if (key == "" || key.Length < 3)
+        {
+            <h3 style="color:aliceblue">vui lòng nhập từ </h3>
+        }
+        else
+        {
+
+            result = new CitricStoreController().SelectByKey(key);
+            result1 = new CitricStoreController().SelectByKey1(key);
+
+            foreach (var item in result)
+            {
+                <p>@item.TenApp</p>
+            }
+
+            foreach (var item in result1)
+            {
+                <p>@item.TenGame</p>
+            }
+
+        }
+    }
+}

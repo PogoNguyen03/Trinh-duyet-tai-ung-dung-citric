@@ -136,6 +136,29 @@ namespace CitricStore.Controllers
             return PartialView(dsGameMoi);
         }
 
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        public APP Select(int id)
+        {
+            return database.APPs.Find(id);
+        }
+
+        public List<APP> SelectByKey(string key)
+        {
+            return database.APPs.SqlQuery("Select * from APP where TenAPP like '%" + key + "%'").ToList();
+        }
+        public GAME Select1(int id)
+        {
+            return database.GAMEs.Find(id);
+        }
+
+        public List<GAME> SelectByKey1(string key)
+        {
+            return database.GAMEs.SqlQuery("Select * from GAME where TenGame like '%" + key + "%'").ToList();
+        }
 
     }
 }
