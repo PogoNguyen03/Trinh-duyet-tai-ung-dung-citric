@@ -359,6 +359,8 @@
     <Content Include="Views\Users\EditInfo.cshtml" />
     <Content Include="Views\CitricStore\GameMoi.cshtml" />
     <Content Include="Views\Users\ViewInfo.cshtml" />
+    <Content Include="Views\Users\FogotPass.cshtml" />
+    <Content Include="Views\Users\ResetPass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

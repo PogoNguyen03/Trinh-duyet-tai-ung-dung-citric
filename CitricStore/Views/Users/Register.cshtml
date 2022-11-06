@@ -11,8 +11,7 @@
     }
 </style>
 
-<div class="container col-lg-6 col-md-12" style="margin:0px auto;">
-    <div style="margin: 10px auto; width: 70%;">
+<div class="container col-lg-5 col-md-11" style="margin:0px auto;">
         <h2 style="text-align: center; color:white">ĐĂNG KÝ THÀNH VIÊN</h2>
         <div style="color:white; font-size:18px;">
             @using (Html.BeginForm("Register", "Users"))
@@ -57,12 +56,10 @@
 
                 <div class="row">
 
-                    <button type="submit" class="btn btn-dark" style="width:46%; margin-left:13px">Đăng Ký</button>
+                    <button type="submit" class="btn btn-dark" style="width:46%; margin-left:16px">Đăng Ký</button>
 
                     @Html.ActionLink("Đăng Nhập", "Login", null, new { @class = "btn btn-dark register-btn" })
                 </div>
             }
         </div>
     </div>
-
-</div>

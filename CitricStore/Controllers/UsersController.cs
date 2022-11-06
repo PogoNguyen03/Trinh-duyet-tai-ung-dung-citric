@@ -79,7 +79,6 @@ namespace CitricStore.Controllers
                     if (khach != null)
                     {
 
-                        ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                         //Lưu vào session
                         Session["TaiKhoan"] = khach;
 
@@ -137,7 +136,7 @@ namespace CitricStore.Controllers
             {
                 database.Entry(kh).State = EntityState.Modified;
                 database.SaveChanges();
-                return RedirectToAction("ViewInfo","Users");
+                return RedirectToAction("ViewInfo","Users", new { idkh = Session["MaKH"] });
             }
             return View(kh);
         }
@@ -147,6 +146,85 @@ namespace CitricStore.Controllers
         {
             Session.Clear();
             return RedirectToAction("Index","CitricStore");
+        }
+
+
+        //Quên mật khẩu
+        public ActionResult FogotPass()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public ActionResult FogotPass( KHACHHANG kh)
+        {
+            if (ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(kh.Email))
+                    ModelState.AddModelError(String.Empty, "Email không được để trống");
+                if (string.IsNullOrEmpty(kh.TenDN))
+                    ModelState.AddModelError(String.Empty, "Tên đăng nhập không được để trống");
+                if (ModelState.IsValid)
+                {
+
+                    var khach = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN && k.Email == kh.Email);
+
+                    var makh = database.KHACHHANGs.Where(g => g.TenDN == kh.TenDN).Select(g => g.MaKH);
+
+                    if (khach != null)
+                    {
+                        //Session["TaiKhoan"] = khach;
+
+                        //Session["TenDN"] = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN).TenDN;
+
+                        Session["MaKH"] = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN).MaKH;
+
+                        return RedirectToAction("ResetPass", "Users", new {id = Session["MaKH"] });
+
+
+                    }
+                    else
+                    {
+                        ViewBag.ThongBao = "Tên đăng nhập hoặc email không đúng";
+                    }
+
+                }
+
+
+            }
+            return View();
+
+        }
+
+        //Reset Password
+        public ActionResult ResetPass(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            KHACHHANG kh = database.KHACHHANGs.Find(id);
+            if (kh == null)
+            {
+                return HttpNotFound();
+            }
+            return View(kh);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPass([Bind(Include = "MaKH,HoTenKH,DienthoaiKH,TenDN,Matkhau,Ngáyinh,Email,Daduyet,GioiTinh")] KHACHHANG kh)
+        {
+            if (ModelState.IsValid)
+            {
+                database.Entry(kh).State = EntityState.Modified;
+                database.SaveChanges();
+
+                ViewBag.ThongBao = "Đổi mật khẩu thành công!";
+            }
+            return View(kh);
         }
 
     }
