@@ -12,19 +12,21 @@
           <Property Name="MaApp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenApp" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="GioiThieu" Type="ntext" />
+          <Property Name="DungLuong" Type="int" />
+          <Property Name="NgonNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="HeDieuHanh" Type="nvarchar" MaxLength="50" />
           <Property Name="LinkTai" Type="ntext" />
           <Property Name="MaTheLoai" Type="int" />
           <Property Name="MaNPH" Type="int" />
+          <Property Name="MaHDH" Type="int" />
+          <Property Name="MaNgonNgu" Type="int" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+          <Property Name="DanhGia" Type="nvarchar" MaxLength="5" />
           <Property Name="HinhNen" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT1" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT2" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT3" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT4" Type="nvarchar" MaxLength="30" />
-          <Property Name="DanhGia" Type="nvarchar" MaxLength="5" />
-          <Property Name="NgayCapNhat" Type="date" />
-          <Property Name="DungLuong" Type="nvarchar" MaxLength="10" />
-          <Property Name="MaHDH" Type="int" />
-          <Property Name="MaNgonNgu" Type="int" />
         </EntityType>
         <EntityType Name="GAME">
           <Key>
@@ -89,6 +91,20 @@
           <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="THELOAIAPP">
+          <Key>
+            <PropertyRef Name="MaTheLoai" />
+          </Key>
+          <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="THELOAIGAME">
+          <Key>
+            <PropertyRef Name="MaTheLoai" />
+          </Key>
+          <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_APP_HEDIEUHANH">
           <End Role="HEDIEUHANH" Type="Self.HEDIEUHANH" Multiplicity="0..1" />
           <End Role="APP" Type="Self.APP" Multiplicity="*" />
@@ -125,11 +141,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_APP_THELOAI">
-          <End Role="THELOAI" Type="Self.THELOAI" Multiplicity="0..1" />
+        <Association Name="FK_APP_THELOAIAPP">
+          <End Role="THELOAIAPP" Type="Self.THELOAIAPP" Multiplicity="0..1" />
           <End Role="APP" Type="Self.APP" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="THELOAI">
+            <Principal Role="THELOAIAPP">
               <PropertyRef Name="MaTheLoai" />
             </Principal>
             <Dependent Role="APP">
@@ -193,6 +209,8 @@
           <EntitySet Name="NGONNGU" EntityType="Self.NGONNGU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHAPHATHANH" EntityType="Self.NHAPHATHANH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THELOAIAPP" EntityType="Self.THELOAIAPP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THELOAIGAME" EntityType="Self.THELOAIGAME" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_APP_HEDIEUHANH" Association="Self.FK_APP_HEDIEUHANH">
             <End Role="HEDIEUHANH" EntitySet="HEDIEUHANH" />
             <End Role="APP" EntitySet="APP" />
@@ -205,8 +223,8 @@
             <End Role="NHAPHATHANH" EntitySet="NHAPHATHANH" />
             <End Role="APP" EntitySet="APP" />
           </AssociationSet>
-          <AssociationSet Name="FK_APP_THELOAI" Association="Self.FK_APP_THELOAI">
-            <End Role="THELOAI" EntitySet="THELOAI" />
+          <AssociationSet Name="FK_APP_THELOAIAPP" Association="Self.FK_APP_THELOAIAPP">
+            <End Role="THELOAIAPP" EntitySet="THELOAIAPP" />
             <End Role="APP" EntitySet="APP" />
           </AssociationSet>
           <AssociationSet Name="FK_GAME_HEDIEUHANH" Association="Self.FK_GAME_HEDIEUHANH">
@@ -302,6 +320,12 @@
             <End Role="NGONNGU" EntitySet="NGONNGUs" />
             <End Role="GAME" EntitySet="GAMEs" />
           </AssociationSet>
+          <EntitySet Name="THELOAIAPPs" EntityType="CitricStoreModel.THELOAIAPP" />
+          <EntitySet Name="THELOAIGAMEs" EntityType="CitricStoreModel.THELOAIGAME" />
+          <AssociationSet Name="FK_APP_THELOAIAPP" Association="CitricStoreModel.FK_APP_THELOAIAPP">
+            <End Role="THELOAIAPP" EntitySet="THELOAIAPPs" />
+            <End Role="APP" EntitySet="APPs" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="APP">
           <Key>
@@ -313,7 +337,7 @@
           <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MaTheLoai" Type="Int32" />
           <Property Name="MaNPH" Type="Int32" />
-          <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
           <Property Name="HinhNen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -322,11 +346,14 @@
           <NavigationProperty Name="NHAPHATHANH" Relationship="CitricStoreModel.FK_APP_NHAPHATHANH" FromRole="APP" ToRole="NHAPHATHANH" />
           <NavigationProperty Name="THELOAI" Relationship="CitricStoreModel.FK_APP_THELOAI" FromRole="APP" ToRole="THELOAI" />
           <Property Name="DanhGia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="DungLuong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DungLuong" Type="String" />
           <Property Name="MaHDH" Type="Int32" />
           <Property Name="MaNgonNgu" Type="Int32" />
           <NavigationProperty Name="HEDIEUHANH" Relationship="CitricStoreModel.FK_APP_HEDIEUHANH" FromRole="APP" ToRole="HEDIEUHANH" />
           <NavigationProperty Name="NGONNGU" Relationship="CitricStoreModel.FK_APP_NGONNGU" FromRole="APP" ToRole="NGONNGU" />
+          <Property Name="NgonNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HeDieuHanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="THELOAIAPP" Relationship="CitricStoreModel.FK_APP_THELOAIAPP" FromRole="APP" ToRole="THELOAIAPP" />
         </EntityType>
         <EntityType Name="GAME">
           <Key>
@@ -467,6 +494,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="THELOAIAPP">
+          <Key>
+            <PropertyRef Name="MaTheLoai" />
+          </Key>
+          <Property Name="MaTheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="APPs" Relationship="CitricStoreModel.FK_APP_THELOAIAPP" FromRole="THELOAIAPP" ToRole="APP" />
+        </EntityType>
+        <EntityType Name="THELOAIGAME">
+          <Key>
+            <PropertyRef Name="MaTheLoai" />
+          </Key>
+          <Property Name="MaTheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_APP_THELOAIAPP">
+          <End Type="CitricStoreModel.THELOAIAPP" Role="THELOAIAPP" Multiplicity="0..1" />
+          <End Type="CitricStoreModel.APP" Role="APP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAIAPP">
+              <PropertyRef Name="MaTheLoai" />
+            </Principal>
+            <Dependent Role="APP">
+              <PropertyRef Name="MaTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -507,6 +561,8 @@
           <EntitySetMapping Name="APPs">
             <EntityTypeMapping TypeName="CitricStoreModel.APP">
               <MappingFragment StoreEntitySet="APP">
+                <ScalarProperty Name="HeDieuHanh" ColumnName="HeDieuHanh" />
+                <ScalarProperty Name="NgonNgu" ColumnName="NgonNgu" />
                 <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
                 <ScalarProperty Name="MaHDH" ColumnName="MaHDH" />
                 <ScalarProperty Name="DungLuong" ColumnName="DungLuong" />
@@ -561,6 +617,22 @@
               <MappingFragment StoreEntitySet="NGONNGU">
                 <ScalarProperty Name="TenNgonNgu" ColumnName="TenNgonNgu" />
                 <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THELOAIAPPs">
+            <EntityTypeMapping TypeName="CitricStoreModel.THELOAIAPP">
+              <MappingFragment StoreEntitySet="THELOAIAPP">
+                <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+                <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THELOAIGAMEs">
+            <EntityTypeMapping TypeName="CitricStoreModel.THELOAIGAME">
+              <MappingFragment StoreEntitySet="THELOAIGAME">
+                <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+                <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -16,42 +16,12 @@
     color: white;
 }
 
-#hnc-game-filter {
-    position: relative;
+#filter-game {
     display: block;
     padding: 10px;
     margin-bottom: 10px;
     overflow: hidden;
     color: #fff;
-    border: 1px solid #293139;
-    border-radius: 24px;
-}
-
-/*.hnc-filter-game {
-    background-color: #00B4CC;
-    height: 40px;
-    width: auto;
-    padding-left: 30px;
-    padding-right: 10px;
-    font-size: 25px;
-    display: flex;
-    border-radius: 24px;
-
-
-}
-
-.hnc-filter-game a {
-        margin: -3px 15px 2px -9px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: white;
-        letter-spacing: 0;
-}
-*/
-.hnc-filter-game-loc{
-    margin-left:27px;
 }
 
 .imageblog-width-height{
@@ -66,10 +36,6 @@
     color:white;
 }
 
-
-#hnc-game-filters button.hnc-filter-game {
-    width: 100%;
-}
 
 .filter-btn {
     background-color: #FCAE03;
@@ -95,13 +61,6 @@
     transition: 0.15s all;
     border-radius:4px;
     margin-top:18px;
-}
-#hnc-game-filters .form-control {
-    display: block;
-    width: 63%;
-    height: auto;
-    padding: 5px 10px;
-    font-size: 13px;
 }
 
 .form-control {
@@ -280,9 +239,6 @@
 
 .dexuat-container {
     width: 100%;
-    font-size: 25px;
-    font-weight: bold;
-    margin-top:30px;
 }
 
 
@@ -405,3 +361,46 @@
     cursor: pointer;
 }
 
+
+
+.filter-tieude{
+    color:white;
+    font-size:16px;
+}
+.dungluong-dropdown {
+    color: black;
+    background-color: white;
+    width: 100%;
+    height: 35px;
+    border: 2px solid;
+    border-color: black;
+    text-decoration: none;
+    padding-left:15px;
+    margin-top:10px;
+}
+
+.dungluong-dropdown:hover{
+    text-decoration:none;
+    animation:none;
+    transition:none;
+    color: black;
+}
+
+
+.dungluong-dropdown-menu {
+    width: 100%;
+    animation: none;
+    transition: none;
+    background-color: white;
+    border: none;
+    padding: 0px;
+    border-radius: unset;
+    border: 2px solid;
+    border-color: black;
+}
+
+.filter-container {
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+}

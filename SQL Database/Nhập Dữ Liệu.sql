@@ -329,4 +329,26 @@ update Game
 set MaNgonNgu = 1
 where MaGame = 1
 
-Select * from game
+Select * from searchstring
+
+
+
+update KHACHHANG
+set TenDN = N'b3tran'
+where MaKH=1
+
+Create table SEARCHSTRING
+(
+	MaSearch int identity(1,1),
+	MaGame int,
+	MaApp int,
+	constraint PK_SearchString primary key (MaSearch)
+)
+
+ Alter table SEARCHSTRING add constraint FK_APP_SEARCHSTRING
+					 foreign key (MaApp)
+					 references APP (MaApp) 
+
+ Alter table SEARCHSTRING add constraint FK_GAME_SEARCHSTRING
+					 foreign key (MaGame)
+					 references GAME (MaGame) 

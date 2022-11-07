@@ -63,7 +63,7 @@
 
             <p class="chitiet">Dung lượng: @Model.DungLuong MB</p>
             <p class="chitiet">Ngôn ngữ: @Html.Action("TenNgonNgu_Details","CitricStore", new {idngonngu = Model.MaNgonNgu })</p>
-            <p class="chitiet">Hệ điều hành: @Html.Action("TenHDH_Details","CitricStore", new {idhdh = Model.MaHDH })</p>
+            <p class="chitiet">Hệ điều hành: @Html.Action("Details_TenHDH","CitricStore", new {idhdh = Model.MaHDH })</p>
             <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>
         </div>
         <hr>

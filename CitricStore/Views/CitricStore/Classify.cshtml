@@ -45,6 +45,7 @@
 </div>
 <script language="Javascript" src="~/Scripts/HomePage.js"></script>
 
+<div class="dexuat-container">
 
     <div class="dexuat-name">
         <div class="line"></div>
@@ -52,228 +53,239 @@
         <div class="line"></div>
     </div>
 
-            <div id="hnc-game-filter">
-                <div class="row row-sm" style="align-items: center; margin-left:10px">
-                    <div class="col-12 col-md-12 col-lg-11 col-xl-11">
-                        <form class="row">
-                            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
-                                <label class="control-label">Sắp xếp</label>
-                                <select class="form-control filter" id="sortgame" name="sortgamevalue" required="required" data-filter="sortgame">
-                                    <option value="0">Chọn mục sắp xếp</option>
-                                    <option value="gamebydate">Game mới nhất</option>
-                                    <option value="gamebyrate">Game hay nhất</option>
-                                </select>
-                            </div> 
 
-                            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
-                                <label class="control-label">Dung lượng</label>
-                                <select class="form-control filter" id="size" name="sizevalue" required="required" data-filter="size">
-                                    <option value="0">Chọn dung lượng</option>
-                                    <option value="10">Dưới 10GB</option>
-                                    <option value="20">Dưới 20GB</option>
-                                    <option value="50">Dưới 50GB</option>
-                                </select>
-                            </div>
+    <div class="row filter-container">
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
+        </div>
 
-                            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
-                                <label class="control-label">Ngôn ngữ</label>
-                                <select class="form-control filter" id="language" name="languagevalue" required="required" data-filter="language">
-                                    <option value="0">Chọn ngôn ngữ</option>
-                                    <option value="tiengviet">Tiếng Việt</option>
-                                    <option value="tienganh">Tiếng Anh</option>
-                                    <option value="ngonngukhac">Ngôn ngữ khác</option>
-                                </select>
-                            </div> 
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <div class="dropdown filter-tieude">
+                <strong>Dung Lượng:</strong>
+                <a href="#" class="dropdown-toggle  dungluong-dropdown"
+                   role="button" id="dropdownMenu" type="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Chọn dung lượng
+                </a>
 
-                            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
-                                <label class="control-label">Nền tảng</label>
-                                <select class="form-control filter" id="operatingsystem" name="operatingsystemvalue" required="required" data-filter="operatingsystem">
-                                    <option value="0">Chọn hệ điều hành</option>
-                                    <option value="windows">Windows</option>
-                                    <option value="macos">Mac OS X</option>
-                                    <option value="linux">SteamOS + Linux</option>
-                                </select>
-                            </div> 
-                        </form>
-                    </div>
-                    <div class="col-12 col-md-12 col-lg-1 col-xl-1">
-                        <button class="btn filter-btn">
-                            Lọc
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <div class="dexuat-container">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="bloggame">
-                            <a href="" class="imageblog">
-
-                                <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
-                            </a>
-                            <div class="bloggame-title h4">
-                                <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
-                            </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
-
-                            </div>
-                            <div class="bloggame-download">
-                                <div class="bloggame-download-btn">
-                                    Tải Game
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
+                    <a href="#" class="dropdown-item">Dưới 10GB</a>
+                    <a href="#" class="dropdown-item">Dưới 20GB</a>
+                    <a href="#" class="dropdown-item">Dưới 30GB</a>
                 </div>
             </div>
         </div>
+
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
+            <div class="dropdown filter-tieude">
+                Ngôn Ngữ:
+                <a href="#" class="dropdown-toggle  dungluong-dropdown"
+                   role="button" id="dropdownMenu" type="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Chọn ngôn ngữ
+                </a>
+
+                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
+                    <a href="#" class="dropdown-item">Dưới 10GB</a>
+                    <a href="#" class="dropdown-item">Dưới 20GB</a>
+                    <a href="#" class="dropdown-item">Dưới 30GB</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
+            <div class="dropdown filter-tieude">
+                Nền Tảng:
+                <a href="#" class="dropdown-toggle  dungluong-dropdown"
+                   role="button" id="dropdownMenu" type="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Chọn hệ điều hành
+                </a>
+
+                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
+                    <a href="#" class="dropdown-item">Dưới 10GB</a>
+                    <a href="#" class="dropdown-item">Dưới 20GB</a>
+                    <a href="#" class="dropdown-item">Dưới 30GB</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="bloggame">
+                    <a href="" class="imageblog">
+
+                        <img class="imageblog-width-height" src="~/Images/nền ứng dụng 1.jpg">
+                    </a>
+                    <div class="bloggame-title h4">
+                        <a class="fix-line" href="">SUPRALAND SIX INCHES UNDER</a>
+                    </div>
+                    <div class="bloggame-theloai">
+                        Thể loại: Game, Game Giải đố, Game Góc Nhìn Thứ Nhất, Game Phiêu Lưu
+
+                    </div>
+                    <div class="bloggame-download">
+                        <div class="bloggame-download-btn">
+                            Tải Game
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,7 +20,7 @@ namespace CitricStore.Controllers
             return View(kh);
         }
 
-        private List<GAME> LayGameMoi (int soluong)
+        private List<GAME> LayGameMoi(int soluong)
         {
             return database.GAMEs.OrderByDescending(game => game.NgayCapNhat).Take(soluong).ToList();
         }
@@ -65,8 +66,8 @@ namespace CitricStore.Controllers
         //Dropdown Navbar
         public ActionResult LayTheLoai()
         {
-           var dsTheLoai = database.THELOAIs.ToList();
-           return PartialView(dsTheLoai);
+            var dsTheLoai = database.THELOAIs.ToList();
+            return PartialView(dsTheLoai);
         }
 
         public ActionResult LayNPH()
@@ -75,16 +76,61 @@ namespace CitricStore.Controllers
             return PartialView(dsNPH);
         }
 
-        
-    public ActionResult UngDungTheoTheLoai(int id)
+
+        public ActionResult UngDungTheoTheLoai(int id)
         {
             var dsUngDung = database.GAMEs.Where(ud => ud.MaTheLoai == id).ToList();
             return View(dsUngDung);
         }
-        public ActionResult GameTheoTheLoai(int id)
+        public ActionResult GameTheoTheLoai(int id, string sortOrder)
         {
-            var dsGame = database.GAMEs.Where(g => g.MaTheLoai == id).ToList();
-            return View(dsGame);
+            ViewBag.RateSortParm = String.IsNullOrEmpty(sortOrder) ? "rate_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var games = from s in database.GAMEs
+                        where s.MaTheLoai == id
+                        select s;
+            switch (sortOrder)
+            {
+                case "rate_desc":
+                    games = games.OrderByDescending(s => s.DanhGia);
+                    break;
+                case "Date":
+                    games = games.OrderBy(s => s.NgayCapNhat);
+                    break;
+                case "date_desc":
+                    games = games.OrderByDescending(s => s.NgayCapNhat);
+                    break;
+                default:
+                    games = games.OrderBy(s => s.MaGame);
+                    break;
+            }
+            return View(games.ToList());
+        }
+
+        //Trang chứa toàn bộ game
+        public ActionResult Page_Game(string searchString)
+        {
+            var game = from g in database.GAMEs
+                       select g;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.ToLower();
+                game = game.Where(g => g.TenGame.ToLower().Contains(searchString));
+            }
+            return View(game);
+        }
+
+        //Trang chứa toàn bộ phần mềm
+        public ActionResult Page_App(string searchString)
+        {
+            var app = from a in database.APPs
+                      select a;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.ToLower();
+                app = app.Where(g => g.TenApp.ToLower().Contains(searchString));
+            }
+            return View(app);
         }
 
 
@@ -170,7 +216,7 @@ namespace CitricStore.Controllers
         }
 
         //Lấy tên hệ điều hành
-        public ActionResult TenHDH_Details(int idhdh)
+        public ActionResult Details_TenHDH(int idhdh)
         {
             var tenhdh = database.HEDIEUHANHs.Where(g => g.MaHDH == idhdh).ToList();
             return PartialView(tenhdh);
@@ -181,6 +227,14 @@ namespace CitricStore.Controllers
         {
             return View();
         }
+
+
+
+
+
+
+
+
 
     }
 }

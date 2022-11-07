@@ -23,7 +23,7 @@
             <div class="header-left-container col-lg-6 col-md-5">
                 <div class="header-left">
                     <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")">Cửa hàng</a>
-                    <a style="width:200px " class="header-left-name header-left-name-btn" >Câu hỏi thường gặp</a>
+                    <a style="width:200px " class="header-left-name header-left-name-btn">Câu hỏi thường gặp</a>
                     <a class="header-left-name header-left-name-btn " href="">Hỗ trợ</a>
                 </div>
             </div>
@@ -66,19 +66,23 @@
             </div>
         </div>
     </header>
+
+
+
     <div class="container main">
         <div class="row navigationbar-container">
             <div class="searchbar-container col-lg-3 col-md-9">
-                <div class="searchbar">
-                    <form action="" class="search" method="post">
-                        <input type="text" class="searchTerm" placeholder="Tìm ứng dụng...">
-                        <button type="submit" class="searchbar-btn">
-                        </button>
-                    </form>
-                </div>
+                    <button type="button" class="dropdown-toggle" id="dropdownMenu"
+                            data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" >
+                        Tìm kiếm
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li>@Html.ActionLink("Trò chơi", "Page_Game", "CitricStore", new { @class = "dropdown-item" })</li>
+                        <li>@Html.ActionLink("Phần mềm", "Page_App", "CitricStore", new { @class = "dropdown-item" })</li>
+                    </ul>
             </div>
+        
             <div class="col-lg-9 col-md-3" style="background-color: rgb(18,18,18); padding: 0px;">
-
                 <div class="navbar navbar-dark navbar-expand-lg justify-content-md-end justify-content-lg-center"
                      style="font-size:20px;">
                     <div class="navigation-container">
@@ -139,48 +143,48 @@
                     </div>
                 </div>
             </div>
-
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
         </div>
-        @RenderBody()
+            @RenderBody()
 
     </div>
-    <footer id="footer" class="container-fluid">
-          <div class="row">
-                      <div  class="col-lg-3 col-md-3 justify-content-center" style="align-items:center;">
 
-                          <img src="~/Images/LOGO/LOGO_Black.png" alt="Citric Logo" style="width:50px; height:50px;margin-top:50px" />
-                          <br />
-                          <img src="~/Images/LOGO/CITRICSTORE.png" alt="Citric" style="width:auto; height:100px; margin-top:-20px" />
-                       </div>
-                      <div class="col-lg-3 col-md-3 d-flex justify-content-center justify-content-lg-between" style="align-self:center">
-                          <p>
-                              <strong>Citric Store</strong>
-                              là một trình duyệt dùng để tìm kiếm và tải các ứng dụng tiện ích, miễn phí. Nơi gợi ý, cung cấp thông tin, chức năng về các ứng dụng đến người dùng.
-                          </p>
-                      </div>
-                      <div class="col-lg-3 col-md-3" style="margin-top:25px;">
-                          <ul class="nav flex-column">
-                              <li class="nav-item mb-2" >
-                              <a  href="#" class="nav-link p-0 text-muted">Cửa hàng</a>
-                              </li>
-                              <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Câu hỏi thường gặp</a></li>
-                              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hỗ trợ</a></li>
-                              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ngôn ngữ</a></li>
-                          </ul>
-                      </div>
-                      <div class="col-lg-3 col-md-3 d-flex justify-content-center">
-                          <i class="icon_lienlac fa-brands fa-square-facebook"></i>
-                          <i class="icon_lienlac fa-brands fa-instagram"></i>
-                          <i class="icon_lienlac fa-brands fa-youtube"></i>
-                          <i class="icon_lienlac fa-brands fa-twitter"></i>
-                          <i class="icon_lienlac fa-brands fa-discord"></i>
-                      </div>
-          </div>
+    <footer id="footer" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 justify-content-center" style="align-items:center;">
+
+                <img src="~/Images/LOGO/LOGO_Black.png" alt="Citric Logo" style="width:50px; height:50px;margin-top:50px" />
+                <br />
+                <img src="~/Images/LOGO/CITRICSTORE.png" alt="Citric" style="width:auto; height:100px; margin-top:-20px" />
+            </div>
+            <div class="col-lg-3 col-md-3 d-flex justify-content-center justify-content-lg-between" style="align-self:center">
+                <p>
+                    <strong>Citric Store</strong>
+                    là một trình duyệt dùng để tìm kiếm và tải các ứng dụng tiện ích, miễn phí. Nơi gợi ý, cung cấp thông tin, chức năng về các ứng dụng đến người dùng.
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-3" style="margin-top:25px;">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link p-0 text-muted">Cửa hàng</a>
+                    </li>
+                    <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Câu hỏi thường gặp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hỗ trợ</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ngôn ngữ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 d-flex justify-content-center">
+                <i class="icon_lienlac fa-brands fa-square-facebook"></i>
+                <i class="icon_lienlac fa-brands fa-instagram"></i>
+                <i class="icon_lienlac fa-brands fa-youtube"></i>
+                <i class="icon_lienlac fa-brands fa-twitter"></i>
+                <i class="icon_lienlac fa-brands fa-discord"></i>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

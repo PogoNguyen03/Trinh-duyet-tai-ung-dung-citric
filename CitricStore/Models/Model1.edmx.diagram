@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="CitricStoreModel.NHAPHATHANH" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="CitricStoreModel.THELOAI" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="CitricStoreModel.APP" Width="1.5" PointX="6" PointY="4.875" />
-        <EntityTypeShape EntityType="CitricStoreModel.GAME" Width="1.5" PointX="3" PointY="5.875" />
+        <EntityTypeShape EntityType="CitricStoreModel.GAME" Width="1.5" PointX="3.5" PointY="5.625" />
         <AssociationConnector Association="CitricStoreModel.FK_APP_NHAPHATHANH" />
         <AssociationConnector Association="CitricStoreModel.FK_APP_THELOAI" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NHAPHATHANH" />
@@ -20,6 +20,9 @@
         <AssociationConnector Association="CitricStoreModel.FK_APP_NGONNGU" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_HEDIEUHANH" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NGONNGU" />
+        <EntityTypeShape EntityType="CitricStoreModel.THELOAIAPP" Width="1.5" PointX="8.375" PointY="0.875" />
+        <EntityTypeShape EntityType="CitricStoreModel.THELOAIGAME" Width="1.5" PointX="8.375" PointY="9.75" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_THELOAIAPP" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
