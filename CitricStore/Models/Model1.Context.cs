@@ -13,10 +13,10 @@ namespace CitricStore.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CitricStoreEntities2 : DbContext
+    public partial class CitricStoreEntities4 : DbContext
     {
-        public CitricStoreEntities2()
-            : base("name=CitricStoreEntities2")
+        public CitricStoreEntities4()
+            : base("name=CitricStoreEntities4")
         {
         }
     
@@ -25,13 +25,12 @@ namespace CitricStore.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
-        public virtual DbSet<NHAPHATHANH> NHAPHATHANHs { get; set; }
-        public virtual DbSet<THELOAI> THELOAIs { get; set; }
         public virtual DbSet<APP> APPs { get; set; }
         public virtual DbSet<GAME> GAMEs { get; set; }
         public virtual DbSet<HEDIEUHANH> HEDIEUHANHs { get; set; }
+        public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<NGONNGU> NGONNGUs { get; set; }
+        public virtual DbSet<NHAPHATHANH> NHAPHATHANHs { get; set; }
         public virtual DbSet<THELOAIAPP> THELOAIAPPs { get; set; }
         public virtual DbSet<THELOAIGAME> THELOAIGAMEs { get; set; }
     }

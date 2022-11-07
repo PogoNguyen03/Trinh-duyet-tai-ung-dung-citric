@@ -12,12 +12,12 @@ namespace CitricStore.Controllers
 {
     public class InputGAMEController : Controller
     {
-        private CitricStoreEntities2 db = new CitricStoreEntities2();
+        private CitricStoreEntities4 db = new CitricStoreEntities4();
 
         // GET: InputGAME
         public ActionResult Index()
         {
-            var gAMEs = db.GAMEs.Include(g => g.NHAPHATHANH).Include(g => g.THELOAI).Include(g => g.HEDIEUHANH).Include(g => g.NGONNGU);
+            var gAMEs = db.GAMEs.Include(g => g.NHAPHATHANH).Include(g => g.THELOAIGAME).Include(g => g.HEDIEUHANH1).Include(g => g.NGONNGU1);
             return View(gAMEs.ToList());
         }
 
@@ -40,7 +40,7 @@ namespace CitricStore.Controllers
         public ActionResult Create()
         {
             ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH");
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai");
+            ViewBag.MaTheLoaiGame = new SelectList(db.THELOAIGAMEs, "MaTheLoaiGame", "TenTheLoai");
             ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu");
             ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH");
             return View();
@@ -51,7 +51,7 @@ namespace CitricStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaGame,TenGame,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoai,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] GAME gAME)
+        public ActionResult Create([Bind(Include = "MaGame,TenGame,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoaiGame,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] GAME gAME)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace CitricStore.Controllers
             }
 
             ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", gAME.MaNPH);
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoai);
+            ViewBag.MaTheLoaiGame = new SelectList(db.THELOAIGAMEs, "MaTheLoaiGame", "TenTheLoai", gAME.MaTheLoaiGame);
             ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", gAME.MaNgonNgu);
             ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", gAME.MaHDH);
 
@@ -81,7 +81,7 @@ namespace CitricStore.Controllers
                 return HttpNotFound();
             }
             ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", gAME.MaNPH);
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoai);
+            ViewBag.MaTheLoaiGame = new SelectList(db.THELOAIGAMEs, "MaTheLoaiGame", "TenTheLoai", gAME.MaTheLoaiGame);
             ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", gAME.MaNgonNgu);
             ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", gAME.MaHDH);
 
@@ -94,7 +94,7 @@ namespace CitricStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaGame,TenGame,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoai,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] GAME gAME)
+        public ActionResult Edit([Bind(Include = "MaGame,TenGame,GioiThieu,KichThuocRam,MaNgonNgu,MaHDH,LinkTai,MaTheLoaiGame,MaNPH,NgayCapNhat,HinhNen,HinhCT1,HinhCT2,HinhCT3,HinhCT4,DanhGia")] GAME gAME)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace CitricStore.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MaNPH = new SelectList(db.NHAPHATHANHs, "MaNPH", "TenNPH", gAME.MaNPH);
-            ViewBag.MaTheLoai = new SelectList(db.THELOAIs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoai);
+            ViewBag.MaTheLoaiGame = new SelectList(db.THELOAIGAMEs, "MaTheLoai", "TenTheLoai", gAME.MaTheLoaiGame);
             ViewBag.MaNgonNgu = new SelectList(db.NGONNGUs, "MaNgonNgu", "TenNgonNgu", gAME.MaNgonNgu);
             ViewBag.MaHDH = new SelectList(db.HEDIEUHANHs, "MaHDH", "TenHDH", gAME.MaHDH);
 

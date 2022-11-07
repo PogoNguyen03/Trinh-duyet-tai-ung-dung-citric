@@ -12,20 +12,17 @@ namespace CitricStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class THELOAI
+    public partial class THELOAIGAME
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public THELOAI()
+        public THELOAIGAME()
         {
-            this.APPs = new HashSet<APP>();
             this.GAMEs = new HashSet<GAME>();
         }
     
-        public int MaTheLoai { get; set; }
+        public int MaTheLoaiGame { get; set; }
         public string TenTheLoai { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<APP> APPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GAME> GAMEs { get; set; }
     }

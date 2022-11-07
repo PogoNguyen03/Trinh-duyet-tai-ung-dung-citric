@@ -9,10 +9,11 @@
 
 <div class="slideshow">
     <div class="display-container">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/nền ứng dụng 1.jpg">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/ứng dụng 1.1.jpg">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/ứng dụng 1.2.jpg">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/ứng dụng 1.3.jpg">
+        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhNen">
+        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT1">
+        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT2">
+        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT3">
+        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT4">
         <!--Nút qua lại-->
         <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
@@ -23,6 +24,7 @@
             <span class="image-badge" onclick="currentDiv(2)"></span>
             <span class="image-badge" onclick="currentDiv(3)"></span>
             <span class="image-badge" onclick="currentDiv(4)"></span>
+            <span class="image-badge" onclick="currentDiv(5)"></span>
         </div>
     </div>
 </div>
@@ -58,11 +60,10 @@
         <div class="tieudechitiet">
 
             <p class="tieude">CHI TIẾT</p>
-            <p class="chitiet">Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore", new { idtheloai = Model.MaTheLoai })</p>
-            <p class="chitiet">Nhà phát hành: @Html.Action("TenNPH_Details","CitricStore", new {idnph = Model.MaNPH })</p>
-
+            <p class="chitiet">Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = Model.MaTheLoai })</p>
+            <p class="chitiet">Nhà phát hành: @Html.Action("Details_TenNPH", "CitricStore", new {idnph = Model.MaNPH })</p>
             <p class="chitiet">Dung lượng: @Model.DungLuong MB</p>
-            <p class="chitiet">Ngôn ngữ: @Html.Action("TenNgonNgu_Details","CitricStore", new {idngonngu = Model.MaNgonNgu })</p>
+            <p class="chitiet">Ngôn ngữ: @Html.Action("Details_TenNgonNgu","CitricStore", new {idngonngu = Model.MaNgonNgu })</p>
             <p class="chitiet">Hệ điều hành: @Html.Action("Details_TenHDH","CitricStore", new {idhdh = Model.MaHDH })</p>
             <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>
         </div>
@@ -71,7 +72,7 @@
                 <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI CÙNG THỂ LOẠI</h1>
                 <div class="game-list-wrapper">
                     <div class="game-list" id="game-list-scrollbar">
-                        @Html.Action("GameCungTheLoai_Details", "CitricStore", new { idtheloai = Model.MaTheLoai })
+                        @Html.Action("Details_GameCungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoaiGame })
                     </div>
                 </div>
             </div>
@@ -79,7 +80,7 @@
                 <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI MỚI</h1>
                 <div class="game-list-wrapper">
                     <div class="game-list" id="game-list-scrollbar">
-                        @Html.Action("GameMoi_Details", "CitricStore")
+                        @Html.Action("Details_GameMoi", "CitricStore")
                     </div>
                 </div>
             </div>
@@ -87,7 +88,7 @@
                 <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI HOT</h1>
                 <div class="game-list-wrapper">
                     <div class="game-list" id="game-list-scrollbar">
-                        @Html.Action("GameTheoDanhGia_Details", "CitricStore")
+                        @Html.Action("Details_GameTheoDanhGia", "CitricStore")
                     </div>
                 </div>
             </div>

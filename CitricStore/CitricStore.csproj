@@ -135,7 +135,8 @@
     <Compile Include="Controllers\InputHEDIEUHANHController.cs" />
     <Compile Include="Controllers\InputNGONNGUController.cs" />
     <Compile Include="Controllers\InputNHAPHATHANHController.cs" />
-    <Compile Include="Controllers\InputTHELOAIController.cs" />
+    <Compile Include="Controllers\InputTHELOAIAPPController.cs" />
+    <Compile Include="Controllers\InputTHELOAIGAMEController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,10 +174,10 @@
     <Compile Include="Models\NHAPHATHANH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SEARCHSTRING.cs">
+    <Compile Include="Models\THELOAIAPP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\THELOAI.cs">
+    <Compile Include="Models\THELOAIGAME.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -444,12 +445,11 @@
     <Content Include="Views\Home\AppPage.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\CitricStore\Index.cshtml" />
-    <Content Include="Views\CitricStore\LayTheLoai.cshtml" />
-    <Content Include="Views\CitricStore\LayNPH.cshtml" />
-    <Content Include="Views\CitricStore\TenTheLoai_Bloggame.cshtml" />
-    <Content Include="Views\CitricStore\GameTheoDanhGia.cshtml" />
-    <Content Include="Views\CitricStore\AppMoi.cshtml" />
-    <Content Include="Views\CitricStore\AppTheoDanhGia.cshtml" />
+    <Content Include="Views\CitricStore\Index_LayTheLoaiApp.cshtml" />
+    <Content Include="Views\CitricStore\TenTheLoaiApp.cshtml" />
+    <Content Include="Views\CitricStore\Index_GameTheoDanhGia.cshtml" />
+    <Content Include="Views\CitricStore\Index_AppMoi.cshtml" />
+    <Content Include="Views\CitricStore\Index_AppTheoDanhGia.cshtml" />
     <Content Include="Views\CitricStore\DetailsGame.cshtml" />
     <Content Include="Views\CitricStore\DetailsApp.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
@@ -485,26 +485,37 @@
     <Content Include="Views\InputNGONNGU\Details.cshtml" />
     <Content Include="Views\InputNGONNGU\Edit.cshtml" />
     <Content Include="Views\InputNGONNGU\Index.cshtml" />
-    <Content Include="Views\CitricStore\AppCungNPH.cshtml" />
-    <Content Include="Views\CitricStore\AppMoi_Details.cshtml" />
-    <Content Include="Views\CitricStore\AppTheoDanhGia_Details.cshtml" />
-    <Content Include="Views\CitricStore\GameTheoDanhGia_Details.cshtml" />
-    <Content Include="Views\CitricStore\GameMoi_Details.cshtml" />
-    <Content Include="Views\CitricStore\AppTheoNPH_Details.cshtml" />
-    <Content Include="Views\CitricStore\GameCungTheLoai_Details.cshtml" />
-    <Content Include="Views\CitricStore\TenNPH_Details.cshtml" />
-    <Content Include="Views\CitricStore\TenNgonNgu_Details.cshtml" />
+    <Content Include="Views\CitricStore\Details_AppMoi.cshtml" />
+    <Content Include="Views\CitricStore\Details_AppTheoDanhGia.cshtml" />
+    <Content Include="Views\CitricStore\Details_GameTheoDanhGia.cshtml" />
+    <Content Include="Views\CitricStore\Details_GameMoi.cshtml" />
+    <Content Include="Views\CitricStore\Details_GameCungTheLoai.cshtml" />
+    <Content Include="Views\CitricStore\Details_TenNPH.cshtml" />
+    <Content Include="Views\CitricStore\Details_TenNgonNgu.cshtml" />
     <Content Include="Views\CitricStore\Details_TenHDH.cshtml" />
     <Content Include="Views\Users\EditInfo.cshtml" />
-    <Content Include="Views\CitricStore\GameMoi.cshtml" />
+    <Content Include="Views\CitricStore\Index_GameMoi.cshtml" />
     <Content Include="Views\Users\ViewInfo.cshtml" />
     <Content Include="Views\Users\FogotPass.cshtml" />
     <Content Include="Views\Users\ResetPass.cshtml" />
     <Content Include="Views\CitricStore\Classify.cshtml" />
-    <Content Include="Views\CitricStore\GameTheoTheLoai.cshtml" />
-    <Content Include="Views\CitricStore\UngDung.cshtml" />
+    <Content Include="Views\CitricStore\Page_GameTheoTheLoai.cshtml" />
     <Content Include="Views\CitricStore\Page_Game.cshtml" />
     <Content Include="Views\CitricStore\Page_App.cshtml" />
+    <Content Include="Views\InputTHELOAIAPP\Create.cshtml" />
+    <Content Include="Views\InputTHELOAIAPP\Delete.cshtml" />
+    <Content Include="Views\InputTHELOAIAPP\Details.cshtml" />
+    <Content Include="Views\InputTHELOAIAPP\Edit.cshtml" />
+    <Content Include="Views\InputTHELOAIAPP\Index.cshtml" />
+    <Content Include="Views\InputTHELOAIGAME\Create.cshtml" />
+    <Content Include="Views\InputTHELOAIGAME\Delete.cshtml" />
+    <Content Include="Views\InputTHELOAIGAME\Details.cshtml" />
+    <Content Include="Views\InputTHELOAIGAME\Edit.cshtml" />
+    <Content Include="Views\InputTHELOAIGAME\Index.cshtml" />
+    <Content Include="Views\CitricStore\Index_LayTheLoaiGame.cshtml" />
+    <Content Include="Views\CitricStore\Page_AppTheoTheLoai.cshtml" />
+    <Content Include="Views\CitricStore\TenTheLoaiGame.cshtml" />
+    <Content Include="Views\CitricStore\Details_AppCungTheLoai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,7 +12,7 @@
                     <a class="fix-line">@game.TenGame</a>
                 </div>
                 <div class="bloggame-theloai">
-                    Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore", new {idtheloai = game.MaTheLoai })
+                    Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame })
                 </div>
                 <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
                     <div class="bloggame-download-btn">
@@ -23,5 +23,4 @@
         </div>
     </div>
 }
-
 

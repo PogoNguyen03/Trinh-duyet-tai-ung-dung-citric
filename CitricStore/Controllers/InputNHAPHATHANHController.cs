@@ -12,7 +12,7 @@ namespace CitricStore.Controllers
 {
     public class InputNHAPHATHANHController : Controller
     {
-        private CitricStoreEntities2 db = new CitricStoreEntities2();
+        private CitricStoreEntities4 db = new CitricStoreEntities4();
 
         // GET: InputNHAPHATHANH
         public ActionResult Index()

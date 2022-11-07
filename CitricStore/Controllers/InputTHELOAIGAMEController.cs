@@ -10,107 +10,107 @@ using CitricStore.Models;
 
 namespace CitricStore.Controllers
 {
-    public class InputNGONNGUController : Controller
+    public class InputTHELOAIGAMEController : Controller
     {
         private CitricStoreEntities4 db = new CitricStoreEntities4();
 
-        // GET: InputNGONNGU
+        // GET: InputTHELOAIGAME
         public ActionResult Index()
         {
-            return View(db.NGONNGUs.ToList());
+            return View(db.THELOAIGAMEs.ToList());
         }
 
-        // GET: InputNGONNGU/Details/5
+        // GET: InputTHELOAIGAME/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NGONNGU nGONNGU = db.NGONNGUs.Find(id);
-            if (nGONNGU == null)
+            THELOAIGAME tHELOAIGAME = db.THELOAIGAMEs.Find(id);
+            if (tHELOAIGAME == null)
             {
                 return HttpNotFound();
             }
-            return View(nGONNGU);
+            return View(tHELOAIGAME);
         }
 
-        // GET: InputNGONNGU/Create
+        // GET: InputTHELOAIGAME/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: InputNGONNGU/Create
+        // POST: InputTHELOAIGAME/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaNgonNgu,TenNgonNgu")] NGONNGU nGONNGU)
+        public ActionResult Create([Bind(Include = "MaTheLoaiGame,TenTheLoai")] THELOAIGAME tHELOAIGAME)
         {
             if (ModelState.IsValid)
             {
-                db.NGONNGUs.Add(nGONNGU);
+                db.THELOAIGAMEs.Add(tHELOAIGAME);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nGONNGU);
+            return View(tHELOAIGAME);
         }
 
-        // GET: InputNGONNGU/Edit/5
+        // GET: InputTHELOAIGAME/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NGONNGU nGONNGU = db.NGONNGUs.Find(id);
-            if (nGONNGU == null)
+            THELOAIGAME tHELOAIGAME = db.THELOAIGAMEs.Find(id);
+            if (tHELOAIGAME == null)
             {
                 return HttpNotFound();
             }
-            return View(nGONNGU);
+            return View(tHELOAIGAME);
         }
 
-        // POST: InputNGONNGU/Edit/5
+        // POST: InputTHELOAIGAME/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaNgonNgu,TenNgonNgu")] NGONNGU nGONNGU)
+        public ActionResult Edit([Bind(Include = "MaTheLoaiGame,TenTheLoai")] THELOAIGAME tHELOAIGAME)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nGONNGU).State = EntityState.Modified;
+                db.Entry(tHELOAIGAME).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nGONNGU);
+            return View(tHELOAIGAME);
         }
 
-        // GET: InputNGONNGU/Delete/5
+        // GET: InputTHELOAIGAME/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NGONNGU nGONNGU = db.NGONNGUs.Find(id);
-            if (nGONNGU == null)
+            THELOAIGAME tHELOAIGAME = db.THELOAIGAMEs.Find(id);
+            if (tHELOAIGAME == null)
             {
                 return HttpNotFound();
             }
-            return View(nGONNGU);
+            return View(tHELOAIGAME);
         }
 
-        // POST: InputNGONNGU/Delete/5
+        // POST: InputTHELOAIGAME/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            NGONNGU nGONNGU = db.NGONNGUs.Find(id);
-            db.NGONNGUs.Remove(nGONNGU);
+            THELOAIGAME tHELOAIGAME = db.THELOAIGAMEs.Find(id);
+            db.THELOAIGAMEs.Remove(tHELOAIGAME);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

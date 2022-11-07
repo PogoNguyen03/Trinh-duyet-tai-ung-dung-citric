@@ -10,107 +10,107 @@ using CitricStore.Models;
 
 namespace CitricStore.Controllers
 {
-    public class InputTHELOAIController : Controller
+    public class InputTHELOAIAPPController : Controller
     {
-        private CitricStoreEntities2 db = new CitricStoreEntities2();
+        private CitricStoreEntities4 db = new CitricStoreEntities4();
 
-        // GET: InputTHELOAI
+        // GET: InputTHELOAIAPP
         public ActionResult Index()
         {
-            return View(db.THELOAIs.ToList());
+            return View(db.THELOAIAPPs.ToList());
         }
 
-        // GET: InputTHELOAI/Details/5
+        // GET: InputTHELOAIAPP/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            THELOAI tHELOAI = db.THELOAIs.Find(id);
-            if (tHELOAI == null)
+            THELOAIAPP tHELOAIAPP = db.THELOAIAPPs.Find(id);
+            if (tHELOAIAPP == null)
             {
                 return HttpNotFound();
             }
-            return View(tHELOAI);
+            return View(tHELOAIAPP);
         }
 
-        // GET: InputTHELOAI/Create
+        // GET: InputTHELOAIAPP/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: InputTHELOAI/Create
+        // POST: InputTHELOAIAPP/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaTheLoai,TenTheLoai")] THELOAI tHELOAI)
+        public ActionResult Create([Bind(Include = "MaTheLoaiApp,TenTheLoai")] THELOAIAPP tHELOAIAPP)
         {
             if (ModelState.IsValid)
             {
-                db.THELOAIs.Add(tHELOAI);
+                db.THELOAIAPPs.Add(tHELOAIAPP);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tHELOAI);
+            return View(tHELOAIAPP);
         }
 
-        // GET: InputTHELOAI/Edit/5
+        // GET: InputTHELOAIAPP/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            THELOAI tHELOAI = db.THELOAIs.Find(id);
-            if (tHELOAI == null)
+            THELOAIAPP tHELOAIAPP = db.THELOAIAPPs.Find(id);
+            if (tHELOAIAPP == null)
             {
                 return HttpNotFound();
             }
-            return View(tHELOAI);
+            return View(tHELOAIAPP);
         }
 
-        // POST: InputTHELOAI/Edit/5
+        // POST: InputTHELOAIAPP/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaTheLoai,TenTheLoai")] THELOAI tHELOAI)
+        public ActionResult Edit([Bind(Include = "MaTheLoaiApp,TenTheLoai")] THELOAIAPP tHELOAIAPP)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tHELOAI).State = EntityState.Modified;
+                db.Entry(tHELOAIAPP).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tHELOAI);
+            return View(tHELOAIAPP);
         }
 
-        // GET: InputTHELOAI/Delete/5
+        // GET: InputTHELOAIAPP/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            THELOAI tHELOAI = db.THELOAIs.Find(id);
-            if (tHELOAI == null)
+            THELOAIAPP tHELOAIAPP = db.THELOAIAPPs.Find(id);
+            if (tHELOAIAPP == null)
             {
                 return HttpNotFound();
             }
-            return View(tHELOAI);
+            return View(tHELOAIAPP);
         }
 
-        // POST: InputTHELOAI/Delete/5
+        // POST: InputTHELOAIAPP/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            THELOAI tHELOAI = db.THELOAIs.Find(id);
-            db.THELOAIs.Remove(tHELOAI);
+            THELOAIAPP tHELOAIAPP = db.THELOAIAPPs.Find(id);
+            db.THELOAIAPPs.Remove(tHELOAIAPP);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

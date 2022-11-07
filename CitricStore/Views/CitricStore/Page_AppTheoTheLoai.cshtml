@@ -1,7 +1,6 @@
 ﻿@using CitricStore.Models
-
 @{
-    ViewBag.Title = "GameTheoTheLoai";
+    ViewBag.Title = "AppTheoTheLoai";
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
@@ -68,9 +67,9 @@
                 </a>
 
                 <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.ActionLink("Game mới nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.DateSortParm })
+                    @Html.ActionLink("Game mới nhất", "AppTheoTheLoai", new { sortOrder = ViewBag.DateSortParm })
                     <br />
-                    @Html.ActionLink("Game hay nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.RateSortParm })
+                    @Html.ActionLink("Game hay nhất", "AppTheoTheLoai", new { sortOrder = ViewBag.RateSortParm })
                 </div>
             </div>
         </div>
@@ -134,21 +133,21 @@
     <div class="dexuat-container">
         <div class="container-fluid">
             <div class="row">
-                @foreach (var game in Model)
+                @foreach (var app in Model)
                 {
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="bloggame">
                             <a href="" class="imageblog">
 
-                                <img class="imageblog-width-height" src="~/Images/@game.HinhNen">
+                                <img class="imageblog-width-height" src="~/Images/APP/@app.HinhNen">
                             </a>
                             <div class="bloggame-title h4">
-                                <a class="fix-line" href="">@game.TenGame</a>
+                                <a class="fix-line" href="">@app.TenApp</a>
                             </div>
                             <div class="bloggame-theloai">
-                                Thể loại: @Html.Action("TenTheLoai_Bloggame", "CitricStore", new { idtheloai = game.MaTheLoai })
+                                Thể loại: @Html.Action("TenTheLoaiApp", "CitricStore", new { idtheloai = app.MaTheLoaiApp })
                             </div>
-                            <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
+                            <a class="bloggame-download" href="@Url.Action("DetailsApp", "CitricStore", new {id=app.MaApp})" style="text-decoration:none">
                                 <div class="bloggame-download-btn">
                                     Tải Xuống
                                 </div>
@@ -159,4 +158,4 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
