@@ -18,16 +18,16 @@ Create table NHAPHATHANH
 
 Create table THELOAIGAME
 (
-	MaTheLoai int identity(1,1),
+	MaTheLoaiGame int identity(1,1),
 	TenTheLoai nvarchar(50),
-	constraint PK_THELOAIGAME primary key (MaTheLoai)
+	constraint PK_THELOAIGAME primary key (MaTheLoaiGame)
 )
 
 Create table THELOAIAPP
 (
-	MaTheLoai int identity(1,1),
+	MaTheLoaiApp int identity(1,1),
 	TenTheLoai nvarchar(50),
-	constraint PK_THELOAIAPP primary key (MaTheLoai)
+	constraint PK_THELOAIAPP primary key (MaTheLoaiApp)
 )
 
 select * from app
@@ -37,11 +37,11 @@ Create table APP
 	MaApp int Identity(1,1),
 	TenApp nvarchar(100) not null,
 	GioiThieu ntext,
-	DungLuong int,
+	DungLuong nvarchar(10),
 	NgonNgu nvarchar(50),
 	HeDieuHanh nvarchar(50),
 	LinkTai ntext,
-	MaTheLoai int,
+	MaTheLoaiApp int,
 	MaNPH int,
 	MaHDH int,
 	MaNgonNgu int,
@@ -54,17 +54,37 @@ Create table APP
 	HinhCT4 nvarchar(30),
 	constraint PK_APP primary key (MaApp)
 )
-
+Create table SEARCHALL
+(
+	MaSearch int Identity(1,1),
+	TenSearch nvarchar(100) not null,
+	GioiThieu ntext,
+	DungLuong nvarchar(10),
+	NgonNgu nvarchar(50),
+	HeDieuHanh nvarchar(50),
+	LinkTai ntext,
+	MaNPH int,
+	MaHDH int,
+	MaNgonNgu int,
+	NgayCapNhat datetime,
+	DanhGia nvarchar(5),
+	HinhNen nvarchar(30),
+	HinhCT1 nvarchar(30),
+	HinhCT2 nvarchar(30),
+	HinhCT3 nvarchar(30),
+	HinhCT4 nvarchar(30),
+	constraint PK_All primary key (MaSearch)
+)
 Create table GAME
 (
 	MaGame int Identity(1,1),
 	TenGame nvarchar(100) not null,
 	GioiThieu ntext,
-	DungLuong int,
+	DungLuong nvarchar(10),
 	NgonNgu nvarchar(50),
 	HeDieuHanh nvarchar(50),
 	LinkTai ntext,
-	MaTheLoai int,
+	MaTheLoaiGame int,
 	MaNPH int,
 	MaHDH int,
 	MaNgonNgu int,
@@ -111,8 +131,8 @@ Create table GAME
 					 foreign key (MaNPH)
 					 references NHAPHATHANH (MaNPH) 
  Alter table APP add constraint FK_APP_THELOAIAPP
-					 foreign key (MaTheLoai)
-					 references THELOAIAPP (MaTheLoai) 
+					 foreign key (MaTheLoaiApp)
+					 references THELOAIAPP (MaTheLoaiApp) 
  Alter table APP add constraint FK_APP_NGONNGU
 					 foreign key (MaNgonNgu)
 					 references NGONNGU (MaNgonNgu) 
@@ -124,12 +144,22 @@ Create table GAME
 					 foreign key (MaNPH)
 					 references NHAPHATHANH (MaNPH) 
  Alter table GAME add constraint FK_GAME_THELOAIGAME
-					 foreign key (MaTheLoai)
-					 references THELOAIGAME (MaTheLoai) 
+					 foreign key (MaTheLoaiGame)
+					 references THELOAIGAME (MaTheLoaiGame) 
  Alter table GAME add constraint FK_GAME_NGONNGU
 					 foreign key (MaNgonNgu)
 					 references NGONNGU (MaNgonNgu) 
  Alter table GAME add constraint FK_GAME_HEDIEUHANH
+					 foreign key (MaHDH)
+					 references HEDIEUHANH (MaHDH) 
+
+ Alter table SEARCHALL add constraint FK_SEARCHALL_NHAPHATHANH
+					 foreign key (MaNPH)
+					 references NHAPHATHANH (MaNPH) 
+ Alter table SEARCHALL add constraint FK_SEARCHALL_NGONNGU
+					 foreign key (MaNgonNgu)
+					 references NGONNGU (MaNgonNgu) 
+ Alter table SEARCHALL add constraint FK_SEARCHALL_HEDIEUHANH
 					 foreign key (MaHDH)
 					 references HEDIEUHANH (MaHDH) 
 

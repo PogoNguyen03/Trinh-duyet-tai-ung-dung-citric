@@ -128,12 +128,12 @@ namespace CitricStore.Controllers
         //Trang chứa toàn bộ game
         public ActionResult Page_Game(string searchString)
         {
-            var game = from g in database.GAMEs
+            var game = from g in database.SEARCHALLs
                        select g;
             if (!String.IsNullOrEmpty(searchString))
             {
                 searchString = searchString.ToLower();
-                game = game.Where(g => g.TenGame.ToLower().Contains(searchString));
+                game = game.Where(g => g.TenSearch.ToLower().Contains(searchString));
             }
             return View(game);
         }

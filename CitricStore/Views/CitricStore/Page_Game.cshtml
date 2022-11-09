@@ -8,16 +8,6 @@
 <link rel="stylesheet" href="~/Content/Search.css" />
 <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
 
-<div class="searchbar-container">
-    @using (Html.BeginForm("Page_Game", "CitricStore", FormMethod.Get, new { @class = "form-inline" }))
-    {
-        <div class="form-group">
-            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên game">
-            <input type="submit" class="btn btn-danger" value="Tìm kiếm">
-        </div>
-    }
-</div>
-
 <div class="slideshow">
     <div class="display-container">
         @*            <div class="slides">
@@ -72,16 +62,8 @@
                         </div>
                         <div class="">
                             <div class="bloggame-title h4">
-                                <a class="fix-line">@game.TenGame</a>
+                                <a class="fix-line">@game.TenSearch</a>
                             </div>
-                            <div class="bloggame-theloai">
-                                Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame })
-                            </div>
-                            <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
-                                <div class="bloggame-download-btn">
-                                    Chi Tiết
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>

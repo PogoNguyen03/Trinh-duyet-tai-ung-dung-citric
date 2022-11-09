@@ -21,6 +21,10 @@
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NGONNGU" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NHAPHATHANH" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_THELOAIGAME" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CitricStoreModel.SEARCHALL" Width="1.5" PointX="14.375" PointY="5" />
+        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_HEDIEUHANH" />
+        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NGONNGU" />
+        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NHAPHATHANH" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -19,6 +19,7 @@ namespace CitricStore.Models
         {
             this.APPs = new HashSet<APP>();
             this.GAMEs = new HashSet<GAME>();
+            this.SEARCHALLs = new HashSet<SEARCHALL>();
         }
     
         public int MaNgonNgu { get; set; }
@@ -28,5 +29,7 @@ namespace CitricStore.Models
         public virtual ICollection<APP> APPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GAME> GAMEs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SEARCHALL> SEARCHALLs { get; set; }
     }
 }
