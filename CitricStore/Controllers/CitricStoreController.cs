@@ -160,5 +160,6 @@ namespace CitricStore.Controllers
             return database.GAMEs.SqlQuery("Select * from GAME where TenGame like '%" + key + "%'").ToList();
         }
 
+       
     }
 }
