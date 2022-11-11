@@ -17,13 +17,19 @@ namespace CitricStore.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHAPHATHANH()
         {
-            this.UNGDUNGs = new HashSet<UNGDUNG>();
+            this.APPs = new HashSet<APP>();
+            this.GAMEs = new HashSet<GAME>();
+            this.SEARCHALLs = new HashSet<SEARCHALL>();
         }
     
         public int MaNPH { get; set; }
         public string TenNPH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UNGDUNG> UNGDUNGs { get; set; }
+        public virtual ICollection<APP> APPs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GAME> GAMEs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SEARCHALL> SEARCHALLs { get; set; }
     }
 }

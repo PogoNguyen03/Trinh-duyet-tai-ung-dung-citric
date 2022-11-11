@@ -1,0 +1,37 @@
+﻿@model CitricStore.Models.THELOAI
+
+@{
+    ViewBag.Title = "Xoá Thể Loại";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
+
+<div style="margin: 10px auto; width: 90%;">
+    <h2 style="text-align: center">NHẬP DỮ LIỆU THỂ LOẠI</h2>
+    <h3 style="text-align: center; color: red;">XOÁ THỂ LOẠI</h3>
+    
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                TÊN THỂ LOẠI
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenTheLoai)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Xoá" class="btn btn-info" /> |
+                @Html.ActionLink("Quay về trang tổng hợp", "Index")
+            </div>
+        }
+    </div>
+</div>

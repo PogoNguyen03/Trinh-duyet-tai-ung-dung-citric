@@ -201,7 +201,7 @@
     padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-    height: 180px;
+    height:180px;
 }
 .footer-logo-name-container {
     align-items: center;
@@ -250,4 +250,15 @@
     color: white;
 }
 
-/*Bootstrap*/
+
+
+
+.DangNhap{
+    text-decoration:none;
+    color:black;
+}
+
+.ThanhVien{
+    text-decoration:none;
+    color: white;
+}

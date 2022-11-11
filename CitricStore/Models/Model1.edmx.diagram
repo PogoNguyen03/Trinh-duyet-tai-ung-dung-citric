@@ -4,13 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3066bfaa85bc49309cf93cc165edcac6" Name="Diagram1">
+      <Diagram DiagramId="489d86e2ece34f3aa3fb16eaac55f335" Name="Diagram1">
+        <EntityTypeShape EntityType="CitricStoreModel.APP" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CitricStoreModel.GAME" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CitricStoreModel.HEDIEUHANH" Width="1.5" PointX="12.125" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="CitricStoreModel.KHACHHANG" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CitricStoreModel.NHAPHATHANH" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="CitricStoreModel.THELOAI" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="CitricStoreModel.UNGDUNG" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="CitricStoreModel.FK_UNGDUNG_NHAPHATHANH" ManuallyRouted="false" />
-        <AssociationConnector Association="CitricStoreModel.FK_UNGDUNG_THELOAI" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CitricStoreModel.NGONNGU" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CitricStoreModel.NHAPHATHANH" Width="1.5" PointX="12" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CitricStoreModel.THELOAIAPP" Width="1.5" PointX="0.875" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CitricStoreModel.THELOAIGAME" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_HEDIEUHANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_NGONNGU" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_NHAPHATHANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_APP_THELOAIAPP" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_GAME_HEDIEUHANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_GAME_NGONNGU" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_GAME_NHAPHATHANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CitricStoreModel.FK_GAME_THELOAIGAME" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CitricStoreModel.SEARCHALL" Width="1.5" PointX="14.375" PointY="5" />
+        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_HEDIEUHANH" />
+        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NGONNGU" />
+        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NHAPHATHANH" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

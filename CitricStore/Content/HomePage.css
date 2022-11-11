@@ -1,4 +1,4 @@
-﻿* {
+﻿ * {
     margin: 0;
 }
 .nenungdung {
@@ -10,20 +10,20 @@
 
 /* Slide image auto */
 .slideshow {
-    height: 360px;
+    height: 450px;
     margin: 0 auto;
 }
 
 .slides {
     display: none;
     width: 100%;
-    height: 360px;
+    height: 450px;
     vertical-align: middle;
 }
 
 .imageslides {
     width:100%;
-    height: 360px;
+    height: 450px;
 }
 
 .display-container {
