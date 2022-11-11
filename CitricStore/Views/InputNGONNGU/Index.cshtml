@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CitricStore.Models.NGONNGU>
+
+@{
+    ViewBag.Title = "Tổng Hợp Ngôn Ngữ";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
+
+<div style="margin: 10px auto; width: 90%;">
+    <h2 style="text-align: center">NHẬP DỮ LIỆU NGÔN NGỮ</h2>
+    <h3 style="text-align: center; color: red;">TỔNG HỢP NGÔN NGỮ</h3>
+
+    <p>
+        @Html.ActionLink("Tạo Mới", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table-bordered" style="width:100%; text-align:center">
+        <tr>
+            <th>
+                Mã Ngôn Ngữ
+            </th>
+            <th>
+                Tên Ngôn Ngữ
+            </th>
+            <th>
+                Sửa
+            </th>
+            <th>
+                Chi Tiết
+            </th>
+            <th>
+                Xoá
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNgonNgu)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNgonNgu)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaNgonNgu }, new { @class = "btn btn-success" })
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaNgonNgu }, new { @class = "btn btn-danger" })
+                </td>
+                <td>
+                    @Html.ActionLink("Xoá", "Delete", new { id = item.MaNgonNgu }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

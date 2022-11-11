@@ -1,0 +1,31 @@
+﻿@model CitricStore.Models.NHAPHATHANH
+
+@{
+    ViewBag.Title = "Chi Tiết NPH";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
+
+<div style="margin: 10px auto; width: 90%;">
+    <h2 style="text-align: center">NHẬP DỮ LIỆU NHÀ PHÁT HÀNH</h2>
+    <h3 style="text-align: center; color: red;">CHI TIẾT NPH</h3>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                TÊN NPH
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenNPH)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaNPH }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Quay về trang tổng hợp", "Index")
+    </p>
+</div>
