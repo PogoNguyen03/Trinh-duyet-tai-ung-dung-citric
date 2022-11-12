@@ -76,8 +76,16 @@
                     @using (Html.BeginForm("Page_Game", "CitricStore", FormMethod.Get, new { @class = "form-inline" }))
                     {
                         <div class="form-group">
-                            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên game">
-                            <input type="submit" class="btn btn-danger" value="Tìm kiếm">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên ứng dụng...">
+                                   </td>
+                                   <td>
+                                       <input type="submit" class="btn btn-danger" value="Tìm kiếm" style="margin-left: 16px; background-color: #FCAE03;">
+                                   </td>
+                               </tr>
+                           </table>
                         </div>
                     }
 

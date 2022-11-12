@@ -252,7 +252,10 @@ namespace CitricStore.Controllers
             return View();
         }
 
-
+        public ActionResult Question()
+        {
+            return View();
+        }
 
 
 
