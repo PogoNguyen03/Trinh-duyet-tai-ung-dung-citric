@@ -25,6 +25,7 @@
         <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_HEDIEUHANH" />
         <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NGONNGU" />
         <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NHAPHATHANH" />
+        <EntityTypeShape EntityType="CitricStoreModel.sysdiagram" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CitricStore.Models;
+using System.Resources;
 
 namespace CitricStore.Controllers
 {
@@ -101,6 +102,9 @@ namespace CitricStore.Controllers
             return View();
 
         }
+
+
+
 
         //XEM THÔNG TIN KHÁCH HÀNG
         public ActionResult ViewInfo(int idkh)

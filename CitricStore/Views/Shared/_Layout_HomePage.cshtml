@@ -22,15 +22,16 @@
             </div>
             <div class="header-left-container col-lg-6 col-md-5">
                 <div class="header-left">
-                    <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")">Cửa hàng</a>
-                    <a style="width:200px " class="header-left-name header-left-name-btn">Câu hỏi thường gặp</a>
-                    <a class="header-left-name header-left-name-btn " href="">Hỗ trợ</a>
+                    <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")" style="color:black">@Html.ActionLink(linkText: CitricStore.Resources.Language.Store, actionName: "Cửa hàng", controllerName: "CitricStore")</a>
+                    <a style="width:200px; color:black" class="header-left-name header-left-name-btn">@Html.ActionLink(linkText: CitricStore.Resources.Language.FrequentlyAskedQuestions, actionName: "Câu hỏi thường gặp", controllerName: "CitricStore")</a>
+                    <a class="header-left-name header-left-name-btn " href="" style="color:black">@Html.ActionLink(linkText: CitricStore.Resources.Language.Support, actionName: "Hỗ trợ", controllerName: "CitricStore")</a>
                 </div>
             </div>
             <div class="header-right-container col-lg-4 col-md-5" style="font-size:16px;">
                 <ul class="header-right">
                     <li class="header-right-name">
-                        <img src="~/Images/Language.png" alt="Ngôn Ngữ" style="width:20px; height:20px" />
+                        @*<img src="~/Images/Language.png" alt="Ngôn Ngữ" style="width:20px; height:20px" />*@
+                        @Html.Partial("_LanguagePartial")
                     </li>
 
 
@@ -76,7 +77,7 @@
                     @using (Html.BeginForm("Page_Game", "CitricStore", FormMethod.Get, new { @class = "form-inline" }))
                     {
                         <div class="form-group">
-                            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên game">
+                            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Tìm kiếm ứng dụng..." >
                             <input type="submit" class="btn btn-danger" value="Tìm kiếm">
                         </div>
                     }
