@@ -129,6 +129,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InputAPPController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InputHEDIEUHANHController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InputNHAPHATHANHController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CitricStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -554,6 +558,23 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\InputAPP\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\InputAPP\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\InputAPP\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InputAPP\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InputAPP\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\InputHEDIEUHANH\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\InputHEDIEUHANH\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\InputHEDIEUHANH\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InputHEDIEUHANH\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InputHEDIEUHANH\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\HomePage.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -673,9 +694,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Images\OVERALL\" />
     <Folder Include="Views\UngDungDaMua\" />
   </ItemGroup>
   <ItemGroup>

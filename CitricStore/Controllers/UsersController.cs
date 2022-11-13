@@ -86,6 +86,10 @@ namespace CitricStore.Controllers
 
                         Session["MaKH"] = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN).MaKH;
 
+                        if(kh.TenDN == "admin")
+                        {
+                            return RedirectToAction("Index", "Admin/Admin");
+                        }    
                         return RedirectToAction("Index", "CitricStore");
 
                     }

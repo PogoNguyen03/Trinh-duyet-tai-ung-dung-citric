@@ -1,0 +1,135 @@
+﻿@model CitricStore.Models.APP
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<div class="container" style="margin: 10px auto; width:100%; align-items:center">
+
+    <h2 style="text-align: center">DỮ LIỆU PHẦN MỀM (APP)</h2>
+
+    <h3 style="text-align: center;">XOÁ DỮ LIỆU</h3>
+    <dl class="dl-horizontal">
+        <dt>
+            Tên:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenApp)
+        </dd>
+
+        <dt>
+            Giới thiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiThieu)
+        </dd>
+
+        <dt>
+            Dung lượng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DungLuong)
+        </dd>
+        <dt>
+            Ngày cập nhật:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            Đánh giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhGia)
+        </dd>
+        <dt>
+            Hệ điều hành:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HEDIEUHANH1.TenHDH)
+        </dd>
+
+        <dt>
+            Ngôn ngữ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGONNGU1.TenNgonNgu)
+        </dd>
+
+        <dt>
+            Nhà phát hành:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAPHATHANH.TenNPH)
+        </dd>
+
+        <dt>
+            Thể loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THELOAIAPP.TenTheLoai)
+        </dd>
+
+        <dt>
+            Hình Nền
+        </dt>
+
+        <dd>
+            <img src="~/Images/APP/@Model.HinhNen" />
+        </dd>
+
+        <dt>
+            Hình chi tiết 1
+        </dt>
+
+        <dd>
+            <img src="~/Images/APP/@Model.HinhCT1" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhCT2)
+        </dt>
+
+        <dd>
+            <img src="~/Images/APP/@Model.HinhCT2" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhCT3)
+        </dt>
+
+        <dd>
+            <img src="~/Images/APP/@Model.HinhCT3" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhCT4)
+        </dt>
+
+        <dd>
+            <img src="~/Images/APP/@Model.HinhCT4" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoá" class="btn btn-info" /> |
+            @Html.ActionLink("Quay về trang tổng hợp", "Index")
+        </div>
+    }
+</div>

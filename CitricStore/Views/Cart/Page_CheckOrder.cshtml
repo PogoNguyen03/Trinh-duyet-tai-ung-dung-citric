@@ -47,6 +47,14 @@
 
 
 
-    @Html.ActionLink("Tiếp tục mua sắm","Index","CitricStore")
-               </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xác nhận đơn hàng" class="btn btn-info" /> |
+            @Html.ActionLink("Quay về", "Page_Payment")
+        </div>
+    }
+</div>
 

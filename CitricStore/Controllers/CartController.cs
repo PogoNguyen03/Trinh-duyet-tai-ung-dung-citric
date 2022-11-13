@@ -163,11 +163,17 @@ namespace CitricStore.Controllers
         //Trang kiểm tra đơn hàng -> xác nhận đã thanh toán
       
         [HttpGet]
-
         public ActionResult Page_CheckOrder()
         {
             List<CartItem> myCart = GetCart();
+            return View(myCart);
+        }
 
+        [HttpPost, ActionName("Page_CheckOrder")]
+        [ValidateAntiForgeryToken]
+        public ActionResult OrderConfirmed()
+        {
+            List<CartItem> myCart = GetCart();
 
             foreach (var item in myCart)
             {
@@ -183,9 +189,13 @@ namespace CitricStore.Controllers
             }
 
 
+            return RedirectToAction("Page_PaymenSuccess");
+        }
+        public ActionResult Page_PaymentSuccess()
+        {
             Session.Remove("GioHang");
 
-            return View(myCart);
+            return View();
         }
 
 
