@@ -19,9 +19,9 @@ namespace CitricStore.Controllers
             return View(kh);
         }
 
-        private List<GAME> LayGameMoi(int soluong)
+        private List<OVERALL> LayGameMoi(int soluong)
         {
-            return database.GAMEs.OrderByDescending(game => game.NgayCapNhat).Take(soluong).ToList();
+            return database.OVERALLs.OrderByDescending(game => game.NgayCapNhat).Where(game => game.AppOrGame == "Game").Take(soluong).ToList();
         }
         public ActionResult Index_GameMoi()
         {
@@ -253,7 +253,11 @@ namespace CitricStore.Controllers
         }
 
 
-
+        public ActionResult Details_Overall(int id)
+        {
+            var ud = database.OVERALLs.FirstOrDefault(s => s.Ma == id);
+            return View(ud);
+        }
 
 
 

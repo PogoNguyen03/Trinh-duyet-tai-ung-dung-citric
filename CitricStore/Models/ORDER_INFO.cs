@@ -12,24 +12,28 @@ namespace CitricStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KHACHHANG
+    public partial class ORDER_INFO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHACHHANG()
+        public ORDER_INFO()
         {
-            this.ORDER_INFO = new HashSet<ORDER_INFO>();
+            this.ORDER_PRODUCT = new HashSet<ORDER_PRODUCT>();
         }
     
-        public int MaKH { get; set; }
-        public string HoTenKH { get; set; }
-        public string DienthoaiKH { get; set; }
-        public string TenDN { get; set; }
-        public string Matkhau { get; set; }
-        public Nullable<System.DateTime> Ngaysinh { get; set; }
-        public string Email { get; set; }
-        public string GioiTinh { get; set; }
+        public int MaOrder { get; set; }
+        public Nullable<System.DateTime> NgayOrder { get; set; }
+        public Nullable<int> MaKH { get; set; }
+        public string TenOrder { get; set; }
+        public string SDTOrder { get; set; }
+        public string DiaChiOrder { get; set; }
+        public string EmailOrder { get; set; }
+        public Nullable<int> MaNganHang { get; set; }
+        public string MaTaiKhoan { get; set; }
+        public string TenTaiKhoan { get; set; }
     
+        public virtual KHACHHANG KHACHHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDER_INFO> ORDER_INFO { get; set; }
+        public virtual ICollection<ORDER_PRODUCT> ORDER_PRODUCT { get; set; }
+        public virtual BANK BANK { get; set; }
     }
 }

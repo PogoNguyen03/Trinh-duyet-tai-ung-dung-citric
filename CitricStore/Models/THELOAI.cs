@@ -12,27 +12,18 @@ namespace CitricStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NGONNGU
+    public partial class THELOAI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NGONNGU()
+        public THELOAI()
         {
-            this.APPs = new HashSet<APP>();
-            this.GAMEs = new HashSet<GAME>();
             this.OVERALLs = new HashSet<OVERALL>();
-            this.SEARCHALLs = new HashSet<SEARCHALL>();
         }
     
-        public int MaNgonNgu { get; set; }
-        public string TenNgonNgu { get; set; }
+        public int MaTheLoai { get; set; }
+        public string TenTheLoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<APP> APPs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GAME> GAMEs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OVERALL> OVERALLs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SEARCHALL> SEARCHALLs { get; set; }
     }
 }

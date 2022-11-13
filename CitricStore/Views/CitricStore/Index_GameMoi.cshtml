@@ -9,12 +9,12 @@
             </div>
             <div class="">
                 <div class="bloggame-title h4">
-                    <a class="fix-line">@game.TenGame</a>
+                    <a class="fix-line">@game.Ten</a>
                 </div>
                 <div class="bloggame-theloai">
-                    Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame })
+                    @*Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame })*@
                 </div>
-                <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
+                <a class="bloggame-download" href="@Url.Action("Details_Overall", "CitricStore", new {id=game.Ma})" style="text-decoration:none">
                     <div class="bloggame-download-btn">
                         Chi Tiết
                     </div>
