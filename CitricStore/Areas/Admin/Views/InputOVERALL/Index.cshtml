@@ -1,0 +1,130 @@
+﻿@model IEnumerable<CitricStore.Models.OVERALL>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiThieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DungLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkTai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DanhGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhNen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhCT1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhCT2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhCT3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhCT4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppOrGame)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HEDIEUHANH.TenHDH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGONNGU.TenNgonNgu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NHAPHATHANH.TenNPH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THELOAI.TenTheLoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiThieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DungLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkTai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DanhGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhNen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhCT1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhCT2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhCT3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhCT4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppOrGame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HEDIEUHANH.TenHDH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGONNGU.TenNgonNgu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHAPHATHANH.TenNPH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THELOAI.TenTheLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ma }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ma }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ma })
+        </td>
+    </tr>
+}
+
+</table>

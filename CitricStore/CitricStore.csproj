@@ -133,6 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\InputAPPController.cs" />
     <Compile Include="Areas\Admin\Controllers\InputHEDIEUHANHController.cs" />
     <Compile Include="Areas\Admin\Controllers\InputNHAPHATHANHController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InputOVERALLController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CitricStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -243,6 +244,7 @@
     <Content Include="Content\HomePage.css" />
     <Content Include="Content\Layout_HomePage.css" />
     <Content Include="Content\Question.css" />
+    <Content Include="Content\Rating,js.js" />
     <Content Include="Content\Search.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -575,6 +577,11 @@
     <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Details.cshtml" />
     <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\InputNHAPHATHANH\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\InputOVERALL\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\InputOVERALL\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\InputOVERALL\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InputOVERALL\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InputOVERALL\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\HomePage.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -691,6 +698,12 @@
     <Content Include="Views\Cart\Page_CheckOrder.cshtml" />
     <Content Include="Views\Cart\Page_ShowPayment.cshtml" />
     <Content Include="Views\Cart\Page_PaymentSuccess.cshtml" />
+    <Content Include="Views\Users\Users_DaMua.cshtml" />
+    <Content Include="Views\Users\DaMua_Product.cshtml" />
+    <Content Include="Views\Users\DaMua_UngDung.cshtml" />
+    <Content Include="Views\CitricStore\Page_App_Filter_NgonNguVie.cshtml" />
+    <Content Include="Views\CitricStore\Page_App_Filter_NgonNgu.cshtml" />
+    <Content Include="Views\CitricStore\Page_App_Filter_NgonNguDropDown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

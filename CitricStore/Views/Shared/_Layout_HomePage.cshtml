@@ -56,6 +56,9 @@
                                      style=" border: none; z-index: 1001;background-color: #FCAE03; animation:none;transition:none">
                                     @Html.ActionLink("Xem Thông Tin", "ViewInfo", "Users", new { idkh = Session["MaKH"] }, new { @class = "dropdown-item XemThongTin" })
 
+                                    @Html.ActionLink("Đơn Hàng Đã Mua", "Users_DaMua", "Users", new { idkh = Session["MaKH"] }, new { @class = "dropdown-item XemThongTin" })
+
+
                                     @Html.ActionLink("Đăng Xuất", "LogOut", "Users", null, new { @class = "dropdown-item XemThongTin" })
                                 </div>
                             </div>

@@ -122,10 +122,62 @@ namespace CitricStore.Controllers
                 default:
                     apps = apps.OrderBy(s => s.MaApp);
                     break;
-            }
+            } 
             return View(apps.ToList());
         }
-        //Trang chứa toàn bộ game
+
+
+        //FILTER
+        public ActionResult Page_App_Filter_NgonNgu(int idnn, string sortOrder)
+        {
+            ViewBag.RateSortParm = String.IsNullOrEmpty(sortOrder) ? "rate_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var apps = from s in database.APPs
+                       where s.MaNgonNgu == idnn
+                       select s;
+            switch (sortOrder)
+            {
+                case "rate_desc":
+                    apps = apps.OrderByDescending(s => s.DanhGia);
+                    break;
+                case "Date":
+                    apps = apps.OrderBy(s => s.NgayCapNhat);
+                    break;
+                case "date_desc":
+                    apps = apps.OrderByDescending(s => s.NgayCapNhat);
+                    break;
+                default:
+                    apps = apps.OrderBy(s => s.MaApp);
+                    break;
+            }
+
+            return View(apps.ToList()) ;
+        }
+
+        public ActionResult Page_App_Filter_NgonNguDropDown()
+        {
+            var nn = database.NGONNGUs.ToList();
+            return PartialView(nn);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Trang search
         public ActionResult Page_Game(string searchString)
         {
             var game = from g in database.SEARCHALLs
@@ -138,18 +190,6 @@ namespace CitricStore.Controllers
             return View(game);
         }
 
-        //Trang chứa toàn bộ phần mềm
-        public ActionResult Page_App(string searchString)
-        {
-            var app = from a in database.APPs
-                      select a;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                searchString = searchString.ToLower();
-                app = app.Where(g => g.TenApp.ToLower().Contains(searchString));
-            }
-            return View(app);
-        }
 
 
 

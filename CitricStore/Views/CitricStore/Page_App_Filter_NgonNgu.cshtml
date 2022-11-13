@@ -1,6 +1,6 @@
 ﻿@using CitricStore.Models
 @{
-    ViewBag.Title = "AppTheoTheLoai";
+    ViewBag.Title = "Page_App_Filter_NgonNguEng";
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
@@ -67,9 +67,9 @@
                 </a>
 
                 <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.ActionLink("Phần mềm mới nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.DateSortParm })
+                    @Html.ActionLink("Game mới nhất", "Page_App_Filter_NgonNgu", new { sortOrder = ViewBag.DateSortParm })
                     <br />
-                    @Html.ActionLink("Phần mềm hay nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.RateSortParm })
+                    @Html.ActionLink("Game hay nhất", "Page_App_Filter_NgonNgu", new { sortOrder = ViewBag.RateSortParm })
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                 </a>
 
                 <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.Action("Page_App_Filter_NgonNguDropDown","CitricStore")
+                    @Html.Action("Page_App_Filter_NgonNguDropDown")
                 </div>
             </div>
         </div>
@@ -143,11 +143,11 @@
                                 <a class="fix-line" href="">@app.TenApp</a>
                             </div>
                             <div class="bloggame-theloai">
-                                Thể loại: @Html.Action("TenTheLoaiApp", "CitricStore", new { idtheloai = app.MaTheLoaiApp })
+                                Ngôn Ngữ: @Html.Action("Details_TenNgonNgu", "CitricStore", new { idngonngu = app.MaNgonNgu })
                             </div>
-                            <a class="bloggame-download" href="@Url.Action("DetailsApp", "CitricStore", new {id=app.MaApp})" style="text-decoration:none">
+                            <a class="bloggame-download" href="@Url.Action("Details_Overall", "CitricStore", new {id=app.MaApp})" style="text-decoration:none">
                                 <div class="bloggame-download-btn">
-                                    Tải Xuống
+                                    Thêm vào giỏ hàng
                                 </div>
                             </a>
                         </div>
@@ -157,3 +157,5 @@
         </div>
     </div>
 </div>
+
+
