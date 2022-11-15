@@ -36,8 +36,6 @@ namespace CitricStore.Models
         public virtual DbSet<OVERALL> OVERALLs { get; set; }
         public virtual DbSet<THELOAI> THELOAIs { get; set; }
         public virtual DbSet<ORDER_INFO> ORDER_INFO { get; set; }
-        public virtual DbSet<SEARCH_THELOAI> SEARCH_THELOAI { get; set; }
-        public virtual DbSet<SEARCHALL> SEARCHALLs { get; set; }
         public virtual DbSet<ORDER_PRODUCT> ORDER_PRODUCT { get; set; }
         public virtual DbSet<BANK> BANKs { get; set; }
     }

@@ -166,6 +166,42 @@ Create table GAME
 	EmailOrder varchar(50),
 	Constraint PK_ORDERINFO primary key (MaOrder)
  )
+ alter table order_info
+add MaTaiKhoan varchar(50)
+ alter table order_info
+add TenTaiKhoan nvarchar(max)
+ alter table order_info
+add TongTien decimal(18,2)
+
+select * from ORDER_INFO
+
+select * from ORDER_PRODUCT
+
+select * from OVERALL
+
+select * from NGONNGU
+Create table BANK
+(
+	BankID int identity(1,1),
+	BankName nvarchar(Max),
+	constraint PK_BANK primary key (BankID)
+)
+Set identity_insert [dbo].[BANK] off
+insert [dbo].[Bank] ([BankID],[BankName])
+values (1, N'Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)')
+insert [dbo].[Bank] ([BankID],[BankName])
+
+values (2, N'Ngân hàng TMCP Á Châu (ACB)')
+insert [dbo].[Bank] ([BankID],[BankName])
+values (3, N'Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)')
+
+
+
+alter table ORDER_INFO add constraint FK_ORDERINFO_BANK
+						foreign key (MaNganHang)
+						references BANK(BankID)
+
+
 
  Create table ORDER_PRODUCT
  (

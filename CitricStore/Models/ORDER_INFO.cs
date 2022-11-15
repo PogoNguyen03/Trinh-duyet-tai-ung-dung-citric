@@ -25,11 +25,11 @@ namespace CitricStore.Models
         public Nullable<int> MaKH { get; set; }
         public string TenOrder { get; set; }
         public string SDTOrder { get; set; }
-        public string DiaChiOrder { get; set; }
         public string EmailOrder { get; set; }
         public Nullable<int> MaNganHang { get; set; }
         public string MaTaiKhoan { get; set; }
         public string TenTaiKhoan { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

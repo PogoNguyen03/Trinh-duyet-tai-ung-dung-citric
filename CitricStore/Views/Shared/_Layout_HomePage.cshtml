@@ -62,7 +62,6 @@
                                     @Html.ActionLink("Đăng Xuất", "LogOut", "Users", null, new { @class = "dropdown-item XemThongTin" })
                                 </div>
                             </div>
-                            <div></div>
                         }
                         else
                         {
@@ -82,23 +81,15 @@
         <div class="row navigationbar-container">
             <div class="searchbar-container col-lg-3 col-md-9">
                 <div class="searchbar">
-                    @using (Html.BeginForm("Page_Game", "CitricStore", FormMethod.Get, new { @class = "form-inline" }))
+                    @using (Html.BeginForm("Page_Search", "CitricStore", FormMethod.Get, new { @class = "form-inline" }))
                     {
                         <div class="form-group">
-                            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên game">
+                            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Tên ứng dụng">
                             <input type="submit" class="btn btn-danger" value="Tìm kiếm">
                         </div>
                     }
 
                 </div>
-                @*<button type="button" class="dropdown-toggle" id="dropdownMenu"
-                data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" >
-            Tìm kiếm
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-            <li>@Html.ActionLink("Trò chơi", "Page_Game", "CitricStore", new { @class = "dropdown-item" })</li>
-            <li>@Html.ActionLink("Phần mềm", "Page_App", "CitricStore", new { @class = "dropdown-item" })</li>
-        </ul>*@
 
             </div>
         

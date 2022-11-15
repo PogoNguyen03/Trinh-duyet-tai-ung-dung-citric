@@ -57,7 +57,7 @@
             <div class="col-lg-4 danhgia">
                 <span class="stars" data-rating="@Model.DanhGia" data-num-stars="5"></span>
             </div>
-            <div class="col-lg-4" style="font-size:30px;"> 5 </div>
+            <div class="col-lg-4" style="font-size:30px;">@Model.DanhGia</div>
             <div class="col-lg-4"></div>
         </div>
         <hr />
@@ -70,7 +70,7 @@
             <hr>
             <div class="tieudechitiet">
                 <p class="tieude">CHI TIẾT</p>
-                @*<p class="chitiet">Thể loại: @Html.Action("TenTheLoaiApp", "CitricStore", new { idtheloai = Model.MaTheLoaiApp })</p>*@
+                <p class="chitiet">Thể loại: @Html.Action("Extension_Overall_TenTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoai})</p>
                 <p class="chitiet">Nhà phát hành: @Html.Action("Details_TenNPH", "CitricStore", new { idnph = Model.MaNPH })</p>
                 <p class="chitiet">Dung lượng: @Model.DungLuong MB</p>
                 <p class="chitiet">Ngôn ngữ: @Html.Action("Details_TenNgonNgu", "CitricStore", new { idngonngu = Model.MaNgonNgu })</p>
@@ -80,27 +80,27 @@
         </div>
         <hr>
         <div class="game-list-container">
-            <h1 class="game-list-title" style="margin-bottom: -20px;">PHẦN MỀM CÙNG THỂ LOẠI</h1>
+            <h1 class="game-list-title" style="margin-bottom: -20px;">CÙNG THỂ LOẠI</h1>
             <div class="game-list-wrapper">
                 <div class="game-list" id="game-list-scrollbar">
-                    @*@Html.Action("Details_AppCungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoaiApp })*@
+                    @Html.Action("Details_Overall_CungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoai })
                 </div>
             </div>
         </div>
 
         <div class="game-list-container">
-            <h1 class="game-list-title">PHẦN MỀM MỚI</h1>
+            <h1 class="game-list-title">MỚI</h1>
             <div class="game-list-wrapper">
                 <div class="game-list" id="game-list-scrollbar">
-                    @Html.Action("Details_AppMoi", "CitricStore")
+                    @Html.Action("Details_Overall_Moi", "CitricStore")
                 </div>
             </div>
         </div>
         <div class="game-list-container">
-            <h1 class="game-list-title">PHẦN MỀM HOT</h1>
+            <h1 class="game-list-title">HOT</h1>
             <div class="game-list-wrapper">
                 <div class="game-list" id="game-list-scrollbar">
-                    @Html.Action("Details_AppTheoDanhGia", "CitricStore")
+                    @Html.Action("Details_Overall_TheoDanhGia", "CitricStore")
                 </div>
             </div>
         </div>

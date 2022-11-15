@@ -29,12 +29,6 @@
         <AssociationConnector Association="CitricStoreModel.FK_OVERALL_THELOAI" />
         <EntityTypeShape EntityType="CitricStoreModel.ORDER_INFO" Width="1.5" PointX="8" PointY="10.875" />
         <AssociationConnector Association="CitricStoreModel.FK_ORDERINFO_KHACHHANG" />
-        <EntityTypeShape EntityType="CitricStoreModel.SEARCH_THELOAI" Width="1.5" PointX="12.125" PointY="1.75" />
-        <EntityTypeShape EntityType="CitricStoreModel.SEARCHALL" Width="1.5" PointX="14.375" PointY="4.75" />
-        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_HEDIEUHANH" />
-        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NGONNGU" />
-        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_NHAPHATHANH" />
-        <AssociationConnector Association="CitricStoreModel.FK_SEARCHALL_THELOAI" />
         <EntityTypeShape EntityType="CitricStoreModel.ORDER_PRODUCT" Width="1.5" PointX="19.625" PointY="8.125" />
         <AssociationConnector Association="CitricStoreModel.FK_ORDERPRODUCT_ORDERINFO" />
         <AssociationConnector Association="CitricStoreModel.FK_ORDERPRODUCT_OVERALL" />

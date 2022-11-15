@@ -189,7 +189,7 @@ namespace CitricStore.Controllers
             }
 
 
-            return RedirectToAction("Page_PaymenSuccess");
+            return RedirectToAction("Page_PaymentSuccess");
         }
         public ActionResult Page_PaymentSuccess()
         {

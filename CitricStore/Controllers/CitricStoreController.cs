@@ -19,9 +19,9 @@ namespace CitricStore.Controllers
             return View(kh);
         }
 
-        private List<OVERALL> LayGameMoi(int soluong)
+        private List<GAME> LayGameMoi(int soluong)
         {
-            return database.OVERALLs.OrderByDescending(game => game.NgayCapNhat).Where(game => game.AppOrGame == "Game").Take(soluong).ToList();
+            return database.GAMEs.OrderByDescending(game => game.NgayCapNhat).Take(soluong).ToList();
         }
         public ActionResult Index_GameMoi()
         {
@@ -178,15 +178,17 @@ namespace CitricStore.Controllers
 
 
         //Trang search
-        public ActionResult Page_Game(string searchString)
+        public ActionResult Page_Search(string searchString)
         {
-            var game = from g in database.SEARCHALLs
+            var game = from g in database.OVERALLs
                        select g;
             if (!String.IsNullOrEmpty(searchString))
             {
                 searchString = searchString.ToLower();
-                game = game.Where(g => g.TenSearch.ToLower().Contains(searchString));
+                game = game.Where(g => g.Ten.ToLower().Contains(searchString));
             }
+
+            Session["SearchKeyWord"] = searchString;
             return View(game);
         }
 
@@ -286,17 +288,49 @@ namespace CitricStore.Controllers
             return PartialView(tenhdh);
         }
 
+        public ActionResult Extension_Overall_TenTheLoai(int idtheloai)
+        {
+            var theloai = database.THELOAIs.Where(g => g.MaTheLoai == idtheloai).ToList();
+
+            return PartialView(theloai);
+        }
         //TRANG PHÂN LOẠI
         public ActionResult Classify()
         {
             return View();
         }
 
-
+        //--------------------------DETAILS OVERALL FOR SEARCH--------------------------
         public ActionResult Details_Overall(int id)
         {
             var ud = database.OVERALLs.FirstOrDefault(s => s.Ma == id);
             return View(ud);
+        }
+        public ActionResult Details_Overall_TheoDanhGia()
+        {
+            var dsUngDungDeXuat = LayUngDungTheoDanhGia(8);
+            return PartialView(dsUngDungDeXuat);
+        }
+
+        public ActionResult Details_Overall_Moi()
+        {
+            var dsGameMoi = LayGameMoi(8);
+            return PartialView(dsGameMoi);
+        }
+
+        public ActionResult Details_Overall_CungTheLoai(int idtheloai)
+        {
+            var dsTheLoai = database.OVERALLs.Where(ud => ud.MaTheLoai == idtheloai).ToList();
+            return PartialView(dsTheLoai);
+        }
+
+        private List<OVERALL> LayUngDungMoi(int soluong)
+        {
+            return database.OVERALLs.OrderByDescending(ud => ud.NgayCapNhat).Take(soluong).ToList();
+        }
+        private List<OVERALL> LayUngDungTheoDanhGia(int soluong)
+        {
+            return database.OVERALLs.OrderByDescending(ud => ud.DanhGia).Take(soluong).ToList();
         }
 
 
