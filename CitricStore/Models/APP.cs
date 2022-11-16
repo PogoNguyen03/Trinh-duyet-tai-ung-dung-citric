@@ -32,8 +32,8 @@ namespace CitricStore.Models
         public string HinhCT4 { get; set; }
         public Nullable<decimal> DonGia { get; set; }
     
-        public virtual HEDIEUHANH HEDIEUHANH1 { get; set; }
-        public virtual NGONNGU NGONNGU1 { get; set; }
+        public virtual HEDIEUHANH HEDIEUHANH { get; set; }
+        public virtual NGONNGU NGONNGU { get; set; }
         public virtual NHAPHATHANH NHAPHATHANH { get; set; }
         public virtual THELOAIAPP THELOAIAPP { get; set; }
     }

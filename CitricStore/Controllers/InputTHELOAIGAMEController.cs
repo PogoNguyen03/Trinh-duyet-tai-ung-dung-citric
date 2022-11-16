@@ -12,7 +12,7 @@ namespace CitricStore.Controllers
 {
     public class InputTHELOAIGAMEController : Controller
     {
-        private CitricStoreEntities4 db = new CitricStoreEntities4();
+        private CitricStoreEntities5 db = new CitricStoreEntities5();
 
         // GET: InputTHELOAIGAME
         public ActionResult Index()

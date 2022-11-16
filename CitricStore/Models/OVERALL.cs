@@ -42,8 +42,8 @@ namespace CitricStore.Models
         public virtual HEDIEUHANH HEDIEUHANH { get; set; }
         public virtual NGONNGU NGONNGU { get; set; }
         public virtual NHAPHATHANH NHAPHATHANH { get; set; }
-        public virtual THELOAI THELOAI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ORDER_PRODUCT> ORDER_PRODUCT { get; set; }
+        public virtual THELOAI THELOAI { get; set; }
     }
 }

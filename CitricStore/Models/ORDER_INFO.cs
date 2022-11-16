@@ -31,9 +31,9 @@ namespace CitricStore.Models
         public string TenTaiKhoan { get; set; }
         public Nullable<decimal> TongTien { get; set; }
     
+        public virtual BANK BANK { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ORDER_PRODUCT> ORDER_PRODUCT { get; set; }
-        public virtual BANK BANK { get; set; }
     }
 }
