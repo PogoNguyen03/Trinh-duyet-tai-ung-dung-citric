@@ -6,6 +6,16 @@
 }
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
+<style>
+    .NutThanhToan{
+        text-decoration:none;
+        color:aliceblue;
+    }
+    .ThanhVien {
+        color: aliceblue;
+    }
+</style>
+
 <div class="col-lg-5 col-md-11" style="margin:0px auto;">
     <h2 style="text-align: center; color:white">THÔNG TIN GIỎ HÀNG</h2>
     <div style="color:white; font-size:18px;">
@@ -40,7 +50,7 @@
         </table>
         @if (Session["TaiKhoan"] != null)
         {
-            @Html.ActionLink("Thanh toán", "Page_Payment", "Cart")
+            @Html.ActionLink("Thanh toán", "Page_Payment", "Cart", null, new {@class = "NutThanhToan"})
         }
         else
         {

@@ -239,7 +239,7 @@
     }
 
     .bloggame-title > a {
-        color: #FCAE03;
+        color: white;
         text-decoration: none;
         -webkit-transition: 0.15s color;
         -o-transition: 0.15s color;

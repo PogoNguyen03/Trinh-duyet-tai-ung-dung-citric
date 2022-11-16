@@ -9,7 +9,7 @@
     <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
     <link href="~/Content/User.css" rel="stylesheet"/>
     <link rel="shortcut icon" type="image/png" href="~/Images/LOGO/LOGO_Black.png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"/>
 
 </head>
 <body style="background-color:rgb(18,18,18)">
@@ -17,6 +17,10 @@
         .ThanhVien{
             color:aliceblue;
         }
+        .text-muted{
+            color: black;
+        }
+
     </style>
     <header id="header" class="container-fluid">
         <div class="row">
@@ -83,7 +87,7 @@
 
 
 
-    <div class="container main" style="height: 800px">
+    <div class="container main">
         <div class="row navigationbar-container">
             <div class="searchbar-container col-lg-3 col-md-9">
                 <div class="searchbar">
@@ -176,7 +180,7 @@
 
     </div>
 
-    <footer id="footer" class="container-fluid">
+    <footer id="footer" class="container-fluid" style=" margin-top: 200px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 justify-content-center" style="align-items:center;">
@@ -196,13 +200,13 @@
                         <li class="nav-item mb-2">
                             <a href="#" class="nav-link p-0 text-muted">Cửa hàng</a>
                         </li>
-                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted" >Câu hỏi thường gặp</a></li>
-                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Hỗ trợ</a></li>
-                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Ngôn ngữ</a></li>
+                        <li class="nav-item mb-2"><a style="color:black" href="#" class="nav-link p-0 text-muted" >Câu hỏi thường gặp</a></li>
+                        <li class="nav-item mb-2"><a style="color:black" href="#" class="nav-link p-0 text-muted">Hỗ trợ</a></li>
+                        <li class="nav-item mb-2"><a style="color:black" href="#" class="nav-link p-0 text-muted">Ngôn ngữ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 d-flex justify-content-center">
-                    <i class="icon_lienlac fa-brands fa-square-facebook"></i>
+                    <i class="icon_lienlac fa-brands fa-facebook"></i>
                     <i class="icon_lienlac fa-brands fa-instagram"></i>
                     <i class="icon_lienlac fa-brands fa-youtube"></i>
                     <i class="icon_lienlac fa-brands fa-twitter"></i>
