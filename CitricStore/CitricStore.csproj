@@ -177,6 +177,9 @@
     <Compile Include="Models\SEARCHALL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\THELOAIAPP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -218,6 +221,7 @@
     <Content Include="Content\Layout_HomePage.css" />
     <Content Include="Content\Question.css" />
     <Content Include="Content\Search.css" />
+    <Content Include="Content\User.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

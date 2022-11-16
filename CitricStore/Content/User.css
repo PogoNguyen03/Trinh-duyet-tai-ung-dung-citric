@@ -1,0 +1,25 @@
+﻿*{
+    margin: 0;
+}
+
+.login-container {
+    height: 500px;
+}
+
+/*trang login*/
+
+.login-btn {
+    width: 46%;
+    margin-left: 10px;
+}
+
+.FotgotPass{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+/*trang fogotpass*/
+.comebacklogin {
+    color: aliceblue;
+    text-decoration: none;
+}

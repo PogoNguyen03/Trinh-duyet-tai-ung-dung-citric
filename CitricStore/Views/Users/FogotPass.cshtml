@@ -5,8 +5,10 @@
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
+<link rel="stylesheet" href="~/Content/User.css" />
 
-<div class="container col-lg-5 col-md-11" style="margin:0px auto;">
+
+<div class="login-container col-lg-5 col-md-11" style="margin:0px auto;">
     <h2 style="text-align: center; color:white">QUÊN MẬT KHẨU ?</h2>
     <h2 style="color: #FCAE03; margin: 0px auto; font-size: 20px;">@ViewBag.ThongBao</h2>
 
@@ -28,7 +30,7 @@
 
                 <button type="submit" class="btn btn-dark">Đặt lại mật khẩu</button>
 
-                @Html.ActionLink("Quay về trang đăng nhập", "Login", "Users")
+                @Html.ActionLink("Quay về trang đăng nhập", "Login", "Users",null, new {@class = "comebacklogin"})
 
 
             </div>

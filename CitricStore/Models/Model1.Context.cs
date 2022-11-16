@@ -34,5 +34,6 @@ namespace CitricStore.Models
         public virtual DbSet<THELOAIAPP> THELOAIAPPs { get; set; }
         public virtual DbSet<THELOAIGAME> THELOAIGAMEs { get; set; }
         public virtual DbSet<SEARCHALL> SEARCHALLs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
