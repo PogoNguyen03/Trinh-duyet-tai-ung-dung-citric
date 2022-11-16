@@ -22,7 +22,7 @@
             </div>
             <div class="header-left-container col-lg-6 col-md-5">
                 <div class="header-left">
-                    <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")" style="color:black">@Html.ActionLink(linkText: CitricStore.Resources.Language.Store, actionName: "Cửa hàng", controllerName: "CitricStore")</a>
+                    @Html.ActionLink(linkText: CitricStore.Resources.Language.Store, actionName: "Index", controllerName: "CitricStore", null, new {@class = "header-left-name header-left-name-btn" })
                     <a style="width:200px; color:black" class="header-left-name header-left-name-btn">@Html.ActionLink(linkText: CitricStore.Resources.Language.FrequentlyAskedQuestions, actionName: "Câu hỏi thường gặp", controllerName: "CitricStore")</a>
                     <a class="header-left-name header-left-name-btn " href="" style="color:black">@Html.ActionLink(linkText: CitricStore.Resources.Language.Support, actionName: "Hỗ trợ", controllerName: "CitricStore")</a>
                 </div>

@@ -650,6 +650,12 @@
     <Content Include="Views\CitricStore\Details_AppCungTheLoai.cshtml" />
     <Content Include="Views\Shared\_LanguagePartial.cshtml" />
     <Content Include="Views\Language\Index.cshtml" />
+    <Content Include="Views\Language\Login.cshtml" />
+    <Content Include="Views\Language\FogotPass.cshtml" />
+    <Content Include="Views\Language\Register.cshtml" />
+    <Content Include="Views\Language\DetailsGame.cshtml" />
+    <Content Include="Views\Language\DetailsApp.cshtml" />
+    <Content Include="Views\Home\Question.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
