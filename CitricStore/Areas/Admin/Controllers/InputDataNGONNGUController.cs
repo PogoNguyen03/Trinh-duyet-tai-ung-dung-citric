@@ -12,7 +12,7 @@ namespace CitricStore.Areas.Admin.Controllers
 {
     public class InputDataNGONNGUController : Controller
     {
-        private CitricStoreEntities5 db = new CitricStoreEntities5();
+        private CitricStoreEntities4 db = new CitricStoreEntities4();
 
         // GET: Admin/InputDataNGONNGU
         public ActionResult Index()

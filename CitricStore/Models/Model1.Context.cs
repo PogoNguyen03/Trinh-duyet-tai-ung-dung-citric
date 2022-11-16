@@ -13,10 +13,10 @@ namespace CitricStore.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CitricStoreEntities5 : DbContext
+    public partial class CitricStoreEntities4 : DbContext
     {
-        public CitricStoreEntities5()
-            : base("name=CitricStoreEntities5")
+        public CitricStoreEntities4()
+            : base("name=CitricStoreEntities4")
         {
         }
     

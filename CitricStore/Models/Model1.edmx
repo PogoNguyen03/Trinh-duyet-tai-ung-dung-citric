@@ -13,19 +13,19 @@
           <Property Name="TenApp" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="GioiThieu" Type="ntext" />
           <Property Name="DungLuong" Type="nvarchar" MaxLength="10" />
-          <Property Name="LinkTai" Type="ntext" />
           <Property Name="MaTheLoaiApp" Type="int" />
           <Property Name="MaNPH" Type="int" />
           <Property Name="MaHDH" Type="int" />
           <Property Name="MaNgonNgu" Type="int" />
           <Property Name="NgayCapNhat" Type="datetime" />
           <Property Name="DanhGia" Type="nvarchar" MaxLength="5" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" />
           <Property Name="HinhNen" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT1" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT2" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT3" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT4" Type="nvarchar" MaxLength="30" />
-          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LinkTai" Type="ntext" />
         </EntityType>
         <EntityType Name="BANK">
           <Key>
@@ -42,19 +42,21 @@
           <Property Name="TenGame" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="GioiThieu" Type="ntext" />
           <Property Name="DungLuong" Type="nvarchar" MaxLength="10" />
-          <Property Name="LinkTai" Type="ntext" />
+          <Property Name="NgonNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="HeDieuHanh" Type="nvarchar" MaxLength="50" />
           <Property Name="MaTheLoaiGame" Type="int" />
           <Property Name="MaNPH" Type="int" />
           <Property Name="MaHDH" Type="int" />
           <Property Name="MaNgonNgu" Type="int" />
           <Property Name="NgayCapNhat" Type="datetime" />
           <Property Name="DanhGia" Type="nvarchar" MaxLength="5" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" />
           <Property Name="HinhNen" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT1" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT2" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT3" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT4" Type="nvarchar" MaxLength="30" />
-          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LinkTai" Type="ntext" />
         </EntityType>
         <EntityType Name="HEDIEUHANH">
           <Key>
@@ -123,7 +125,6 @@
           <Property Name="Ten" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="GioiThieu" Type="ntext" />
           <Property Name="DungLuong" Type="nvarchar" MaxLength="10" />
-          <Property Name="LinkTai" Type="ntext" />
           <Property Name="MaNPH" Type="int" />
           <Property Name="MaHDH" Type="int" />
           <Property Name="MaNgonNgu" Type="int" />
@@ -136,6 +137,7 @@
           <Property Name="HinhCT2" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT3" Type="nvarchar" MaxLength="30" />
           <Property Name="HinhCT4" Type="nvarchar" MaxLength="30" />
+          <Property Name="LinkTai" Type="ntext" />
           <Property Name="AppOrGame" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="THELOAI">
@@ -442,19 +444,19 @@
           <Property Name="TenApp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DungLuong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MaTheLoaiApp" Type="Int32" />
           <Property Name="MaNPH" Type="Int32" />
           <Property Name="MaHDH" Type="Int32" />
           <Property Name="MaNgonNgu" Type="Int32" />
           <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
           <Property Name="DanhGia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="HinhNen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT3" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT4" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HEDIEUHANH" Relationship="Self.FK_APP_HEDIEUHANH" FromRole="APP" ToRole="HEDIEUHANH" />
           <NavigationProperty Name="NGONNGU" Relationship="Self.FK_APP_NGONNGU" FromRole="APP" ToRole="NGONNGU" />
           <NavigationProperty Name="NHAPHATHANH" Relationship="Self.FK_APP_NHAPHATHANH" FromRole="APP" ToRole="NHAPHATHANH" />
@@ -476,21 +478,23 @@
           <Property Name="TenGame" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DungLuong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgonNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HeDieuHanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MaTheLoaiGame" Type="Int32" />
           <Property Name="MaNPH" Type="Int32" />
           <Property Name="MaHDH" Type="Int32" />
           <Property Name="MaNgonNgu" Type="Int32" />
           <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
           <Property Name="DanhGia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="HinhNen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT3" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT4" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="HEDIEUHANH" Relationship="Self.FK_GAME_HEDIEUHANH" FromRole="GAME" ToRole="HEDIEUHANH" />
-          <NavigationProperty Name="NGONNGU" Relationship="Self.FK_GAME_NGONNGU" FromRole="GAME" ToRole="NGONNGU" />
+          <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HEDIEUHANH1" Relationship="Self.FK_GAME_HEDIEUHANH" FromRole="GAME" ToRole="HEDIEUHANH" />
+          <NavigationProperty Name="NGONNGU1" Relationship="Self.FK_GAME_NGONNGU" FromRole="GAME" ToRole="NGONNGU" />
           <NavigationProperty Name="NHAPHATHANH" Relationship="Self.FK_GAME_NHAPHATHANH" FromRole="GAME" ToRole="NHAPHATHANH" />
           <NavigationProperty Name="THELOAIGAME" Relationship="Self.FK_GAME_THELOAIGAME" FromRole="GAME" ToRole="THELOAIGAME" />
         </EntityType>
@@ -576,7 +580,6 @@
           <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DungLuong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MaNPH" Type="Int32" />
           <Property Name="MaHDH" Type="Int32" />
           <Property Name="MaNgonNgu" Type="Int32" />
@@ -589,12 +592,13 @@
           <Property Name="HinhCT2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT3" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT4" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="AppOrGame" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HEDIEUHANH" Relationship="Self.FK_OVERALL_HEDIEUHANH" FromRole="OVERALL" ToRole="HEDIEUHANH" />
           <NavigationProperty Name="NGONNGU" Relationship="Self.FK_OVERALL_NGONNGU" FromRole="OVERALL" ToRole="NGONNGU" />
           <NavigationProperty Name="NHAPHATHANH" Relationship="Self.FK_OVERALL_NHAPHATHANH" FromRole="OVERALL" ToRole="NHAPHATHANH" />
           <NavigationProperty Name="ORDER_PRODUCT" Relationship="Self.FK_ORDERPRODUCT_OVERALL" FromRole="OVERALL" ToRole="ORDER_PRODUCT" />
           <NavigationProperty Name="THELOAI" Relationship="Self.FK_OVERALL_THELOAI" FromRole="OVERALL" ToRole="THELOAI" />
+          <Property Name="AppOrGame" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="THELOAI">
           <Key>
@@ -812,7 +816,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CitricStoreEntities5" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CitricStoreEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="APPs" EntityType="Self.APP" />
           <EntitySet Name="BANKs" EntityType="Self.BANK" />
           <EntitySet Name="GAMEs" EntityType="Self.GAME" />
@@ -896,7 +900,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CitricStoreModelStoreContainer" CdmEntityContainer="CitricStoreEntities5">
+        <EntityContainerMapping StorageEntityContainer="CitricStoreModelStoreContainer" CdmEntityContainer="CitricStoreEntities4">
           <EntitySetMapping Name="APPs">
             <EntityTypeMapping TypeName="CitricStoreModel.APP">
               <MappingFragment StoreEntitySet="APP">
@@ -904,19 +908,19 @@
                 <ScalarProperty Name="TenApp" ColumnName="TenApp" />
                 <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
                 <ScalarProperty Name="DungLuong" ColumnName="DungLuong" />
-                <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
                 <ScalarProperty Name="MaTheLoaiApp" ColumnName="MaTheLoaiApp" />
                 <ScalarProperty Name="MaNPH" ColumnName="MaNPH" />
                 <ScalarProperty Name="MaHDH" ColumnName="MaHDH" />
                 <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
                 <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
                 <ScalarProperty Name="DanhGia" ColumnName="DanhGia" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="HinhNen" ColumnName="HinhNen" />
                 <ScalarProperty Name="HinhCT1" ColumnName="HinhCT1" />
                 <ScalarProperty Name="HinhCT2" ColumnName="HinhCT2" />
                 <ScalarProperty Name="HinhCT3" ColumnName="HinhCT3" />
                 <ScalarProperty Name="HinhCT4" ColumnName="HinhCT4" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -935,19 +939,21 @@
                 <ScalarProperty Name="TenGame" ColumnName="TenGame" />
                 <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
                 <ScalarProperty Name="DungLuong" ColumnName="DungLuong" />
-                <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
+                <ScalarProperty Name="NgonNgu" ColumnName="NgonNgu" />
+                <ScalarProperty Name="HeDieuHanh" ColumnName="HeDieuHanh" />
                 <ScalarProperty Name="MaTheLoaiGame" ColumnName="MaTheLoaiGame" />
                 <ScalarProperty Name="MaNPH" ColumnName="MaNPH" />
                 <ScalarProperty Name="MaHDH" ColumnName="MaHDH" />
                 <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
                 <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
                 <ScalarProperty Name="DanhGia" ColumnName="DanhGia" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="HinhNen" ColumnName="HinhNen" />
                 <ScalarProperty Name="HinhCT1" ColumnName="HinhCT1" />
                 <ScalarProperty Name="HinhCT2" ColumnName="HinhCT2" />
                 <ScalarProperty Name="HinhCT3" ColumnName="HinhCT3" />
                 <ScalarProperty Name="HinhCT4" ColumnName="HinhCT4" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1019,11 +1025,11 @@
           <EntitySetMapping Name="OVERALLs">
             <EntityTypeMapping TypeName="CitricStoreModel.OVERALL">
               <MappingFragment StoreEntitySet="OVERALL">
+                <ScalarProperty Name="AppOrGame" ColumnName="AppOrGame" />
                 <ScalarProperty Name="Ma" ColumnName="Ma" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
                 <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
                 <ScalarProperty Name="DungLuong" ColumnName="DungLuong" />
-                <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
                 <ScalarProperty Name="MaNPH" ColumnName="MaNPH" />
                 <ScalarProperty Name="MaHDH" ColumnName="MaHDH" />
                 <ScalarProperty Name="MaNgonNgu" ColumnName="MaNgonNgu" />
@@ -1036,7 +1042,7 @@
                 <ScalarProperty Name="HinhCT2" ColumnName="HinhCT2" />
                 <ScalarProperty Name="HinhCT3" ColumnName="HinhCT3" />
                 <ScalarProperty Name="HinhCT4" ColumnName="HinhCT4" />
-                <ScalarProperty Name="AppOrGame" ColumnName="AppOrGame" />
+                <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

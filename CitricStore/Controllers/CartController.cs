@@ -9,7 +9,7 @@ namespace CitricStore.Controllers
 {
     public class CartController : Controller
     {
-        CitricStoreEntities5 db = new CitricStoreEntities5();
+        CitricStoreEntities4 db = new CitricStoreEntities4();
         // GET: Cart
         public ActionResult Index()
         {
@@ -47,10 +47,8 @@ namespace CitricStore.Controllers
             }
             
             if(currentProduct.LoaiUngDung == "Game")
-            {
                 return RedirectToAction("DetailsGame", "CitricStore", new { id = id });
 
-            }
             else
                 return RedirectToAction("DetailsApp", "CitricStore", new { id = id });
         }

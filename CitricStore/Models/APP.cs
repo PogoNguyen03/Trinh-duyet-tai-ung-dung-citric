@@ -18,19 +18,19 @@ namespace CitricStore.Models
         public string TenApp { get; set; }
         public string GioiThieu { get; set; }
         public string DungLuong { get; set; }
-        public string LinkTai { get; set; }
         public Nullable<int> MaTheLoaiApp { get; set; }
         public Nullable<int> MaNPH { get; set; }
         public Nullable<int> MaHDH { get; set; }
         public Nullable<int> MaNgonNgu { get; set; }
         public Nullable<System.DateTime> NgayCapNhat { get; set; }
         public string DanhGia { get; set; }
+        public Nullable<decimal> DonGia { get; set; }
         public string HinhNen { get; set; }
         public string HinhCT1 { get; set; }
         public string HinhCT2 { get; set; }
         public string HinhCT3 { get; set; }
         public string HinhCT4 { get; set; }
-        public Nullable<decimal> DonGia { get; set; }
+        public string LinkTai { get; set; }
     
         public virtual HEDIEUHANH HEDIEUHANH { get; set; }
         public virtual NGONNGU NGONNGU { get; set; }
