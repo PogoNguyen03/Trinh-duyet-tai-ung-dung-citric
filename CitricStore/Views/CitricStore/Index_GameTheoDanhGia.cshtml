@@ -4,22 +4,20 @@
 {
     <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="bloggame">
-            <div class="imageblog">
+            <a class="imageblog" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})">
                 <img class="card-img-top imageblog-width-height" src="~/Images/GAME/@game.HinhNen" alt="Card image">
-            </div>
-            <div class="">
-                <div class="bloggame-title h4">
-                    <a class="fix-line">@game.TenGame</a>
-                </div>
+            </a>
+                <a class="bloggame-title h4" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})">
+                    @game.TenGame
+                </a>
                 <div class="bloggame-theloai">
-                    Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new {idtheloai = game.MaTheLoaiGame })
+                    Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame })
                 </div>
                 <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
                     <div class="bloggame-download-btn">
                         Chi Tiết
                     </div>
                 </a>
-            </div>
         </div>
     </div>
 }
