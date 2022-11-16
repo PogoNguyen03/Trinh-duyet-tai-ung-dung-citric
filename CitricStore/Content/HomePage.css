@@ -222,38 +222,20 @@
 }
 
 .bloggame-title {
+    color: white;
     margin-bottom: 10px;
     font-size: 16px;
-    color: white;
     text-align: center;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-    .bloggame-title:hover {
+    .bloggame-title:hover{
         color: #FCAE03;
+
     }
-
-    .bloggame-title > a.fix-line {
-        display: block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .bloggame-title > a {
-        color: white;
-        text-decoration: none;
-        -webkit-transition: 0.15s color;
-        -o-transition: 0.15s color;
-        transition: 0.15s color;
-        display: block;
-    }
-        .bloggame-title > a :hover {
-            color: #FCAE03;
-        }
-        .bloggame-title > a.fix-line :hover{
-            color: #FCAE03;
-        }
-
-
 
 .bloggame-theloai {
     color:white;

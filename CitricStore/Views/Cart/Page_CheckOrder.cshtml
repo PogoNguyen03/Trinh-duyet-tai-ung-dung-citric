@@ -6,16 +6,19 @@
 
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 <style>
+    .thanhtoan{
+        color:white;
+        font-size:16px;
+        margin-left:200px;
+    }
 </style>
-<div class="col-lg-5 col-md-11" style="margin:0px auto;">
-    <h2 style="text-align: center; color:white">ĐÃ THANH TOÁN THÀNH CÔNG!</h2>
-    <hr />
-    <h3 style="text-align: center; color:white">THÔNG TIN ĐƠN HÀNG</h3>
+<div class="container" style="margin:0px auto; min-height:900px;">
+    <h3 style="text-align: center; color:white">KIỂM TRA THÔNG TIN ĐƠN HÀNG</h3>
     <div style="color:white; font-size:18px;">
-        <table class="table table-borderless">
+        <table class="table table-borderless" style="color:white; text-align:center; table-layout:fixed; width:100%">
             <thead>
                 <tr>
-                    <th colspan="2">SẢN PHẨM</th>
+                    <th colspan="2">ỨNG DỤNG</th>
 
                     <th>SỐ LƯỢNG</th>
                     <th>ĐƠN GIÁ</th>
@@ -27,22 +30,24 @@
 
                 {
                     <tr>
-                        <td>@product.TenUngDung</td>
-                        <td><img src="~/Images/APP/@product.HinhNen" /></td>
-                        <td>@product.SoLuong</td>
-                        <td>@product.DonGia</td>
-                        <td>@product.FinalPrice()</td>
+                        <td><img src="~/Images/APP/@product.HinhNen" style="width:100px; height:100px;" /></td>
+                        <td class="align-middle" style="font-size:25px; font-weight:500;">@product.TenUngDung</td>
+
+                        <td class="align-middle">@product.SoLuong</td>
+                        <td class="align-middle">@String.Format("{0:0,0}", @product.DonGia) VND</td>
+                        <td class="align-middle">@String.Format("{0:0,0}", @product.FinalPrice()) VND</td>
                     </tr>
                 }
-                <tr style="font-weight:bold; text-align:right; color:red;">
-                    <td colspan="5">Tổng số lượng: @ViewBag.TotalNumber</td>
-                    <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
+                <tr style="font-size: 22px; font-weight: 500; text-align: right; color: white;">
+                    <td></td>
+                    <td colspan="2" style="text-align:right">Tống số lượng: @ViewBag.TotalNumber</td>
+                    <td colspan="2" style="text-align:center">Tổng thanh toán: @String.Format("{0:0,0}", @ViewBag.TotalPrice) VND</td>
                 </tr>
             </tbody>
         </table>
     </div>
-
-    <h3 style="text-align: center; color:white">THÔNG TIN THANH TOÁN VÀ NHẬN HÀNG</h3>
+    <hr />
+    <h3 style="text-align: center; color:white; margin-top:50px;">THÔNG TIN THANH TOÁN VÀ NHẬN HÀNG</h3>
     @Html.Action("Page_ShowPayment", "Cart", new { idor = Session["MaOrder"] })
 
 
@@ -52,8 +57,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Xác nhận đơn hàng" class="btn btn-info" /> |
-            @Html.ActionLink("Quay về", "Page_Payment")
+            <input type="submit" value="Xác nhận đơn hàng"class="btn btn-dark" style="margin-top:20px; margin-left:430px; font-size:23px;" />
+            @*@Html.ActionLink("Quay về", "Page_Payment")*@
         </div>
     }
 </div>

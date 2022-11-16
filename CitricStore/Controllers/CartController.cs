@@ -172,6 +172,9 @@ namespace CitricStore.Controllers
         [HttpGet]
         public ActionResult Page_CheckOrder()
         {
+            ViewBag.TotalNumber = GetTotalNumber();
+            ViewBag.TotalPrice = GetTotalPrice();
+
             List<CartItem> myCart = GetCart();
             return View(myCart);
         }

@@ -7,22 +7,30 @@
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
 <style>
-    .NutThanhToan{
-        text-decoration:none;
-        color:aliceblue;
-    }
+
     .ThanhVien {
         color: aliceblue;
     }
-</style>
+    .thanhtoan-btn{
+        margin:0px auto;
+        right:0px;
+        margin-right:0px;
+        align-items:end;
+    }
 
-<div class="col-lg-5 col-md-11" style="margin:0px auto;">
+
+</style>
+    
+   
+    
+<div class="container" style="margin:0px auto; min-height:900px;">
+
     <h2 style="text-align: center; color:white">THÔNG TIN GIỎ HÀNG</h2>
     <div style="color:white; font-size:18px;">
-        <table class="table table-borderless" style="color:white; text-align:center">
+        <table class="table table-borderless" style="color:white; text-align:center; table-layout:fixed; width:100%">
             <thead>
                 <tr>
-                    <th colspan="2">SẢN PHẨM</th>
+                    <th colspan="2">ỨNG DỤNG</th>
 
                     <th>SỐ LƯỢNG</th>
                     <th>ĐƠN GIÁ</th>
@@ -33,29 +41,37 @@
                 @foreach (var product in Model)
 
                 {
-                <tr>
-                    <td><img src="~/Images/APP/@product.HinhNen" style="width:50px; height:50px;" /></td>
-                    <td>@product.TenUngDung</td>
+                    <tr>
+                        <td><img src="~/Images/APP/@product.HinhNen" style="width:100px; height:100px;" /></td>
+                        <td class="align-middle" style="font-size:25px; font-weight:500;">@product.TenUngDung</td>
 
-                    <td>@product.SoLuong</td>
-                    <td>@product.DonGia</td>
-                    <td>@product.FinalPrice()</td>
-                </tr>
+                        <td class="align-middle">@product.SoLuong</td>
+                        <td class="align-middle">@String.Format("{0:0,0}", @product.DonGia) VND</td>
+                        <td class="align-middle">@String.Format("{0:0,0}", @product.FinalPrice()) VND</td>
+                    </tr>
                 }
-                <tr style="font-weight:bold; text-align:right; color:red;">
-                    <td colspan="5">Tổng số lượng: @ViewBag.TotalNumber</td>
-                    <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
+                <tr style="font-size: 22px; font-weight: 500; text-align: right; color: white;">
+                    <td colspan="2" style="text-align:right">Tống số lượng: @ViewBag.TotalNumber</td>
+                    <td colspan="2" style="text-align:center">Tổng thanh toán: @String.Format("{0:0,0}", @ViewBag.TotalPrice) VND</td>
+
+                    <td>
+                        <div class="row">
+                            @if (Session["TaiKhoan"] != null)
+                            {
+                                @Html.ActionLink("Thanh toán", "Page_Payment", "Cart", null, new { @class = "btn btn-dark" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Đăng nhập để thanh toán", "Login", "Users", null, new { @class = "btn btn-dark" })
+                            }
+
+                        </div>
+
+
+                    </td>
                 </tr>
             </tbody>
         </table>
-        @if (Session["TaiKhoan"] != null)
-        {
-            @Html.ActionLink("Thanh toán", "Page_Payment", "Cart", null, new {@class = "NutThanhToan"})
-        }
-        else
-        {
-            Console.WriteLine("Vui lòng đăng nhập trước khi thanh toán");
-        }
 
     </div>
     </div>
