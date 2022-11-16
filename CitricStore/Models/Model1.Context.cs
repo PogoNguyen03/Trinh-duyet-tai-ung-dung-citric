@@ -13,10 +13,10 @@ namespace CitricStore.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CitricStoreEntities4 : DbContext
+    public partial class CitricStoreEntities5 : DbContext
     {
-        public CitricStoreEntities4()
-            : base("name=CitricStoreEntities4")
+        public CitricStoreEntities5()
+            : base("name=CitricStoreEntities5")
         {
         }
     
@@ -26,17 +26,17 @@ namespace CitricStore.Models
         }
     
         public virtual DbSet<APP> APPs { get; set; }
+        public virtual DbSet<BANK> BANKs { get; set; }
         public virtual DbSet<GAME> GAMEs { get; set; }
         public virtual DbSet<HEDIEUHANH> HEDIEUHANHs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<NGONNGU> NGONNGUs { get; set; }
         public virtual DbSet<NHAPHATHANH> NHAPHATHANHs { get; set; }
-        public virtual DbSet<THELOAIAPP> THELOAIAPPs { get; set; }
-        public virtual DbSet<THELOAIGAME> THELOAIGAMEs { get; set; }
-        public virtual DbSet<OVERALL> OVERALLs { get; set; }
-        public virtual DbSet<THELOAI> THELOAIs { get; set; }
         public virtual DbSet<ORDER_INFO> ORDER_INFO { get; set; }
         public virtual DbSet<ORDER_PRODUCT> ORDER_PRODUCT { get; set; }
-        public virtual DbSet<BANK> BANKs { get; set; }
+        public virtual DbSet<OVERALL> OVERALLs { get; set; }
+        public virtual DbSet<THELOAI> THELOAIs { get; set; }
+        public virtual DbSet<THELOAIAPP> THELOAIAPPs { get; set; }
+        public virtual DbSet<THELOAIGAME> THELOAIGAMEs { get; set; }
     }
 }

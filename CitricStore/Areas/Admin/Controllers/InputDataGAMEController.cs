@@ -12,12 +12,12 @@ namespace CitricStore.Areas.Admin.Controllers
 {
     public class InputDataGAMEController : Controller
     {
-        private CitricStoreEntities4 db = new CitricStoreEntities4();
+        private CitricStoreEntities5 db = new CitricStoreEntities5();
 
         // GET: Admin/InputDataGAME
         public ActionResult Index()
         {
-            var gAMEs = db.GAMEs.Include(g => g.HEDIEUHANH1).Include(g => g.NGONNGU1).Include(g => g.NHAPHATHANH).Include(g => g.THELOAIGAME);
+            var gAMEs = db.GAMEs.Include(g => g.HEDIEUHANH).Include(g => g.NGONNGU).Include(g => g.NHAPHATHANH).Include(g => g.THELOAIGAME);
             return View(gAMEs.ToList());
         }
 

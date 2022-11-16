@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="~/Content/Layout_HomePage.css" />
     <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
     <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
+    <link href="~/Content/User.css" rel="stylesheet"/>
     <link rel="shortcut icon" type="image/png" href="~/Images/LOGO/LOGO_Black.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 
 </head>
 <body style="background-color:rgb(18,18,18)">
+    <style>
+        .ThanhVien{
+            color:aliceblue;
+        }
+    </style>
     <header id="header" class="container-fluid">
         <div class="row">
             <div class="col-lg-1 col-sm-1 d-flex justify-content-center" style="align-items:center;">
@@ -22,9 +28,9 @@
             </div>
             <div class="header-left-container col-lg-6 col-sm-5">
                 <div class="header-left">
-                    <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")">Cửa hàng</a>
-                    <a style="width:200px " class="header-left-name header-left-name-btn">Câu hỏi thường gặp</a>
-                    <a class="header-left-name header-left-name-btn " href="">Hỗ trợ</a>
+                    <a class="header-left-name header-left-name-btn" href="@Url.Action("Index", "CitricStore")" style="color:black;">Cửa hàng</a>
+                    <a style="width:200px; color:black; " class="header-left-name header-left-name-btn">Câu hỏi thường gặp</a>
+                    <a class="header-left-name header-left-name-btn " href="" style="color:black;">Hỗ trợ</a>
                 </div>
             </div>
             <div class="header-right-container col-lg-4 col-sm-3" style="font-size:16px;">
@@ -77,15 +83,23 @@
 
 
 
-    <div class="container main">
+    <div class="container main" style="height: 800px">
         <div class="row navigationbar-container">
             <div class="searchbar-container col-lg-3 col-md-9">
                 <div class="searchbar">
                     @using (Html.BeginForm("Page_Search", "CitricStore", FormMethod.Get, new { @class = "form-inline" }))
                     {
                         <div class="form-group">
-                            <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Tên ứng dụng">
-                            <input type="submit" class="btn btn-danger" value="Tìm kiếm">
+                           <table>
+                               <tr>
+                                   <td>
+                                       <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Tên ứng dụng">
+                                   </td>
+                                   <td>
+                                       <input type="submit" class="btn btn-danger" value="Tìm kiếm" style="margin-left: 16px; background-color: #FCAE03">
+                                   </td>
+                               </tr>
+                           </table>
                         </div>
                     }
 
@@ -115,8 +129,7 @@
                                         Game
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu" style="background-color:rgb(18,18,18); border:none;
-                                               margin-left:-10px; padding:0px;">
+                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu" style="background-color: rgb(18,18,18); border: none; margin-left: -10px; padding: 0px; height: 228px; overflow-y: scroll; opacity: 0.9; text-overflow: ellipsis; ">
                                         @Html.Action("Index_LayTheLoaiGame", "CitricStore")
                                     </div>
                                 </li>
@@ -129,8 +142,7 @@
                                         Phần Mềm
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu" style="background-color:rgb(18,18,18); border:none;
-                                               margin-left:-10px; padding:0px;">
+                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu" style="background-color: rgb(18,18,18); border: none; margin-left: -10px; padding: 0px; height: 228px; overflow-y: scroll; opacity: 0.9; text-overflow: ellipsis; ">
                                         @Html.Action("Index_LayTheLoaiApp", "CitricStore")
                                     </div>
                                 </li>
@@ -142,7 +154,7 @@
                                     }
                                     else
                                     {
-                                        @Html.ActionLink("Thành Viên", "Login", "Users", null, new { @class = "nav-link" })
+                                        @Html.ActionLink("Thành Viên", "Login", "Users", new {@style = "color : white;"}, new { @class = "nav-link ThanhVien" })
                                     }
 
                                 </li>
@@ -184,9 +196,9 @@
                         <li class="nav-item mb-2">
                             <a href="#" class="nav-link p-0 text-muted">Cửa hàng</a>
                         </li>
-                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Câu hỏi thường gặp</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hỗ trợ</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ngôn ngữ</a></li>
+                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted" >Câu hỏi thường gặp</a></li>
+                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Hỗ trợ</a></li>
+                        <li class="nav-item mb-2"><a style="color: black" href="#" class="nav-link p-0 text-muted">Ngôn ngữ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 d-flex justify-content-center">
