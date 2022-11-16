@@ -201,7 +201,7 @@
 /*làm ẩn thanh scollball*/
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
     background-color: rgb(18,18,18);
 }
 
@@ -262,15 +262,19 @@
     margin-top: 100px;
     margin-left: 10px;
     font-size: 30px;
-    color: white;
+    color: black;
+}
+
+.text-muted{
+    color:black;
 }
 
 
 
 
-.DangNhap{
-    text-decoration:none;
-    color:black;
+.DangNhap {
+    text-decoration: none;
+    color: black;
 }
 
 .ThanhVien{

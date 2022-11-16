@@ -9,6 +9,13 @@
 
 <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
 
+<style>
+    .chonloc{
+        text-decoration:none;
+        color:black;
+    }
+</style>
+
 <div class="slideshow">
     <div class="display-container">
         @*            <div class="slides">
@@ -66,65 +73,65 @@
                     Kiểu sắp xếp
                 </a>
 
-                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.ActionLink("Phần mềm mới nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.DateSortParm })
+                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu" , style="border-radius: 9px;">
+                    @Html.ActionLink("Phần mềm mới nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.DateSortParm }, new { @Class = "chonloc" })
                     <br />
-                    @Html.ActionLink("Phần mềm hay nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.RateSortParm })
+                    @Html.ActionLink("Phần mềm hay nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.RateSortParm }, new { @Class = "chonloc" })
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-            <div class="dropdown filter-tieude">
-                <strong>Dung Lượng:</strong>
-                <a href="#" class="dropdown-toggle  dungluong-dropdown"
-                   role="button" id="dropdownMenu" type="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Chọn dung lượng
-                </a>
+        @*<div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <div class="dropdown filter-tieude">
+                    <strong>Dung Lượng:</strong>
+                    <a href="#" class="dropdown-toggle  dungluong-dropdown"
+                       role="button" id="dropdownMenu" type="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Chọn dung lượng
+                    </a>
 
-                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    <a href="#" class="dropdown-item">Dưới 10GB</a>
-                    <a href="#" class="dropdown-item">Dưới 20GB</a>
-                    <a href="#" class="dropdown-item">Dưới 30GB</a>
+                    <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
+                        <a href="#" class="dropdown-item">Dưới 10GB</a>
+                        <a href="#" class="dropdown-item">Dưới 20GB</a>
+                        <a href="#" class="dropdown-item">Dưới 30GB</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
-            <div class="dropdown filter-tieude">
-                Ngôn Ngữ:
-                <a href="#" class="dropdown-toggle  dungluong-dropdown"
-                   role="button" id="dropdownMenu" type="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Chọn ngôn ngữ
-                </a>
+            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
+                <div class="dropdown filter-tieude">
+                    Ngôn Ngữ:
+                    <a href="#" class="dropdown-toggle  dungluong-dropdown"
+                       role="button" id="dropdownMenu" type="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Chọn ngôn ngữ
+                    </a>
 
-                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.Action("Page_App_Filter_NgonNguDropDown","CitricStore")
+                    <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
+                        @Html.Action("Page_App_Filter_NgonNguDropDown","CitricStore")
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
-            <div class="dropdown filter-tieude">
-                Nền Tảng:
-                <a href="#" class="dropdown-toggle  dungluong-dropdown"
-                   role="button" id="dropdownMenu" type="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Chọn hệ điều hành
-                </a>
+            <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 filter-row">
+                <div class="dropdown filter-tieude">
+                    Nền Tảng:
+                    <a href="#" class="dropdown-toggle  dungluong-dropdown"
+                       role="button" id="dropdownMenu" type="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Chọn hệ điều hành
+                    </a>
 
-                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    <a href="#" class="dropdown-item">Dưới 10GB</a>
-                    <a href="#" class="dropdown-item">Dưới 20GB</a>
-                    <a href="#" class="dropdown-item">Dưới 30GB</a>
+                    <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
+                        <a href="#" class="dropdown-item">Dưới 10GB</a>
+                        <a href="#" class="dropdown-item">Dưới 20GB</a>
+                        <a href="#" class="dropdown-item">Dưới 30GB</a>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div>*@
 
     </div>
 
