@@ -106,31 +106,25 @@
 
 .nuttaigame {
     background-color: #FCAE03;
-    height: 40px;
+    height: 45px;
     width: 250px;
     font-size: 25px;
     display: flex;
     border-radius: 24px;
     text-decoration: none;
     text-decoration-style:unset;
-    margin-top: 13px;
     color: white;
-    text-align:center;
+    text-align: center;
     align-content:center;
 }
 
-    .nuttaigame a {
-        margin: 0px -12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: white;
-    }
+.nuttaigame:hover{
+    color:white;
+}
 
 .danhgia {
     color:white;
-    font-size: 30px;
+    font-size: 40px;
     margin:0px auto;
     align-items:center
 }
@@ -152,17 +146,12 @@
 }
 
 .noidung {
-    font-size: medium;
+    font-size: 20px;
     margin-left:30px;
     color: white;
 }
 
-
-.tieudechitiet {
-}
-
 .tieude {
-   
     font-size: 30px;
     color: white;
 }
@@ -170,7 +159,7 @@
 
 .chitiet {
     margin-left:30px;
-    font-size: medium;
+    font-size: 20px;
     color: white;
 }
 
@@ -235,7 +224,6 @@
     transition: all 1s ease-in-out;
     width: 270px;
     height: 200px;
-    object-fit: cover;
 }
 
 .game-list-item-title {

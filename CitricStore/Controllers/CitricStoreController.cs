@@ -291,7 +291,6 @@ namespace CitricStore.Controllers
         public ActionResult Extension_Overall_TenTheLoai(int idtheloai)
         {
             var theloai = database.THELOAIs.Where(g => g.MaTheLoai == idtheloai).ToList();
-
             return PartialView(theloai);
         }
         //TRANG PHÂN LOẠI
@@ -306,6 +305,15 @@ namespace CitricStore.Controllers
             var ud = database.OVERALLs.FirstOrDefault(s => s.Ma == id);
             return View(ud);
         }
+        private List<OVERALL> LayUngDungMoi(int soluong)
+        {
+            return database.OVERALLs.OrderByDescending(ud => ud.NgayCapNhat).Take(soluong).ToList();
+        }
+        private List<OVERALL> LayUngDungTheoDanhGia(int soluong)
+        {
+            return database.OVERALLs.OrderByDescending(ud => ud.DanhGia).Take(soluong).ToList();
+        }
+
         public ActionResult Details_Overall_TheoDanhGia()
         {
             var dsUngDungDeXuat = LayUngDungTheoDanhGia(8);
@@ -314,7 +322,7 @@ namespace CitricStore.Controllers
 
         public ActionResult Details_Overall_Moi()
         {
-            var dsGameMoi = LayGameMoi(8);
+            var dsGameMoi = LayUngDungMoi(8);
             return PartialView(dsGameMoi);
         }
 
@@ -324,14 +332,6 @@ namespace CitricStore.Controllers
             return PartialView(dsTheLoai);
         }
 
-        private List<OVERALL> LayUngDungMoi(int soluong)
-        {
-            return database.OVERALLs.OrderByDescending(ud => ud.NgayCapNhat).Take(soluong).ToList();
-        }
-        private List<OVERALL> LayUngDungTheoDanhGia(int soluong)
-        {
-            return database.OVERALLs.OrderByDescending(ud => ud.DanhGia).Take(soluong).ToList();
-        }
 
 
 

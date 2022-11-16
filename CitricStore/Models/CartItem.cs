@@ -13,6 +13,7 @@ namespace CitricStore.Models
         public string HinhNen { get; set; }
         public decimal DonGia { get; set; }
         public int SoLuong { get; set; }
+        public string LoaiUngDung { get; set; }
         //Tính thành tiền = DongGia * SoLuong
         public decimal FinalPrice()
         {
@@ -27,6 +28,7 @@ namespace CitricStore.Models
             this.HinhNen = ud.HinhNen;
             this.DonGia = (decimal)ud.DonGia;
             this.SoLuong = 1; //Số lượng mua ban đầu của một mặt hàng là 1 (cho lần click đầu)
+            this.LoaiUngDung = ud.AppOrGame;
         }
 
     }

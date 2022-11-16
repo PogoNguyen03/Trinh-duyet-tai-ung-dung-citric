@@ -5,7 +5,7 @@
 }
 
 <link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
-<link rel="stylesheet" href="~/Content/Search.css" />
+<link rel="stylesheet" href="~/Content/HomePage.css" />
 <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
 
 <div class="slideshow">
@@ -54,18 +54,24 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            @foreach (var search in Model)
+            @foreach (var app in Model)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="bloggame">
                         <div class="imageblog">
-                            <img class="card-img-top imageblog-width-height" src="~/Images/OVEALL/@search.HinhNen" alt="Card image">
+                            <img class="card-img-top imageblog-width-height" src="~/Images/OVERALL/@app.HinhNen" alt="Card image">
                         </div>
-                        <div class="">
                             <div class="bloggame-title h4">
-                                <a class="fix-line">@search.Ten</a>
+                                <a class="fix-line">@app.Ten</a>
                             </div>
-                        </div>
+                            <div class="bloggame-theloai">
+                                Thể loại: @Html.Action("Extension_Overall_TenTheLoai", "CitricStore", new { idtheloai = app.MaTheLoai})
+                            </div>
+                            <a class="bloggame-download" href="@Url.Action("DetailsApp", "CitricStore", new {id=app.Ma})" style="text-decoration:none">
+                                <div class="bloggame-download-btn">
+                                    Chi Tiết
+                                </div>
+                            </a>
                     </div>
                 </div>
             }

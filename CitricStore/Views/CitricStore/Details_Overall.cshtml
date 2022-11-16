@@ -17,66 +17,77 @@
 </script>
 
 
-<div class="slideshow">
-    <div class="display-container">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhNen">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT1">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT2">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT3">
-        <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT4">
-        <!--Nút qua lại-->
-        <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+<div class="row" style="margin-top:20px;">
+    <div class="col-lg-8">
+        <div class="slideshow">
+            <div class="display-container">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhNen">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT1">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT2">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT3">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT4">
+                <!--Nút qua lại-->
+                <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
 
-        <!-- Chấm tròn -->
-        <div class="badge" style="width:100%">
-            <span class="image-badge" onclick="currentDiv(1)"></span>
-            <span class="image-badge" onclick="currentDiv(2)"></span>
-            <span class="image-badge" onclick="currentDiv(3)"></span>
-            <span class="image-badge" onclick="currentDiv(4)"></span>
-            <span class="image-badge" onclick="currentDiv(5)"></span>
+                <!-- Chấm tròn -->
+                <div class="badge" style="width:100%">
+                    <span class="image-badge" onclick="currentDiv(1)"></span>
+                    <span class="image-badge" onclick="currentDiv(2)"></span>
+                    <span class="image-badge" onclick="currentDiv(3)"></span>
+                    <span class="image-badge" onclick="currentDiv(4)"></span>
+                    <span class="image-badge" onclick="currentDiv(5)"></span>
+                </div>
+            </div>
         </div>
+        <script language="Javascript" src="~/Scripts/SlideImageAuto.js"></script>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="tenungdung" style=" padding-bottom:10px; padding-top:10px; text-align:center; margin-top:100px;">
+            @Model.Ten
+        </div>
+
+        <div class="price" style="color: white; font-size: 30px; text-align: center">
+            @String.Format("{0:0,0}", Model.DonGia) VND
+        </div>
+
+        <a class="nuttaigame align-items-center" style="margin: 25px auto"
+           href="@Url.Action("AddToCart","Cart", new {id = Model.Ma})">
+            Thêm vào giỏ hàng
+        </a>
     </div>
 </div>
-<script language="Javascript" src="~/Scripts/SlideImageAuto.js"></script>
 
 <div class="col-12">
     <div class="row">
-        <div class="col-lg-8 col-md-8 tenungdung" style=" padding-bottom:25px; padding-top:10px">
-            @Model.Ten
-        </div>
-        <div class="col-lg-4 col-md-4" style="padding-top:10px;">
-            <a class="nuttaigame float-end justify-content-center" style="text-align:center; align-items:center"
-               href="@Url.Action("AddToCart","Cart", new {id = Model.Ma})">
-                Thêm vào giỏ hàng
-            </a>
+        <p class="tieude" style="margin-top:20px">NỘI DUNG</p>
+        <p class="noidung">
+            @Model.GioiThieu
+        </p>
 
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4 danhgia">
-                <span class="stars" data-rating="@Model.DanhGia" data-num-stars="5"></span>
-            </div>
-            <div class="col-lg-4" style="font-size:30px;">@Model.DanhGia</div>
-            <div class="col-lg-4"></div>
-        </div>
         <hr />
 
-        <div class="tieudenoidung">
-            <p class="tieude">NỘI DUNG</p>
-            <p class="noidung">
-                @Model.GioiThieu
-            </p>
-            <hr>
-            <div class="tieudechitiet">
-                <p class="tieude">CHI TIẾT</p>
-                <p class="chitiet">Thể loại: @Html.Action("Extension_Overall_TenTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoai})</p>
-                <p class="chitiet">Nhà phát hành: @Html.Action("Details_TenNPH", "CitricStore", new { idnph = Model.MaNPH })</p>
-                <p class="chitiet">Dung lượng: @Model.DungLuong MB</p>
-                <p class="chitiet">Ngôn ngữ: @Html.Action("Details_TenNgonNgu", "CitricStore", new { idngonngu = Model.MaNgonNgu })</p>
-                <p class="chitiet">Hệ điều hành: @Html.Action("Details_TenHDH", "CitricStore", new { idhdh = Model.MaHDH })</p>
-                <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>
+        <p class="tieude">ĐÁNH GIÁ CỦA NGƯỜI DÙNG</p>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3" style="font-size:40px; color:white; text-align:right;">@Model.DanhGia</div>
+
+            <div class="col-lg-3 danhgia justify-content-start align-bottom">
+                <span class="stars" data-rating="@Model.DanhGia" data-num-stars="5"></span>
             </div>
+            <div class="col-lg-3"></div>
+
+        </div>
+        <hr>
+        <div class="tieudechitiet">
+            <p class="tieude">CHI TIẾT</p>
+            <p class="chitiet">Thể loại: @Html.Action("Extension_Overall_TenTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoai })</p>
+            <p class="chitiet">Nhà phát hành: @Html.Action("Details_TenNPH", "CitricStore", new { idnph = Model.MaNPH })</p>
+            <p class="chitiet">Dung lượng: @Model.DungLuong MB</p>
+            <p class="chitiet">Ngôn ngữ: @Html.Action("Details_TenNgonNgu", "CitricStore", new { idngonngu = Model.MaNgonNgu })</p>
+            <p class="chitiet">Hệ điều hành: @Html.Action("Details_TenHDH", "CitricStore", new { idhdh = Model.MaHDH })</p>
+            <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>
         </div>
         <hr>
         <div class="game-list-container">

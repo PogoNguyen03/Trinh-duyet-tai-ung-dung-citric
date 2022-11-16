@@ -172,13 +172,15 @@
     height: 40px;
     position: relative;
     align-items: center;
+    margin-bottom: 10px;
 }
 
     .dexuat-name > span {
         padding-right: 20px;
         padding-left: 20px;
-        color: black;
+        color: white;
     }
+
 
 .line:first-child {
     width: 70px;
@@ -225,6 +227,9 @@
     color: white;
     text-align: center;
 }
+    .bloggame-title:hover {
+        color: #FCAE03;
+    }
 
     .bloggame-title > a.fix-line {
         display: block;
@@ -234,13 +239,21 @@
     }
 
     .bloggame-title > a {
-        color: inherit;
+        color: #FCAE03;
         text-decoration: none;
         -webkit-transition: 0.15s color;
         -o-transition: 0.15s color;
         transition: 0.15s color;
         display: block;
     }
+        .bloggame-title > a :hover {
+            color: #FCAE03;
+        }
+        .bloggame-title > a.fix-line :hover{
+            color: #FCAE03;
+        }
+
+
 
 .bloggame-theloai {
     color:white;
@@ -256,7 +269,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top:10px;
     margin-bottom:10px;
 }
 
@@ -265,13 +278,17 @@
     justify-content: center;
     align-items: center;
     margin: 0px auto;
+    text-decoration:none;
+    color:white;
+    
 }
 
 .bloggame-download-btn {
     background-color: #293139;
     border-color: #101215;
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 16px;
+    
     line-height: 1.5;
     height: 35px;
     width: 100px;
@@ -282,3 +299,6 @@
     cursor: pointer;
 }
 
+.bloggame-download-btn:hover{
+    color:white;
+}

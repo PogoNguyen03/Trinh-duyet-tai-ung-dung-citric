@@ -4,127 +4,153 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
 }
+<link rel="stylesheet" href="~/Content/bootstrap5/css/bootstrap.css" />
 
-<h2>Index</h2>
+<style>
+    th, td {
+        text-align: center
+    }
+</style>
+
+<h2 style="text-align: center; color:white">DỮ LIỆU TỔNG HỢP ỨNG DỤNG</h2>
+
+<h3 style="text-align: center; color:white">TỔNG HỢP</h3>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo Mới", "Create", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
+<table class="table-bordered" style="table-layout:fixed; width:100%; word-break: break-word; color:white;">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ten)
+            Mã
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GioiThieu)
+            Tên
+        </th>
+        <th style="width:30%;">
+            Giới thiệu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DungLuong)
+            Dung lượng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LinkTai)
+            Đơn giá
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgayCapNhat)
+            HDH
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DanhGia)
+            Ngôn ngữ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DonGia)
+            NPH
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HinhNen)
+            Thể loại
+        </th>
+
+        <th>
+            Ngày nhập
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HinhCT1)
+            Đánh giá
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HinhCT2)
+            App/Game
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HinhCT3)
+            Nền
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HinhCT4)
+            Chi tiết 1
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AppOrGame)
+            Chi tiết 2
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HEDIEUHANH.TenHDH)
+            Chi tiết 3
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NGONNGU.TenNgonNgu)
+            Chi tiết 4
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NHAPHATHANH.TenNPH)
+            Sửa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.THELOAI.TenTheLoai)
+            Chi tiết
         </th>
-        <th></th>
+        <th>
+            Xoá
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ten)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GioiThieu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DungLuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LinkTai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayCapNhat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DanhGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhNen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhCT1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhCT2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhCT3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhCT4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppOrGame)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HEDIEUHANH.TenHDH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGONNGU.TenNgonNgu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NHAPHATHANH.TenNPH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.THELOAI.TenTheLoai)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Ma }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Ma }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Ma })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ma)
+    </td>
 
-</table>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GioiThieu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DungLuong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonGia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HEDIEUHANH.TenHDH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NGONNGU.TenNgonNgu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NHAPHATHANH.TenNPH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.THELOAI.TenTheLoai)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayCapNhat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DanhGia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AppOrGame)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.HinhNen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HinhCT1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HinhCT2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HinhCT3)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HinhCT4)
+    </td>
+    <td>
+        @Html.ActionLink("Sửa", "Edit", new { id = item.Ma }, new { @class = "btn btn-success" })
+    </td>
+    <td>
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.Ma }, new { @class = "btn btn-danger" })
+    </td>
+    <td>
+        @Html.ActionLink("Xoá", "Delete", new { id = item.Ma }, new { @class = "btn btn-primary" })
+    </td>
+</tr>
+        }
+
+    </table>

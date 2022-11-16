@@ -45,7 +45,14 @@ namespace CitricStore.Controllers
             {
                 currentProduct.SoLuong++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
             }
-            return RedirectToAction("Details_Overall", "CitricStore", new { id = id });
+            
+            if(currentProduct.LoaiUngDung == "Game")
+            {
+                return RedirectToAction("DetailsGame", "CitricStore", new { id = id });
+
+            }
+            else
+                return RedirectToAction("DetailsApp", "CitricStore", new { id = id });
         }
 
 
