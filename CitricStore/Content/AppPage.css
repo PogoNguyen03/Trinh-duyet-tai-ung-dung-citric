@@ -107,7 +107,7 @@
 .nuttaigame {
     background-color: #FCAE03;
     height: 40px;
-    width: 200px;
+    width: 250px;
     font-size: 25px;
     display: flex;
     border-radius: 24px;
@@ -132,6 +132,7 @@
     color:white;
     font-size: 30px;
     margin:0px auto;
+    align-items:center
 }
 
 .ungdung {

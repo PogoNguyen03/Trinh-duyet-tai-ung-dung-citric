@@ -45,24 +45,25 @@
 </div>
 <script language="Javascript" src="~/Scripts/HomePage.js"></script>
 
+
 <div class="dexuat-container">
     <div class="dexuat-name">
         <div class="line"></div>
-        <span>TRÒ CHƠI</span>
+        <span>KẾT QUẢ TÌM KIẾM CHO "@Session["SearchKeyWord"].ToString()"</span>
         <div class="line"></div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            @foreach (var game in Model)
+            @foreach (var search in Model)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="bloggame">
                         <div class="imageblog">
-                            <img class="card-img-top imageblog-width-height" src="~/Images/@game.HinhNen" alt="Card image">
+                            <img class="card-img-top imageblog-width-height" src="~/Images/OVEALL/@search.HinhNen" alt="Card image">
                         </div>
                         <div class="">
                             <div class="bloggame-title h4">
-                                <a class="fix-line">@game.TenSearch</a>
+                                <a class="fix-line">@search.Ten</a>
                             </div>
                         </div>
                     </div>

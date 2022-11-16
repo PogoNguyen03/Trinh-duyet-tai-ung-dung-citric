@@ -7,12 +7,11 @@
             <div class="imageblog">
                 <img class="card-img-top imageblog-width-height" src="~/Images/GAME/@game.HinhNen" alt="Card image">
             </div>
-            <div class="">
                 <div class="bloggame-title h4">
                     <a class="fix-line">@game.TenGame</a>
                 </div>
                 <div class="bloggame-theloai">
-                    Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame })
+                    Thể loại: @Html.Action("TenTheLoaiGame", "CitricStore", new { idtheloai = game.MaTheLoaiGame})
                 </div>
                 <a class="bloggame-download" href="@Url.Action("DetailsGame", "CitricStore", new {id=game.MaGame})" style="text-decoration:none">
                     <div class="bloggame-download-btn">
@@ -21,6 +20,5 @@
                 </a>
             </div>
         </div>
-    </div>
 }
 

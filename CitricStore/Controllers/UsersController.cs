@@ -86,6 +86,10 @@ namespace CitricStore.Controllers
 
                         Session["MaKH"] = database.KHACHHANGs.FirstOrDefault(k => k.TenDN == kh.TenDN).MaKH;
 
+                        if(kh.TenDN == "admin")
+                        {
+                            return RedirectToAction("Index", "Admin/Admin");
+                        }    
                         return RedirectToAction("Index", "CitricStore");
 
                     }
@@ -227,6 +231,28 @@ namespace CitricStore.Controllers
             return View(kh);
         }
 
+
+
+        //Đơn đã mua
+        public ActionResult Users_DaMua(int idkh)
+        {
+            var info = database.ORDER_INFO.Where(s => s.MaKH == idkh).ToList();
+            return View(info);
+        }
+
+        public ActionResult DaMua_Product(int idor)
+        {
+            var or = database.ORDER_PRODUCT.Where(s => s.MaOrder == idor);
+            return PartialView(or);
+        }
+
+        public ActionResult DaMua_UngDung(int idud)
+        {
+            var ud = database.OVERALLs.Where(s => s.Ma == idud) ;
+            return PartialView(ud);
+        }
+
+        //Game đã có
     }
 
 }

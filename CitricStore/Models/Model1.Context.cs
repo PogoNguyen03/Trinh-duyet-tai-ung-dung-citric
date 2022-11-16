@@ -33,7 +33,10 @@ namespace CitricStore.Models
         public virtual DbSet<NHAPHATHANH> NHAPHATHANHs { get; set; }
         public virtual DbSet<THELOAIAPP> THELOAIAPPs { get; set; }
         public virtual DbSet<THELOAIGAME> THELOAIGAMEs { get; set; }
-        public virtual DbSet<SEARCHALL> SEARCHALLs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<OVERALL> OVERALLs { get; set; }
+        public virtual DbSet<THELOAI> THELOAIs { get; set; }
+        public virtual DbSet<ORDER_INFO> ORDER_INFO { get; set; }
+        public virtual DbSet<ORDER_PRODUCT> ORDER_PRODUCT { get; set; }
+        public virtual DbSet<BANK> BANKs { get; set; }
     }
 }

@@ -67,9 +67,9 @@
                 </a>
 
                 <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.ActionLink("Game mới nhất", "AppTheoTheLoai", new { sortOrder = ViewBag.DateSortParm })
+                    @Html.ActionLink("Phần mềm mới nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.DateSortParm })
                     <br />
-                    @Html.ActionLink("Game hay nhất", "AppTheoTheLoai", new { sortOrder = ViewBag.RateSortParm })
+                    @Html.ActionLink("Phần mềm hay nhất", "Page_AppTheoTheLoai", new { sortOrder = ViewBag.RateSortParm })
                 </div>
             </div>
         </div>
@@ -103,9 +103,7 @@
                 </a>
 
                 <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    <a href="#" class="dropdown-item">Dưới 10GB</a>
-                    <a href="#" class="dropdown-item">Dưới 20GB</a>
-                    <a href="#" class="dropdown-item">Dưới 30GB</a>
+                    @Html.Action("Page_App_Filter_NgonNguDropDown","CitricStore")
                 </div>
             </div>
         </div>

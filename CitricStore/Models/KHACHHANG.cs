@@ -14,6 +14,12 @@ namespace CitricStore.Models
     
     public partial class KHACHHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KHACHHANG()
+        {
+            this.ORDER_INFO = new HashSet<ORDER_INFO>();
+        }
+    
         public int MaKH { get; set; }
         public string HoTenKH { get; set; }
         public string DienthoaiKH { get; set; }
@@ -21,7 +27,9 @@ namespace CitricStore.Models
         public string Matkhau { get; set; }
         public Nullable<System.DateTime> Ngaysinh { get; set; }
         public string Email { get; set; }
-        public Nullable<bool> Daduyet { get; set; }
         public string GioiTinh { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDER_INFO> ORDER_INFO { get; set; }
     }
 }

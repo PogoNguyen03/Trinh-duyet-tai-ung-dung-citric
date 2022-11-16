@@ -18,8 +18,6 @@ namespace CitricStore.Models
         public string TenApp { get; set; }
         public string GioiThieu { get; set; }
         public string DungLuong { get; set; }
-        public string NgonNgu { get; set; }
-        public string HeDieuHanh { get; set; }
         public string LinkTai { get; set; }
         public Nullable<int> MaTheLoaiApp { get; set; }
         public Nullable<int> MaNPH { get; set; }
@@ -32,6 +30,7 @@ namespace CitricStore.Models
         public string HinhCT2 { get; set; }
         public string HinhCT3 { get; set; }
         public string HinhCT4 { get; set; }
+        public Nullable<decimal> DonGia { get; set; }
     
         public virtual HEDIEUHANH HEDIEUHANH1 { get; set; }
         public virtual NGONNGU NGONNGU1 { get; set; }

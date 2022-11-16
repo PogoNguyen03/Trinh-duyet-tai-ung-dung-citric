@@ -36,17 +36,17 @@
             @Model.TenApp
         </div>
         <div class="col-lg-4 col-md-4" style="padding-top:10px;">
-            <a type="submit" class="nuttaigame float-end justify-content-center" style="text-align:center; align-items:center" href="@Model.LinkTai">
-                Download
+            <a class="nuttaigame float-end justify-content-center" style="text-align:center; align-items:center"
+               href="@Url.Action("AddToCart","Cart", new {id = Model.MaApp })">
+                Đặt Mua
             </a>
             <div class="row justify-content-center">
-                <div class="danhgia">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4 danhgia">
+                    <span class="stars" data-rating="@Model.DanhGia" data-num-stars="5"></span>
                 </div>
+                <div class="col-lg-4" style="font-size:30px;">@Model.DanhGia</div>
+                <div class="col-lg-4"></div>
             </div>
         </div>
         <hr />
@@ -58,13 +58,13 @@
             </p>
             <hr>
             <div class="tieudechitiet">
-                <p class="tieude">CHI TIẾT</p>
+                @*<p class="tieude">CHI TIẾT</p>
                 <p class="chitiet">Thể loại: @Html.Action("TenTheLoaiApp", "CitricStore", new { idtheloai = Model.MaTheLoaiApp })</p>
                 <p class="chitiet">Nhà phát hành: @Html.Action("Details_TenNPH", "CitricStore", new { idnph = Model.MaNPH })</p>
                 <p class="chitiet">Dung lượng: @Model.DungLuong MB</p>
                 <p class="chitiet">Ngôn ngữ: @Html.Action("Details_TenNgonNgu", "CitricStore", new { idngonngu = Model.MaNgonNgu })</p>
                 <p class="chitiet">Hệ điều hành: @Html.Action("Details_TenHDH", "CitricStore", new { idhdh = Model.MaHDH })</p>
-                <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>
+                <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>*@
             </div>
         </div>
         <hr>
@@ -72,7 +72,7 @@
             <h1 class="game-list-title" style="margin-bottom: -20px;">PHẦN MỀM CÙNG THỂ LOẠI</h1>
             <div class="game-list-wrapper">
                 <div class="game-list" id="game-list-scrollbar">
-                    @Html.Action("Details_AppCungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoaiApp })
+                    @*@Html.Action("Details_AppCungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoaiApp })*@
                 </div>
             </div>
         </div>
