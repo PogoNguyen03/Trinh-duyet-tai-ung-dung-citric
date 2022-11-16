@@ -148,7 +148,10 @@ namespace CitricStore.Controllers
 
         public ActionResult LogOut()
         {
-            Session.Clear();
+            Session.Remove("TaiKhoan");
+            Session.Remove("TenDN");
+            Session.Remove("MaKH");
+
             return RedirectToAction("Index","CitricStore");
         }
 
