@@ -22,8 +22,9 @@ namespace CitricStore.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Language {
-        
+
+    public class Language {
+
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -36,7 +37,9 @@ namespace CitricStore.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+
+        public static global::System.Resources.ResourceManager ResourceManager {
+
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CitricStore.Resources.Language", typeof(Language).Assembly);
@@ -51,7 +54,9 @@ namespace CitricStore.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+
+        public static global::System.Globalization.CultureInfo Culture {
+
             get {
                 return resourceCulture;
             }
@@ -59,5 +64,43 @@ namespace CitricStore.Resources {
                 resourceCulture = value;
             }
         }
+
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Câu hỏi thường gặp.
+        /// </summary>
+        public static string FrequentlyAskedQuestions {
+            get {
+                return ResourceManager.GetString("FrequentlyAskedQuestions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tìm kiếm ứng dụng....
+        /// </summary>
+        public static string SearchInStore {
+            get {
+                return ResourceManager.GetString("SearchInStore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cửa hàng.
+        /// </summary>
+        public static string Store {
+            get {
+                return ResourceManager.GetString("Store", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hỗ trợ.
+        /// </summary>
+        public static string Support {
+            get {
+                return ResourceManager.GetString("Support", resourceCulture);
+            }
+
+
     }
 }

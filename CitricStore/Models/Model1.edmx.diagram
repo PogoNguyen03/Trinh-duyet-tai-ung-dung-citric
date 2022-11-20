@@ -27,6 +27,7 @@
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NGONNGU" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_NHAPHATHANH" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_GAME_THELOAIGAME" ManuallyRouted="false" />
+
         <AssociationConnector Association="CitricStoreModel.FK_OVERALL_HEDIEUHANH" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_ORDERINFO_KHACHHANG" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_OVERALL_NGONNGU" ManuallyRouted="false" />
@@ -34,6 +35,7 @@
         <AssociationConnector Association="CitricStoreModel.FK_ORDERPRODUCT_ORDERINFO" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_ORDERPRODUCT_OVERALL" ManuallyRouted="false" />
         <AssociationConnector Association="CitricStoreModel.FK_OVERALL_THELOAI" ManuallyRouted="false" />
+
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
