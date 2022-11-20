@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CitricStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CitricStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="APP">
           <Key>
             <PropertyRef Name="MaApp" />
@@ -146,6 +146,16 @@
           </Key>
           <Property Name="MaTheLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="THELOAIAPP">
           <Key>
@@ -361,10 +371,12 @@
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NGONNGU" EntityType="Self.NGONNGU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHAPHATHANH" EntityType="Self.NHAPHATHANH" Schema="dbo" store:Type="Tables" />
+
           <EntitySet Name="ORDER_INFO" EntityType="Self.ORDER_INFO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ORDER_PRODUCT" EntityType="Self.ORDER_PRODUCT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OVERALL" EntityType="Self.OVERALL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+
           <EntitySet Name="THELOAIAPP" EntityType="Self.THELOAIAPP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THELOAIGAME" EntityType="Self.THELOAIGAME" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_APP_HEDIEUHANH" Association="Self.FK_APP_HEDIEUHANH">
@@ -432,7 +444,8 @@
             <End Role="OVERALL" EntitySet="OVERALL" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CitricStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -593,12 +606,12 @@
           <Property Name="HinhCT3" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="HinhCT4" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="LinkTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AppOrGame" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HEDIEUHANH" Relationship="Self.FK_OVERALL_HEDIEUHANH" FromRole="OVERALL" ToRole="HEDIEUHANH" />
           <NavigationProperty Name="NGONNGU" Relationship="Self.FK_OVERALL_NGONNGU" FromRole="OVERALL" ToRole="NGONNGU" />
           <NavigationProperty Name="NHAPHATHANH" Relationship="Self.FK_OVERALL_NHAPHATHANH" FromRole="OVERALL" ToRole="NHAPHATHANH" />
           <NavigationProperty Name="ORDER_PRODUCT" Relationship="Self.FK_ORDERPRODUCT_OVERALL" FromRole="OVERALL" ToRole="ORDER_PRODUCT" />
           <NavigationProperty Name="THELOAI" Relationship="Self.FK_OVERALL_THELOAI" FromRole="OVERALL" ToRole="THELOAI" />
-          <Property Name="AppOrGame" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="THELOAI">
           <Key>
@@ -894,7 +907,9 @@
             <End Role="THELOAI" EntitySet="THELOAIs" />
             <End Role="OVERALL" EntitySet="OVERALLs" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="CitricStoreModel.sysdiagram" />
         </EntityContainer>
+
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1025,7 +1040,6 @@
           <EntitySetMapping Name="OVERALLs">
             <EntityTypeMapping TypeName="CitricStoreModel.OVERALL">
               <MappingFragment StoreEntitySet="OVERALL">
-                <ScalarProperty Name="AppOrGame" ColumnName="AppOrGame" />
                 <ScalarProperty Name="Ma" ColumnName="Ma" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
                 <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
@@ -1043,6 +1057,7 @@
                 <ScalarProperty Name="HinhCT3" ColumnName="HinhCT3" />
                 <ScalarProperty Name="HinhCT4" ColumnName="HinhCT4" />
                 <ScalarProperty Name="LinkTai" ColumnName="LinkTai" />
+                <ScalarProperty Name="AppOrGame" ColumnName="AppOrGame" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1070,6 +1085,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
