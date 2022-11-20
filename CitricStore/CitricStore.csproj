@@ -147,6 +147,7 @@
     <Compile Include="Controllers\InputNHAPHATHANHController.cs" />
     <Compile Include="Controllers\InputTHELOAIAPPController.cs" />
     <Compile Include="Controllers\InputTHELOAIGAMEController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1489,6 +1490,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\language\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
