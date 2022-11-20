@@ -1,5 +1,6 @@
 ﻿* {
-    margin: 0;
+    margin: 0px;
+    padding:0px;
 }
 /*-------------HEADER-------------*/
 #header {
@@ -13,8 +14,6 @@
 }
 .imagelogo {
     margin: 0px auto;
-    top: 50%;
-    transform: translateY(-50%);
 }
 .tenweb {
     height: 60px;
@@ -135,41 +134,51 @@
 }
 
 .searchbar {
-    margin-left: 50px;
+    top:50%;
+    transform:translateY(-50%);
+    margin-left:50px;
     height: 50px;
-    top: 50%;
-    transform: translateY(-50%);
     position: absolute;
     display: flex;
     border-radius: 24px;
 }
-
-.searchTerm {
-    width: 100%;
-    border: 3px solid black;
-    border-right: none;
-    border-radius: 24px 0 0 24px;
-    outline: none;
-    color: #00B4CC;
+.searchbar-form {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.searchbar-btn {
-    height: 50px;
-    width: 50px;
-    background-color: #00B4CC;
-    border: 3px solid black;
-    border-left: none;
-    text-align: center;
-    border-radius: 0 24px 24px 0;
-    cursor: pointer;
-    font-size: 20px;
+    .searchbar-form:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+
+.searchbar-form::-moz-placeholder {
+    color: #6c757d;
+    opacity: 1;
 }
 
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
+.searchbar-form::placeholder {
+    color: #6c757d;
+    opacity: 1;
 }
+
+
+
 
 .navigation-container {
     height: 100%;
@@ -187,6 +196,13 @@
 .navigation-name {
     padding-left: 10px;
     padding-right: 20px;
+}
+
+/*làm ẩn thanh scollball*/
+
+::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgb(18,18,18);
 }
 
 /*-------------FOOTER-------------*/
@@ -246,18 +262,27 @@
     margin-top: 100px;
     margin-left: 10px;
     font-size: 30px;
-    color: white;
+    color: black;
+}
+
+.text-muted{
+    color:black;
 }
 
 
 
 
-.DangNhap{
-    text-decoration:none;
-    color:black;
+.DangNhap {
+    text-decoration: none;
+    color: black;
 }
 
 .ThanhVien{
     text-decoration:none;
     color: white;
+   
+}
+
+.ThanhVien :hover{
+    color:white;
 }

@@ -172,13 +172,15 @@
     height: 40px;
     position: relative;
     align-items: center;
+    margin-bottom: 10px;
 }
 
     .dexuat-name > span {
         padding-right: 20px;
         padding-left: 20px;
-        color: black;
+        color: white;
     }
+
 
 .line:first-child {
     width: 70px;
@@ -198,7 +200,6 @@
 }
 
 .bloggame {
-    border-spacing: 20px 20px;
     width: auto;
     height:auto;
     margin: 0px auto;
@@ -206,7 +207,6 @@
 }
 
 .imageblog {
-    position: relative;
     display: block;
     overflow: hidden;
     border-radius: 4px;
@@ -222,44 +222,37 @@
 }
 
 .bloggame-title {
+    color: white;
     margin-bottom: 10px;
     font-size: 16px;
-    color: white;
     text-align: center;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+    .bloggame-title:hover{
+        color: #FCAE03;
 
-    .bloggame-title > a.fix-line {
-        display: block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .bloggame-title > a {
-        color: inherit;
-        text-decoration: none;
-        -webkit-transition: 0.15s color;
-        -o-transition: 0.15s color;
-        transition: 0.15s color;
-        display: block;
     }
 
 .bloggame-theloai {
-    font-size: 13px;
+    color:white;
+    font-size: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 45px;
 }
 
 .bloggame-download {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .bloggame-download-btn {
@@ -267,13 +260,17 @@
     justify-content: center;
     align-items: center;
     margin: 0px auto;
+    text-decoration:none;
+    color:white;
+    
 }
 
 .bloggame-download-btn {
     background-color: #293139;
     border-color: #101215;
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 16px;
+    
     line-height: 1.5;
     height: 35px;
     width: 100px;
@@ -284,3 +281,6 @@
     cursor: pointer;
 }
 
+.bloggame-download-btn:hover{
+    color:white;
+}

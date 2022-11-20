@@ -9,9 +9,13 @@
         width: 46%;
         margin-left: 10px;
     }
+
+    .ThanhVien{
+        color:aliceblue;
+    }
 </style>
 
-<div class="container col-lg-5 col-md-11" style="margin:0px auto;">
+<div class="login-container col-lg-5 col-md-11" style="margin:0px auto;">
         <h2 style="text-align: center; color:white">ĐĂNG KÝ THÀNH VIÊN</h2>
         <div style="color:white; font-size:18px;">
             @using (Html.BeginForm("Register", "Users"))
@@ -60,6 +64,7 @@
 
                     @Html.ActionLink("Đăng Nhập", "Login", null, new { @class = "btn btn-dark register-btn" })
                 </div>
+                <br />
             }
         </div>
     </div>

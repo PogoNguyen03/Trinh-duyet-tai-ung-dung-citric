@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="~/Content/classify.css" />
 
 <script src="~/Content/bootstrap5/js/bootstrap.js"></script>
+<style>
+    .chonloc{
+        text-decoration:none;
+        color:black;
+    }
+</style>
 
 <div class="slideshow">
     <div class="display-container">
@@ -67,15 +73,15 @@
                     Kiểu sắp xếp
                 </a>
 
-                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu">
-                    @Html.ActionLink("Game mới nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.DateSortParm })
+                <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu" style="border-radius: 9px;">
+                    @Html.ActionLink("Game mới nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.DateSortParm }, new {@class = "chonloc"})
                     <br />
-                    @Html.ActionLink("Game hay nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.RateSortParm })
+                    @Html.ActionLink("Game hay nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.RateSortParm }, new { @class = "chonloc"})
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        @*<div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
             <div class="dropdown filter-tieude">
                 <strong>Dung Lượng:</strong>
                 <a href="#" class="dropdown-toggle  dungluong-dropdown"
@@ -127,7 +133,7 @@
                     <a href="#" class="dropdown-item">Dưới 30GB</a>
                 </div>
             </div>
-        </div>
+        </div>*@
 
     </div>
 

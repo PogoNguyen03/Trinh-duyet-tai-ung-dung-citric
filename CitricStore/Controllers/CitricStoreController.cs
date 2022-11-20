@@ -123,34 +123,76 @@ namespace CitricStore.Controllers
                 default:
                     apps = apps.OrderBy(s => s.MaApp);
                     break;
-            }
+            } 
             return View(apps.ToList());
         }
-        //Trang chứa toàn bộ game
-        public ActionResult Page_Game(string searchString)
+
+
+        //FILTER
+        public ActionResult Page_App_Filter_NgonNgu(int idnn, string sortOrder)
         {
-            var game = from g in database.SEARCHALLs
+            ViewBag.RateSortParm = String.IsNullOrEmpty(sortOrder) ? "rate_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var apps = from s in database.APPs
+                       where s.MaNgonNgu == idnn
+                       select s;
+            switch (sortOrder)
+            {
+                case "rate_desc":
+                    apps = apps.OrderByDescending(s => s.DanhGia);
+                    break;
+                case "Date":
+                    apps = apps.OrderBy(s => s.NgayCapNhat);
+                    break;
+                case "date_desc":
+                    apps = apps.OrderByDescending(s => s.NgayCapNhat);
+                    break;
+                default:
+                    apps = apps.OrderBy(s => s.MaApp);
+                    break;
+            }
+
+            return View(apps.ToList()) ;
+        }
+
+        public ActionResult Page_App_Filter_NgonNguDropDown()
+        {
+            var nn = database.NGONNGUs.ToList();
+            return PartialView(nn);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Trang search
+        public ActionResult Page_Search(string searchString)
+        {
+            var game = from g in database.OVERALLs
                        select g;
             if (!String.IsNullOrEmpty(searchString))
             {
                 searchString = searchString.ToLower();
-                game = game.Where(g => g.TenSearch.ToLower().Contains(searchString));
+                game = game.Where(g => g.Ten.ToLower().Contains(searchString));
             }
+
+            Session["SearchKeyWord"] = searchString;
             return View(game);
         }
 
-        //Trang chứa toàn bộ phần mềm
-        public ActionResult Page_App(string searchString)
-        {
-            var app = from a in database.APPs
-                      select a;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                searchString = searchString.ToLower();
-                app = app.Where(g => g.TenApp.ToLower().Contains(searchString));
-            }
-            return View(app);
-        }
 
 
 
@@ -247,13 +289,49 @@ namespace CitricStore.Controllers
             return PartialView(tenhdh);
         }
 
+        public ActionResult Extension_Overall_TenTheLoai(int idtheloai)
+        {
+            var theloai = database.THELOAIs.Where(g => g.MaTheLoai == idtheloai).ToList();
+            return PartialView(theloai);
+        }
         //TRANG PHÂN LOẠI
         public ActionResult Classify()
         {
             return View();
         }
 
+        //--------------------------DETAILS OVERALL FOR SEARCH--------------------------
+        public ActionResult Details_Overall(int id)
+        {
+            var ud = database.OVERALLs.FirstOrDefault(s => s.Ma == id);
+            return View(ud);
+        }
+        private List<OVERALL> LayUngDungMoi(int soluong)
+        {
+            return database.OVERALLs.OrderByDescending(ud => ud.NgayCapNhat).Take(soluong).ToList();
+        }
+        private List<OVERALL> LayUngDungTheoDanhGia(int soluong)
+        {
+            return database.OVERALLs.OrderByDescending(ud => ud.DanhGia).Take(soluong).ToList();
+        }
 
+        public ActionResult Details_Overall_TheoDanhGia()
+        {
+            var dsUngDungDeXuat = LayUngDungTheoDanhGia(8);
+            return PartialView(dsUngDungDeXuat);
+        }
+
+        public ActionResult Details_Overall_Moi()
+        {
+            var dsGameMoi = LayUngDungMoi(8);
+            return PartialView(dsGameMoi);
+        }
+
+        public ActionResult Details_Overall_CungTheLoai(int idtheloai)
+        {
+            var dsTheLoai = database.OVERALLs.Where(ud => ud.MaTheLoai == idtheloai).ToList();
+            return PartialView(dsTheLoai);
+        }
 
 
 
