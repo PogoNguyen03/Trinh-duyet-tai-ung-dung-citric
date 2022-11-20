@@ -164,19 +164,6 @@ namespace CitricStore.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         //Trang search
         public ActionResult Page_Search(string searchString)
         {

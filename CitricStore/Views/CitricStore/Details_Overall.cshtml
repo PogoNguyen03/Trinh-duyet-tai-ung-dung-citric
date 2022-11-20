@@ -21,11 +21,11 @@
     <div class="col-lg-8">
         <div class="slideshow">
             <div class="display-container">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhNen">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT1">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT2">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT3">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT4">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/OVERALL/@Model.HinhNen">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/OVERALL/@Model.HinhCT1">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/OVERALL/@Model.HinhCT2">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/OVERALL/@Model.HinhCT3">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/OVERALL/@Model.HinhCT4">
                 <!--Nút qua lại-->
                 <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
@@ -52,7 +52,7 @@
             @String.Format("{0:0,0}", Model.DonGia) VND
         </div>
 
-        <a class="nuttaigame align-items-center" style="margin: 25px auto"
+        <a class="nuttaigame align-items-center" style="margin: 25px auto; display:block;"
            href="@Url.Action("AddToCart","Cart", new {id = Model.Ma})">
             Thêm vào giỏ hàng
         </a>

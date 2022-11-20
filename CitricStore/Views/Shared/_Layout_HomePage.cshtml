@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"/>
 
 </head>
-<body style="background-color:rgb(18,18,18)">
+<body style="background-color:rgb(18,18,18)" id="body-container">
     <style>
         .ThanhVien{
             color:aliceblue;
@@ -87,7 +87,7 @@
 
 
 
-    <div class="container main">
+    <div class="container" id="main">
         <div class="row navigationbar-container">
             <div class="searchbar-container col-lg-3 col-md-9">
                 <div class="searchbar align-bottom">
@@ -171,6 +171,7 @@
 
 
         </div>
+
             @RenderBody()
 
     </div>

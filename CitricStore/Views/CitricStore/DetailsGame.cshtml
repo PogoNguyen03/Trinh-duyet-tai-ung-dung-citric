@@ -19,11 +19,11 @@
     <div class="col-lg-8">
         <div class="slideshow">
             <div class="display-container">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhNen">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT1">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT2">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT3">
-                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/APP/@Model.HinhCT4">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/GAME/@Model.HinhNen">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/GAME/@Model.HinhCT1">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/GAME/@Model.HinhCT2">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/GAME/@Model.HinhCT3">
+                <img class="slides animate-fading" onclick="changeImage()" src="~/Images/GAME/@Model.HinhCT4">
                 <!--Nút qua lại-->
                 <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
@@ -64,7 +64,18 @@
         <p class="noidung">
             @Model.GioiThieu
         </p>
-    <hr />
+        <hr />
+        <p class="tieude">ĐÁNH GIÁ CỦA NGƯỜI DÙNG</p>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3" style="font-size:40px; color:white; text-align:right;">@Model.DanhGia</div>
+
+            <div class="col-lg-3 danhgia justify-content-start align-bottom">
+                <span class="stars" data-rating="@Model.DanhGia" data-num-stars="5"></span>
+            </div>
+            <div class="col-lg-3"></div>
+
+        </div>
 
 
 
@@ -76,31 +87,31 @@
         <p class="chitiet">Ngôn ngữ: @Html.Action("Details_TenNgonNgu", "CitricStore", new { idngonngu = Model.MaNgonNgu })</p>
         <p class="chitiet">Hệ điều hành: @Html.Action("Details_TenHDH", "CitricStore", new { idhdh = Model.MaHDH })</p>
         <p class="chitiet">Ngày cập nhật: @Model.NgayCapNhat</p>
-    <hr>
-    <div class="game-list-container">
-        <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI CÙNG THỂ LOẠI</h1>
-        <div class="game-list-wrapper">
-            <div class="game-list" id="game-list-scrollbar">
-                @Html.Action("Details_GameCungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoaiGame })
+        <hr>
+        <div class="game-list-container">
+            <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI CÙNG THỂ LOẠI</h1>
+            <div class="game-list-wrapper">
+                <div class="game-list" id="game-list-scrollbar">
+                    @Html.Action("Details_GameCungTheLoai", "CitricStore", new { idtheloai = Model.MaTheLoaiGame })
+                </div>
+            </div>
+        </div>
+        <div class="game-list-container">
+            <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI MỚI</h1>
+            <div class="game-list-wrapper">
+                <div class="game-list" id="game-list-scrollbar">
+                    @Html.Action("Details_GameMoi", "CitricStore")
+                </div>
+            </div>
+        </div>
+        <div class="game-list-container">
+            <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI HOT</h1>
+            <div class="game-list-wrapper">
+                <div class="game-list" id="game-list-scrollbar">
+                    @Html.Action("Details_GameTheoDanhGia", "CitricStore")
+                </div>
             </div>
         </div>
     </div>
-    <div class="game-list-container">
-        <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI MỚI</h1>
-        <div class="game-list-wrapper">
-            <div class="game-list" id="game-list-scrollbar">
-                @Html.Action("Details_GameMoi", "CitricStore")
-            </div>
-        </div>
-    </div>
-    <div class="game-list-container">
-        <h1 class="game-list-title" style="margin-bottom: -20px;">TRÒ CHƠI HOT</h1>
-        <div class="game-list-wrapper">
-            <div class="game-list" id="game-list-scrollbar">
-                @Html.Action("Details_GameTheoDanhGia", "CitricStore")
-            </div>
-        </div>
-    </div>
-</div>
 
     </div>

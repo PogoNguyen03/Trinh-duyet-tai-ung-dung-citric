@@ -14,6 +14,7 @@ namespace CitricStore.Models
         public decimal DonGia { get; set; }
         public int SoLuong { get; set; }
         public string LoaiUngDung { get; set; }
+
         //Tính thành tiền = DongGia * SoLuong
         public decimal FinalPrice()
         {
@@ -22,13 +23,17 @@ namespace CitricStore.Models
         public CartItem(int MaUD)
         {
             this.MaUngDung = MaUD;
-            //Tìm sách trong CSDL có mã id cần và gán cho mặt hàng được mua
-            var ud = db.OVERALLs.Single(s => s.Ma == this.MaUngDung);
+
+            var ud = db.OVERALLs.Single(s => s.Ma == MaUD);
             this.TenUngDung = ud.Ten;
+
             this.HinhNen = ud.HinhNen;
+
             this.DonGia = (decimal)ud.DonGia;
-            this.SoLuong = 1; //Số lượng mua ban đầu của một mặt hàng là 1 (cho lần click đầu)
-            this.LoaiUngDung = ud.AppOrGame;
+
+            this.SoLuong = 1;
+
+            this.LoaiUngDung = ud.AppOrGame ;
         }
 
     }

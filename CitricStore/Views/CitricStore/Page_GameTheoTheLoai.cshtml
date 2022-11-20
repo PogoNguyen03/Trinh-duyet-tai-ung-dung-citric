@@ -1,7 +1,7 @@
 ﻿@using CitricStore.Models
 
 @{
-    ViewBag.Title = "GameTheoTheLoai";
+    ViewBag.Title = "Thể Loại";
     Layout = "~/Views/Shared/_Layout_HomePage.cshtml";
 }
 
@@ -74,9 +74,9 @@
                 </a>
 
                 <div class="dropdown-menu dungluong-dropdown-menu" aria-labelledby="dropdownMenu" style="border-radius: 9px;">
-                    @Html.ActionLink("Game mới nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.DateSortParm }, new {@class = "chonloc"})
+                    @Html.ActionLink("Trò chơi mới nhất", "Page_GameTheoTheLoai", new {sortOrder = ViewBag.DateSortParm }, new {@class = "chonloc"})
                     <br />
-                    @Html.ActionLink("Game hay nhất", "GameTheoTheLoai", new {sortOrder = ViewBag.RateSortParm }, new { @class = "chonloc"})
+                    @Html.ActionLink("Trò chơi hay nhất", "Page_GameTheoTheLoai", new {sortOrder = ViewBag.RateSortParm }, new { @class = "chonloc"})
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
                         <div class="bloggame">
                             <a href="" class="imageblog">
 
-                                <img class="imageblog-width-height" src="~/Images/@game.HinhNen">
+                                <img class="imageblog-width-height" src="~/Images/GAME/@game.HinhNen">
                             </a>
                             <div class="bloggame-title h4">
                                 <a class="fix-line" href="">@game.TenGame</a>

@@ -20,6 +20,7 @@ namespace CitricStore.Controllers
         public List<CartItem> GetCart()
         {
             List<CartItem> myCart = Session["GioHang"] as List<CartItem>;
+
             //Nếu giỏ hàng chưa tồn tại thì tạo mới và đưa vào Session
             if (myCart == null)
             {
@@ -34,7 +35,10 @@ namespace CitricStore.Controllers
         public ActionResult AddToCart(int id)
         {
             //Lấy giỏ hàng hiện tại
+            var game = "Game";
             List<CartItem> myCart = GetCart();
+
+
             CartItem currentProduct = myCart.FirstOrDefault(p => p.MaUngDung == id);
             if (currentProduct == null)
             {
@@ -45,12 +49,13 @@ namespace CitricStore.Controllers
             {
                 currentProduct.SoLuong++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
             }
-            
-            if(currentProduct.LoaiUngDung == "Game")
-                return RedirectToAction("DetailsGame", "CitricStore", new { id = id });
 
-            else
+            if (currentProduct.LoaiUngDung == "Game")
+                return RedirectToAction("DetailsGame", "CitricStore", new { id = id });
+            else 
                 return RedirectToAction("DetailsApp", "CitricStore", new { id = id });
+
+            //return RedirectToAction("Details_Overall", "CitricStore", new { id = id });
         }
 
 
